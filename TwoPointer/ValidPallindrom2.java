@@ -21,7 +21,7 @@ public class Main{
                             // else left and right-1
 
                             // if both of them say it's valid then only it's valid else not.
-
+    // Do: NA
     // change: left ++ and right --;
 
 
