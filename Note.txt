@@ -7,3 +7,12 @@
 3. break and return if: Can be multiple conditions
 4. Do: This can be either 3 or 4. depends on questions.
 5. change: left ++ and right --; this will be as per some condition or else always.
+
+
+Sum of 2 nos: HashMap
+1. initialize the response if not boolean
+2. Create a hashMap to store and retrieve.
+3. Start for loop. 
+4. Do: as per condition either find the element do calculation 
+5. change - add no to the hashmap.
+6. if nothing found return null.
