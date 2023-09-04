@@ -1,0 +1,170 @@
+
+Fast and slow pointers
+  ---------------------
+
+public int fn(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+    int ans = 0;
+
+while(fast !=null && fast.next != null){
+   // do some logic
+slow = slow.next;
+fast = fast.next.next;
+
+}
+return ans;
+}
+
+
+Efficient String building
+  ------------------------
+
+public String func(char[] arr){
+StringBuilder sb = new StringBuilder();
+
+for(char c: arr){
+sb.append(c);
+}
+
+return c.toString();
+}
+
+
+sliding window
+  -------------
+
+This is ideally just 2 nested loops.
+
+One loop is outside that moves the right pointer always by 1.
+Other is an inner loop.
+This moves the left pointer. Till it's condition is satisfied. Or doesn't moves it when not satisfied.
+
+Steps:
+1. Initialise the value of left, current and answer
+2. For loop the right pointer and move it single steps.
+3. Since we are moving and things are coming in.
+4. We so operation on current. Current stores out current state.
+5. Then we check do we need to move left pointer too.
+6. If satisfied we move the left pointer.
+7. While doing so the span is changing so. We decrease the value from current. And also change the value of left. Mostly move it to right.
+8. Outside the while loop and inside the for loop update the value of answer.
+9. When all the right steps are done.
+10. Return the answer.
+
+// needs practice
+
+public int func(int[] arr){
+
+int left = 0; right =0; ans =0;
+
+while(right< arr.length){
+
+while(<CONDITION_TO_MOVE_WINDOW){
+left++;
+}
+right++;
+}
+
+}
+
+// same thing in for loop
+
+public int func(int[] arr){
+int left =0, ans =0, curr =0;
+
+for(int right =0; right< arr.length[]; right++)
+{
+// do logic to update curr; this will temporarily hold ans;
+// ans
+while(<CONDITION>){
+// Update te
+left++;
+}
+
+//update answer
+
+}
+
+return ans;
+}
+
+
+2 pointers, 2 inputs, exhaust both
+  ---------------------------------
+
+
+public int func(int[] arr1, int[] arr2){
+
+// initialize all at the 0 the starting line, extreme left.
+int i =0, j =0; ans = 0;
+
+while(i < arr1.length && j < arr2.length)
+{
+// do something, like copy the element in a new array or sum or compare
+if(<CONDITION>){
+i++;
+}else{
+j++;
+}
+}
+
+while(i < arr1.length)
+{
+// some logic
+i++;
+}
+
+while(j< arr2.length)
+{
+j++;
+}
+
+return ans;
+}
+
+
+2 pointers 1 array, opposite end
+  --------------------------------
+
+public int func( int[] nums){
+ 
+int left = 0;
+int right = nums.length - 1;
+int ans = 0;
+
+while(left<right){
+
+// do something with left and right ex in pallindrom check
+// if nums[left] == nums[right];
+// ++ this moving of pointer i can do at my different logic too.
+// ++ if we move them without any condition, it becomes like a for loop.
+
+// now move the pointer
+if( <CONDITION>){
+left++;
+}else{
+right++;
+}
+}
+return ans;
+}
+
+
+-----------------
+
+  Java String compareTo() method - javatpoint
+
+public class CompareToExample{  
+public static void main(String args[]){  
+String s1="hello";  
+String s2="hello";  
+String s3="meklo";  
+String s4="hemlo";  
+String s5="flag";  
+System.out.println(s1.compareTo(s2));//0 because both are equal  
+System.out.println(s1.compareTo(s3));//-5 because "h" is 5 times lower than "m"  
+System.out.println(s1.compareTo(s4));//-1 because "l" is 1 times lower than "m"  
+System.out.println(s1.compareTo(s5));//2 because "h" is 2 times greater than "f"  
+}}  
+
