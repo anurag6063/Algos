@@ -1,4 +1,20 @@
 // sliding window 
+
+// 2 pointer approach:
+
+// initalize the answer variable.
+// check if in any condition we would not like to process anymore.
+// 1. initialize: left to 0 initially ;  right side of window will be for loop
+// 2. do till:  while/for loop right 0 -> n-1 ; right ++ since the irght one keep movinf always.
+// 3.   in: break and return if: Can be multiple conditions
+// 4.   in: Do: let right pointer do that it has to do till left kicks in.
+//          check for left kick in condition
+//          calculate ans first; since this ans is the one for when the 1st window appears.
+//          now slide the window from left too/ do modification
+//          left++
+//          
+// 5. change: left ++ and right --; this will be as per some condition or else always.
+
 class Solution{
 
     public double findMaxAverage(int[] nums, int k){
