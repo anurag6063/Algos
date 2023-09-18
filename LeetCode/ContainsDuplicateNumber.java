@@ -6,6 +6,48 @@
  */
 import java.util.*;
 
+// the basics brute force idea. 
+// here i am checking each i element with i+1 to n element. 
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+    
+    boolean result = false;
+
+    for(int i=0; i< nums.length; i++){
+        for(int j=i+1; j< nums.length; j++){
+            if(nums[i]==nums[j])
+                result = true;
+        }
+    }
+
+    return result;
+    }
+}
+// the bottleneck is that the second loop seems the same element that the first element sees. So i need to find a better way
+// to see and check the elements.
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+    
+    boolean result = false;
+    // instead of second loop we are using a HashSet.
+    Set<Integer> numsHs = new HashSet<Integer>();
+    for(int i=0; i< nums.length; i++){
+        // the if condition changed
+        if(numsHs.contains(nums[i]))
+            return true;
+        numsHs.add(nums[i]);
+        
+    }
+    return result;
+    }
+}
+
+// ------------------------------------------------
+// below we still have 2 valid answers. 
+// but Set is better than Map. 
+// in second below ans, the array will be too huge. 
 class Solution {
     public boolean containsDuplicate(int[] nums) {
 
