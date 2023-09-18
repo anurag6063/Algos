@@ -41,3 +41,41 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
     return maxP;
 }
 }
+
+
+// brute force algorithm
+
+class Solution {
+  public int maxProfit(int[] prices) {
+    int maxProfit = 0;
+    int n = prices.length;
+    for( int i=0; i< n; i++){
+      for(int j=i+1; j<n; j++){
+        System.out.println(maxProfit);
+          maxProfit = Math.max(maxProfit, prices[j]- prices[i]);
+        }
+    }
+    return maxProfit;
+  }
+}
+
+
+// my same modified code
+class Solution {
+  public int maxProfit(int[] prices) {
+    int maxProfit = 0;
+    int min=prices[0];
+    int n = prices.length;
+    for( int i=0; i< n; i++){
+     // find the minimum and the maximum post the minimum
+     if(prices[i] < min)
+        min = prices[i];
+
+      //  System.out.println(maxProfit);
+        maxProfit = Math.max(maxProfit, prices[i]- min);        
+    }
+    return maxProfit;
+  }
+}
+
+
