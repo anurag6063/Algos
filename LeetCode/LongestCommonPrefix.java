@@ -9,6 +9,24 @@ If there is no common prefix, return an empty string "".
 
  */
 
+// wrote myself
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+
+        StringBuilder result = new StringBuilder();
+        // i wish to do vertical comparison so that i can find if the first element is present is all the words or not. But the issue is length of each word.
+        Arrays.sort(strs);
+        for(int i=0; i< strs[0].length(); i++){
+            if(strs[0].charAt(i) == strs[strs.length-1].charAt(i))
+                result.append(strs[0].charAt(i));
+            else
+                break;
+        }
+
+        return result.toString();
+    }
+}
+// ----------------------------
 import java.util.Arrays;
 
 class Solution {
