@@ -1,10 +1,38 @@
 import java.util.HashSet;
 import java.util.Set;
 
+
+
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 
+// brute force - own
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int result = 0;
+        int max =0;
+        Set<Character> set = new HashSet<>();
+
+            for(int i=0; i< s.length(); i++){
+                if(set.contains(s.charAt(i))){
+                    set.clear();
+                    result = 0;
+                }else{
+                    set.add(s.charAt(i));
+                    result++;
+                    System.out.println(result);
+                }
+                // since we want to find the max length ever. Else it will give the length of the last substring with no repeating chars.
+                max = Math.max(max, result);
+            }
+
+        return max;
+
+    }
+}
+
+// ------------------------------
 class Solution {
     /**
      * @param s
