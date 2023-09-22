@@ -12,6 +12,42 @@
  // start placing num from back since that way will avoid overriting. 
  // can't use for loop at all since the array that i would like to write to, itself is changing. 
 
+// ------
+// own solution
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        // find length of both
+        // for loop smaller one
+        // compare and place at end of num1
+        // out
+        // while on other and place it.
+        int x = m+n-1;
+        while(m > 0 && n > 0){
+            if(nums1[m-1] > nums2[n-1]){
+                nums1[x] = nums1[m-1]; 
+                m--;
+            }else{
+                nums1[x]= nums2[n-1];
+                n--;
+            }
+            x--;
+        }
+        while(m>0){
+            nums1[x]= nums1[m-1];
+            x--;
+            m--;
+        }
+
+        while(n>0){
+            nums1[x] = nums2[n-1];
+            x--;
+            n--;
+        }
+
+    }
+}
+//-------------------------
  
  class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
