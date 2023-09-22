@@ -32,6 +32,71 @@ class Solution {
     }
 }
 
+
+// -----------------------------
+// INCORRECT ANSWER, BUT ALWAYS COMES TO MIND
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int result = 0;
+        int max = 0;
+
+        int left = 0;
+        int right = 1;  // here if not starting from one, the if condition below will always satisfy as true and keep incrementing. it can work well btw when we want to find repeating characters. 
+        
+        int n = s.length();
+       // this did not work because the right moved on without checking if that word was there in the window. So it had non unique characrters. 
+        while(right < n){
+            max = Math.max(max, right-left);
+            System.out.println(max + " "+ left + " "+ right);
+            if(left < n && s.charAt(left) == s.charAt(right)){
+                while(left < n && s.charAt(left) == s.charAt(right)){
+                    left++;
+                    System.out.println("left");
+                }
+            }
+            right++;
+        }
+        return max;
+
+    }
+}
+
+// ------------------------------
+// OPTIMIZED
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int result = 0;
+        int max = 0;
+        Set<Character> set = new HashSet<Character>();
+
+        int left = 0;
+        int right =0;
+
+        while(right < s.length()){
+            // if it does not contains
+            if(!set.contains(s.charAt(right))){
+                // as we have found a unique character the window length increases
+                max = Math.max(max, right - left+1);
+            //    System.out.println("not repeated- left: "+ left + " right: "+ right);
+
+            }else {
+                // System.out.println("repeated - left: "+ left + " right: "+ right);
+
+                // we need to check for right and remove char left from the set irrespective of positin because the dupicate can be at any place in the window. 
+                while(set.contains(s.charAt(right))){
+                    set.remove(s.charAt(left));
+                    left++;
+                }
+            }
+            set.add(s.charAt(right));
+            right++;
+        }
+        return max;
+    }
+}
+
 // ------------------------------
 class Solution {
     /**
