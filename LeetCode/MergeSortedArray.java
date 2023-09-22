@@ -48,8 +48,10 @@ class Solution {
     }
 }
 //-------------------------
- 
- class Solution {
+
+// here we do not have extra 2 while loop becuase the arrays are sorted by deafault. Since the array 1 is larger once we exhaust 
+// array 2 we are sure array 1 's extra element are anyways sorted.
+  class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1;
         int j = n - 1;
@@ -57,10 +59,15 @@ class Solution {
         
         while (j >= 0) {
             if (i >= 0 && nums1[i] > nums2[j]) {
+                            System.out.println(i + ": i "+ nums1[i]  );
+
                 nums1[k--] = nums1[i--];
             } else {
+                            System.out.println( j +" :j "+ nums2[j] );
+
                 nums1[k--] = nums2[j--];
             }
+            
         }
     }
 }
