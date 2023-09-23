@@ -4,6 +4,30 @@
  * value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
  */
 
+// own
+
+class Solution {
+  public int reverse(int x) {
+    long result = 0;
+    int num = x;
+    if (num < 0) {
+      num = Math.abs(num);
+    }
+    while (num > 0) {
+      result = result * 10 + num % 10;
+      num = num / 10;
+    }
+    if (x < 0) {
+      result = result * -1;
+    }
+    if (result > Math.pow(2, 31) || result < Math.pow(-2, 31)) {
+      result = 0;
+    }
+    return (int) result;
+  }
+}
+
+// -----------------------
  class Solution {
     public int reverse(int x) {   
       int y = x;
