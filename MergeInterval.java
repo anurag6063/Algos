@@ -1,6 +1,12 @@
 
 /**
 https://leetcode.com/problems/merge-intervals/
+https://github.com/Chanda-Abdul/Several-Coding-Patterns-for-Solving-Data-Structures-and-Algorithms-Problems-during-Interviews/blob/main/%E2%9C%85%20%20Pattern%2004%20:%20Merge%20Intervals.md
+
+if there is an overlap ib. a.end < b.start
+merged.start = a.start;
+merged.end = Max(a.end,b.end)
+  
   */
 class Solution {
    public int[][] merge(int[][] intervals) {
