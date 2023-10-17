@@ -9,6 +9,7 @@ public class Main {
     cars.add("Mazda");
     System.out.println(cars);
     cars.forEach(System.out::println);
+    cars.forEach(s -> {if(s == "Volvo"){System.out.println(s);}});
     
   } 
 }
