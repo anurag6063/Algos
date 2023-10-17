@@ -29,14 +29,16 @@ class Solution {
         System.out.println(r);
         while(l<r){
 
+         // skipping non character/digit value. left++ till it's a char /digit and left is less than right. 
             while(!Character.isLetterOrDigit(s.charAt(l)) && l<r ){
                 l++;
             }
-            
+            // same for right. 
              while(!Character.isLetterOrDigit(s.charAt(r)) && l<r){
                  r--;
              }
-             
+
+         // this is the main function that we have. But since we need to skip all non valid characters. before this we will skip them. 
                 if(s.charAt(l) != s.charAt(r))
                     return false;
             
