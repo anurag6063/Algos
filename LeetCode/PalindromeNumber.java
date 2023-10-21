@@ -28,6 +28,7 @@ class Solution {
         }
 
         // didn't underatand
+   // ? maybe becuse the x gets divided by 10 fianlly so to match that we have check also /10.
         return (x==check || x==check/10);
 }
 }

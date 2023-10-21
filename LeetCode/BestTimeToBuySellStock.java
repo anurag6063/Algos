@@ -72,6 +72,7 @@ class Solution {
         min = prices[i];
 
       //  System.out.println(maxProfit);
+     // even though the min price did not change, may be the max profit can change, since prices[i] is changing.
         maxProfit = Math.max(maxProfit, prices[i]- min);        
     }
     return maxProfit;
