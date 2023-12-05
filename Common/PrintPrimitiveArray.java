@@ -11,7 +11,5 @@ public class Main {
     IntStream.range(0, cars.length)
             .mapToObj(index -> String.format("%d -> %s",index, cars[index]))
             .forEach(System.out::println); 
-
-    Arrays.asList(cars).forEach( x -> Ststem.out.println(x));
   }
 }
