@@ -45,7 +45,7 @@ class Solution {
     }
 
     public static void mergeSort(int[] arr, int low, int high) {
-        if(low >= mid) return;
+        if(low >= high) return;
 		int mid = (low+high)/2;
 		mergeSort(arr, low, mid);
 		mergeSort(arr, low+1, high);
