@@ -16,7 +16,7 @@ class Solution {
 		
 		
 		while(left <=mid && right <= high){
-			if(arr[left] > arr[right]){
+			if(arr[left] <= arr[right]){
 				temp.add(arr[left]);
 				left++;
 			}else{
@@ -48,7 +48,7 @@ class Solution {
         if(low >= high) return;
 		int mid = (low+high)/2;
 		mergeSort(arr, low, mid);
-		mergeSort(arr, low+1, high);
+		mergeSort(arr, mid+1, high);
 		
 		merge(arr, low, mid, high);
 		
@@ -57,8 +57,8 @@ class Solution {
 public class tUf {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int n = 7;
-        int arr[] = { 9, 4, 7, 6, 3, 1, 5 };
+        int n = 9;
+        int arr[] = { 9, 4, 7, 6, 3, 1, 5,8,9 };
         System.out.println("Before sorting array: ");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
