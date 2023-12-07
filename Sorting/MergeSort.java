@@ -4,61 +4,68 @@
 // https://www.youtube.com/watch?v=ogjf7ORKfd8
 // https://takeuforward.org/data-structure/merge-sort-algorithm/
 // divide and merge algorithm 
-
 import java.util.*;
 
 class Solution {
     private static void merge(int[] arr, int low, int mid, int high) {
-		// using 2 pointers merge 2 distince array, that are pointer by the indexes
-		ArrayList<Integer> temp = new ArrayList<Integer>();
-		int left = low; // starting index of ledt array
-		int right = mid+1; // starting index of right array
-		
-		
-		while(left <=mid && right <= high){
-			if(arr[left] <= arr[right]){
-				temp.add(arr[left]);
-				left++;
-			}else{
-				temp.add(arr[right]);
-				right++;
-			}
-			
-			// now if there are extra elements remaining
-			while(left <= mid){
-				temp.add(arr[left]);
-				left++;
-			}
-			
-			while(right <= high){
-				temp.add(arr[right]);
-				right++;
-			}
-			
-			// transfer elements from temp to original
-			for(int i= low; i<= high; i++){
-				arr[i] = temp.get(i-low);
-			} 
-		}
-		
-		
-    }
+        ArrayList<Integer> temp = new ArrayList<>(); // temporary array
+        int left = low;      // starting index of left half of arr
+        int right = mid + 1;   // starting index of right half of arr
 
+        //storing elements in the temporary array in a sorted manner//
+
+        while (left <= mid && right <= high) {
+            if (arr[left] <= arr[right]) {
+                temp.add(arr[left]);
+                left++;
+            } else {
+                temp.add(arr[right]);
+                right++;
+            }
+        }
+
+        // if elements on the left half are still left //
+
+        while (left <= mid) {
+            temp.add(arr[left]);
+            left++;
+        }
+
+        //  if elements on the right half are still left //
+        while (right <= high) {
+            temp.add(arr[right]);
+            right++;
+        }
+
+        // // transfering all elements from temporary to arr //
+        // for (int i = low; i <= high; i++) {
+        //     arr[i] = temp.get(i - low);
+        // }
+        
+// Transfer sorted elements from temporary to arr
+System.out.println("Transferring sorted elements from temporary to arr:");
+int i = low;
+for (int value : temp) {
+    arr[i++] = value;
+    System.out.println("arr[" + (i - 1) + "] = " + value);
+}
+
+Arrays.stream(arr).forEach(s -> System.out.print(s +" - "));
+System.out.println("Transfer completed.");
+}
     public static void mergeSort(int[] arr, int low, int high) {
-        if(low >= high) return;
-		int mid = (low+high)/2;
-		mergeSort(arr, low, mid);
-		mergeSort(arr, mid+1, high);
-		
-		merge(arr, low, mid, high);
-		
+        if (low >= high) return;
+        int mid = (low + high) / 2 ;
+        mergeSort(arr, low, mid);  // left half
+        mergeSort(arr, mid + 1, high); // right half
+        merge(arr, low, mid, high);  // merging sorted halves
     }
 }
 public class tUf {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        int n = 9;
-        int arr[] = { 9, 4, 7, 6, 3, 1, 5,8,9 };
+        int n = 7;
+        int arr[] = { 9, 4, 7, 6, 3, 1, 5 };
         System.out.println("Before sorting array: ");
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
