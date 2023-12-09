@@ -4,6 +4,10 @@
 // https://www.youtube.com/watch?v=ogjf7ORKfd8
 // https://takeuforward.org/data-structure/merge-sort-algorithm/
 // divide and merge algorithm 
+
+// note: https://app.diagrams.net/#G1mE4JcbTWaBEsFvqsUS1nPncfkCvs5oVy#%7B%22pageId%22%3A%2292isOL0RM1IdXXxOq5pJ%22%7D
+
+
 import java.util.*;
 
 class Solution {
