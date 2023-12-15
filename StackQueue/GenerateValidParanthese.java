@@ -1,7 +1,7 @@
 /*
 https://leetcode.com/problems/generate-parentheses/?envType=list&envId=pheho7s5
 
-here stack is used automatically, it's not stack tather recursion.
+here stack is used automatically, it's not stack rather recursion.
 remember the 3 conditions and how to use the result at the end
 
 @Question: how the variations are created here?
