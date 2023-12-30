@@ -1,0 +1,11 @@
+Note
+
+problems to solve in depth:
+
+https://leetcode.com/problems/largest-rectangle-in-histogram/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/basic-calculator/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/car-fleet/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/sum-of-subarray-minimums/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/constrained-subsequence-sum/description/?envType=list&envId=pheho7s5
+https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/description/?envType=list&envId=pheho7s5
