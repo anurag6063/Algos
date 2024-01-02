@@ -1,16 +1,24 @@
 /*
+[Note]
+[Reference]: https://www.youtube.com/watch?v=UcGtPs2LE_c
+[Problem]: https://leetcode.com/problems/rotate-list/?envType=list&envId=ruypfpvi
 
-https://www.youtube.com/watch?v=UcGtPs2LE_c
-https://leetcode.com/problems/rotate-list/?envType=list&envId=ruypfpvi
-
-find to length of the nodes
-now go till length - size = length - k - 1
-now do the switch : #UnderstandMore
+[Pattern]: Modify links of LL
+[Tips]: we very conscios of the modification of link ; never loose the pointer to links ; sequence of modificationis important
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice and do similar question on LL, understand pointers
+[Steps]: find to length of the nodes ; now go till length - size = length - k - 1 ; now do the switch 
+[Code]	
+	while (tail.next != null) { // imp
+	---	
 	ListNode newHead = cur.next;
     cur.next = null;
     tail.next = head;
 
     return newHead;
+[/Code]
+[/Note]
 */
 
 /**

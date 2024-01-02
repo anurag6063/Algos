@@ -1,21 +1,56 @@
 /*
-https://leetcode.com/problems/swap-nodes-in-pairs/?envType=list&envId=ruypfpvi
-
-
-
-// need more practise and understanding
-#Revise #NeedMoreUnderstanding
+[Note]
+[Reference]: YT solution; https://www.youtube.com/watch?v=o811TZLAWOo
+[Problem]: https://leetcode.com/problems/swap-nodes-in-pairs/?envType=list&envId=ruypfpvi
+[Pattern]: Swap nodes of LL
+[Tips]: Have a pointer before and after the first and second (to be switched; point prev = first && first = after;
+[Revision]: 1
+[Confidence]: 30%
+[Next]: Practice 
+[Steps]: Find pointers befor and after, switch and move ahead
+[Code]	
+	All
+[/Code]
+[/Note]
 */
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+// best colution with best names - mine
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+
+    // create a dummy node, to start from so as to keep curr easily
+    ListNode dummy = new ListNode(0);
+    dummy.next = head; // link it to next/head
+
+    // now we need two pointers to swap curr and prev
+    ListNode first = head;
+    ListNode prev = dummy;
+
+    // loop till end
+    while(first != null && first.next !=null  ){ // we need a pair to go ahead
+        
+        // save ptrs
+        ListNode second = first.next;
+        ListNode after = first.next.next;
+        
+
+        // swap
+        second.next = first;
+        first.next = after;
+        prev.next = second;
+        
+
+        // System.out.printf("prev %d, current: %d , first %d , second %d \n", prev.val, current.val, after.val, second.val);
+        
+        prev = first;
+        first = after;
+    }
+
+    // when i reach end, reach dummy next will the head
+    return dummy.next;
+
+    }
+}
+
 class Solution {
     public ListNode swapPairs(ListNode head) {
 
