@@ -1,3 +1,19 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/jump-game/description/
+[Pattern]: Add and check max
+[Tips]: Remember it's not about reaching the last index exactly, it's just about reaching the finish line. The only time it can not reach is when the index where its stands is greater than reachable limit, (this is how it's designed)
+[Revision]: 1
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: loop all element, if(i > reachable ) return ; else Math.max(reachablem i+nums[i]
+[Code]	
+	
+[/Code]
+[/Note]
+*/
+
 /**
  * 
  * https://leetcode.com/problems/jump-game/description/

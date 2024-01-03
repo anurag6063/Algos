@@ -1,3 +1,19 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=list&envId=ph9f65i7
+[Pattern]: 2 loops, oue out, other in to match
+[Tips]: The inisde for loop should go till haystack.len-needle.len because inside this for loop again i will go from o to len of needle. 
+[Revision]: 1
+[Confidence]: 30%
+[Next]: Practice 
+[Steps]: for i-> 0 to haystack.len - needle.len , let match be true, now for -> i to needle.len if chars not match; match = false, if match found return index of i (the starting point, else at last index is -1;
+[Code]	
+	for(int i=0; i< haystack.length()- needle.length() ; i++){ // outside loop
+		for(int j=i; j < needle.length(); j++) // inside 
+[/Code]
+[/Note]
+*/
 /**
  * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=list&envId=ph9f65i7
  * Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.

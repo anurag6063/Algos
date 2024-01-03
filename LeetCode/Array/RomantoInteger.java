@@ -9,14 +9,13 @@ class Solution {
         // use Pop etc too. 
         LinkedList<Integer> ll = new LinkedList<>();
         char[] chars = s.toCharArray();
-        for(int i = chars.length-1; i>=0; i--){
+        for(int i = chars.length-1; i >= 0; i--){
             int num = convert(chars[i]);
             if(ll.size() > 0 && num < ll.peek() ){
                result = result - num; 
             }else{
                 result = result + num;
             }
-
             ll.push(num);
         }
         return result;        

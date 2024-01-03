@@ -1,4 +1,20 @@
 /*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/find-the-highest-altitude/?envType=list&envId=ph9f65i7
+[Pattern]: keep adding and always find the max
+[Tips]: Find the next num and then find the max of the resulting till now. It's like find the max of all the all no till no will be stored in max, now when i see the new no, find the exact no and now compare if the newly formed no is the max or now. Very sismilar to what i would have done manually.
+[Revision]: 1
+[Confidence]: 50%
+[Next]: Practice 
+[Steps]: For loop, find the exact no, find the current max.
+[Code]	
+	
+[/Code]
+[/Note]
+*/
+
+/*
 https://leetcode.com/problems/find-the-highest-altitude/?envType=list&envId=ph9f65i7
 
 */
