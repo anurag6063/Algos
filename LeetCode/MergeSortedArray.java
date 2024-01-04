@@ -1,3 +1,33 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/merge-sorted-array/
+[Pattern]: Copy will you exhaust; reverse
+[Tips]: 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+ we need to put the result in same array 1, but we have extra space too.  that is m+n-1  start placing num from back since that way will avoid overriting.  can't use for loop at all since the array that i would like to write to, itself is changing.
+[Code]	
+ initialize: NA
+
+while (j >= 0) {
+	if (i >= 0 && nums1[i] > nums2[j]) {
+					System.out.println(i + ": i "+ nums1[i]  );
+
+		nums1[k--] = nums1[i--];
+	} else {
+					System.out.println( j +" :j "+ nums2[j] );
+
+		nums1[k--] = nums2[j--];
+	}
+	
+} 
+[/Code]
+[/Note]
+*/
+
 /**
  * https://leetcode.com/problems/merge-sorted-array/
  * 
@@ -56,7 +86,8 @@ class Solution {
         int i = m - 1;
         int j = n - 1;
         int k = m + n - 1;
-        
+        // since we need to actually sort only the J (nums2) since it has lesser element and also has to come and fit in nums1.
+		// with this we don't have to copy the pending ones
         while (j >= 0) {
             if (i >= 0 && nums1[i] > nums2[j]) {
                             System.out.println(i + ": i "+ nums1[i]  );

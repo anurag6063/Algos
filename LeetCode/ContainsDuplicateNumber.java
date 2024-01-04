@@ -1,4 +1,18 @@
-
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/contains-duplicate/
+[Pattern]: HashMap
+[Tips]: Use a hashMap for quick lookup
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: Loop, check in HMap if present return false; else finally out return true;
+[Code]	
+	
+[/Code]
+[/Note]
+*/
 /**
  * https://leetcode.com/problems/contains-duplicate/
  * 

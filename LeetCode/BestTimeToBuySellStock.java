@@ -1,3 +1,20 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+[Pattern]: Min , Max Math.min/max
+[Tips]: Find the Min profit, Find max profit at each step;
+[Revision]: 0
+[Confidence]: 50%
+[Next]: Practice 
+[Steps]: For(prices)-> 0 to <len ; find min ( minPrice, current value); maxP = Math.max(prices[i] - minPrice , maxP);; return the max profit;
+[Code]		   
+	minPrice = Math.min(prices[i], minPrice);
+	maxP = Math.max(prices[i] - minPrice , maxP);
+[/Code]
+[/Note]
+*/
+
 /**
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  * 
@@ -8,6 +25,22 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  */
 
+ class Solution {
+    public int maxProfit(int[] prices) {
+     int minPrice = prices[0];
+     int maxP = 0;
+     if(prices.length < 2)
+     return 0;
+
+     for(int i=0; i< prices.length ; i++){
+         
+        minPrice = Math.min(prices[i], minPrice);
+        maxP = Math.max(prices[i] - minPrice , maxP);
+
+     }
+    return maxP;
+}
+}
 
  // in this we just need to find the min and the max.
  // get the result.

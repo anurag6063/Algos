@@ -1,3 +1,30 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+[Pattern]: Unique Character tracking; HashSet
+[Tips]: Use HashSet to keep track of unique string; If a char is repeated - clear the HashSet; Finally return only the longest subString use max value;
+[Revision]: 1
+[Confidence]: 50%
+[Next]: Practice 
+[Steps]: Use a hashSet; for each letter -> if set contains the char; set set.clear() and result = 0; if not then ass the char to the set and increment the result. Outsise the if/else; find the max b/w earlier max substringand the current length of substring.
+[Code]	
+	 for(int i=0; i< s.length(); i++){
+		if(set.contains(s.charAt(i))){
+			set.clear();
+			result = 0;
+		}else{
+			set.add(s.charAt(i));
+			result++;
+			System.out.println(result);
+		}
+		// since we want to find the max length ever. Else it will give the length of the last substring with no repeating chars.
+		max = Math.max(max, result);
+    }
+[/Code]
+[/Note]
+*/
+
 import java.util.HashSet;
 import java.util.Set;
 

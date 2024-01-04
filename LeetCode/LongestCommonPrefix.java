@@ -1,4 +1,25 @@
 /*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/longest-common-prefix/
+[Pattern]: Trick; Sort words; Compare first and last word's chars
+[Tips]: Sort words; Compare first and last word's chars
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	for(int i=0; i< strs[0].length(); i++){
+		if(strs[0].charAt(i) == strs[strs.length-1].charAt(i))
+			result.append(strs[0].charAt(i));
+		else
+			break;
+	}
+[/Code]
+[/Note]
+*/
+
+/*
  * https://leetcode.com/problems/longest-common-prefix/
  * Write a function to find the longest common prefix string amongst an array of strings.
 

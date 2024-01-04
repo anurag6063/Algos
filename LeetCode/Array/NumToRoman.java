@@ -1,3 +1,18 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/integer-to-roman/?envType=list&envId=ph9f65i7
+[Pattern]: Trick 	
+[Tips]: Use list of valid nums and list of valid corresponding char;
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: Use the valid list of chars and nums; now for each int valid(for), run a while (this is to allow adding multiple same chars like XX etc MM, also when does the char is valid; when valid value <= given incoming no; IN While - bum = num - value[i] si substract the valid no and to final ans string add the valid char like M,X etc; return string.toString; Use SB
+[Code]	
+	
+[/Code]
+[/Note]
+*/
 /**
  * https://leetcode.com/problems/integer-to-roman/?envType=list&envId=ph9f65i7
  * 
