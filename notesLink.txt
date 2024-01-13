@@ -1,0 +1,125 @@
+[Problem]: NA
+[Pattern]: Common code
+[Tips]: Any collection can be printed with forEach. ArrayList, List, HashMap
+[Revision]: 4
+--
+[Problem]:
+[Pattern]: Modify links of LL
+[Tips]: BFS uses queue
+[Revision]: 0
+--
+[Problem]: NA
+[Pattern]: DFS ; recursion, base case and for loop to go deep
+[Tips]: Use recursion and keep marking when you see one. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/find-the-highest-altitude/?envType=list&envId=ph9f65i7
+[Pattern]: keep adding and always find the max
+[Tips]: Find the next num and then find the max of the resulting till now. It's like find the max of all the all no till no will be stored in max, now when i see the new no, find the exact no and now compare if the newly formed no is the max or now. Very sismilar to what i would have done manually.
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=list&envId=ph9f65i7
+[Pattern]: 2 loops, oue out, other in to match
+[Tips]: The inisde for loop should go till haystack.len-needle.len because inside this for loop again i will go from o to len of needle. 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/jump-game/description/
+[Pattern]: Add and check max
+[Tips]: Remember it's not about reaching the last index exactly, it's just about reaching the finish line. The only time it can not reach is when the index where its stands is greater than reachable limit, (this is how it's designed)
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/merge-strings-alternately/description/?envType=list&envId=ph9f65i7
+[Pattern]: Merge till either one has length.
+[Tips]: Check length and then append.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/integer-to-roman/?envType=list&envId=ph9f65i7
+[Pattern]: Trick 	
+[Tips]: Use list of valid nums and list of valid corresponding char;
+[Revision]: 0
+--
+[Problem]:  https://leetcode.com/problems/roman-to-integer/description/?envType=list&envId=ph9f65i7
+[Pattern]: Trick
+[Tips]: Have a list of valid nums and associated char; here i used a switch ; List no used like in Num to Roman since we will not loop the num list. Here Add or Substract both can happen. Use a LL/Stack; We need to keep the value.
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+[Pattern]: Min , Max Math.min/max
+[Tips]: Find the Min profit, Find max profit at each step;
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/contains-duplicate/
+[Pattern]: HashMap
+[Tips]: Use a hashMap for quick lookup
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/longest-common-prefix/
+[Pattern]: Trick; Sort words; Compare first and last word's chars
+[Tips]: Sort words; Compare first and last word's chars
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+[Pattern]: Unique Character tracking; HashSet
+[Tips]: Use HashSet to keep track of unique string; If a char is repeated - clear the HashSet; Finally return only the longest subString use max value;
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/merge-sorted-array/
+[Pattern]: Copy will you exhaust; reverse
+[Tips]: 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/linked-list-cycle/description/?envType=list&envId=ruypfpvi
+[Pattern]: slow and fast LL
+[Tips]: while - fast and fast next, first move pointer and then check
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/lru-cache/description/?envType=list&envId=ruypfpvi
+[Pattern]: HashMap and LL
+[Tips]: Create everything and implement addNode and deleteNode
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/palindrome-linked-list/?envType=list&envId=ruypfpvi
+[Pattern]: Split in 2, reverse, compare
+[Tips]: split, reverse, compare 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/partition-list/?envType=list&envId=ruypfpvi
+[Pattern]: 2 pointers and merge
+[Tips]: create 2 heads and 2 tail pointers, create the list, merge them. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/?envType=list&envId=ruypfpvi
+[Pattern]: Modify links of LL
+[Tips]: Once we reset the pointers, other nodes will still be pointing to the LL, but since they are not in our line when we accesusing head, we will ignore them.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=list&envId=ruypfpvi
+[Pattern]: Find dupicate first then alter pointers		
+[Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/reorder-list/?envType=list&envId=ruypfpvi
+[Pattern]: reverse; reorder & merge all in one
+[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/rotate-list/?envType=list&envId=ruypfpvi
+
+[Pattern]: Modify links of LL
+[Tips]: we very conscios of the modification of link ; never loose the pointer to links ; sequence of modificationis important
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/swap-nodes-in-pairs/?envType=list&envId=ruypfpvi
+[Pattern]: Swap nodes of LL
+[Tips]: Have a pointer before and after the first and second (to be switched; point prev = first && first = after;
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/middle-of-the-linked-list/?envType=list&envId=ruypfpvi
+[Pattern]: slow and fast pointers
+[Tips]: initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
+[Revision]: 0
+--
+[Problem]: 
+[Pattern]: 
+[Tips]: 
+[Revision]: 0

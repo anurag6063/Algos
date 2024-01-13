@@ -1,0 +1,99 @@
+./Common/PrintArray.java:[Pattern]: Common code
+./Common/PrintArray.java:[Tips]: Any collection can be printed with forEach. ArrayList, List, HashMap
+./Common/PrintArray.java-[Revision]: 4
+--
+./graphs/BFS.java:[Pattern]: Modify links of LL
+./graphs/BFS.java:[Tips]: BFS uses queue
+./graphs/BFS.java-[Revision]: 0
+--
+./graphs/DFS.java:[Pattern]: DFS ; recursion, base case and for loop to go deep
+./graphs/DFS.java:[Tips]: Use recursion and keep marking when you see one. 
+./graphs/DFS.java-[Revision]: 0
+--
+./LeetCode/Array/FindtheHighestAltitude.java:[Pattern]: keep adding and always find the max
+./LeetCode/Array/FindtheHighestAltitude.java:[Tips]: Find the next num and then find the max of the resulting till now. It's like find the max of all the all no till no will be stored in max, now when i see the new no, find the exact no and now compare if the newly formed no is the max or now. Very sismilar to what i would have done manually.
+./LeetCode/Array/FindtheHighestAltitude.java-[Revision]: 1
+--
+./LeetCode/Array/HaystackNeedle.java:[Pattern]: 2 loops, oue out, other in to match
+./LeetCode/Array/HaystackNeedle.java:[Tips]: The inisde for loop should go till haystack.len-needle.len because inside this for loop again i will go from o to len of needle. 
+./LeetCode/Array/HaystackNeedle.java-[Revision]: 1
+--
+./LeetCode/Array/JumpGame.java:[Pattern]: Add and check max
+./LeetCode/Array/JumpGame.java:[Tips]: Remember it's not about reaching the last index exactly, it's just about reaching the finish line. The only time it can not reach is when the index where its stands is greater than reachable limit, (this is how it's designed)
+./LeetCode/Array/JumpGame.java-[Revision]: 1
+--
+./LeetCode/Array/MergeStringsAlternately.java:[Pattern]: Merge till either one has length.
+./LeetCode/Array/MergeStringsAlternately.java:[Tips]: Check length and then append.
+./LeetCode/Array/MergeStringsAlternately.java-[Revision]: 0
+--
+./LeetCode/Array/NumToRoman.java:[Pattern]: Trick 	
+./LeetCode/Array/NumToRoman.java:[Tips]: Use list of valid nums and list of valid corresponding char;
+./LeetCode/Array/NumToRoman.java-[Revision]: 0
+--
+./LeetCode/Array/RomantoInteger.java:[Pattern]: Trick
+./LeetCode/Array/RomantoInteger.java:[Tips]: Have a list of valid nums and associated char; here i used a switch ; List no used like in Num to Roman since we will not loop the num list. Here Add or Substract both can happen. Use a LL/Stack; We need to keep the value.
+./LeetCode/Array/RomantoInteger.java-[Revision]: 1
+--
+./LeetCode/BestTimeToBuySellStock.java:[Pattern]: Min , Max Math.min/max
+./LeetCode/BestTimeToBuySellStock.java:[Tips]: Find the Min profit, Find max profit at each step;
+./LeetCode/BestTimeToBuySellStock.java-[Revision]: 0
+--
+./LeetCode/ContainsDuplicateNumber.java:[Pattern]: HashMap
+./LeetCode/ContainsDuplicateNumber.java:[Tips]: Use a hashMap for quick lookup
+./LeetCode/ContainsDuplicateNumber.java-[Revision]: 0
+--
+./LeetCode/LongestCommonPrefix.java:[Pattern]: Trick; Sort words; Compare first and last word's chars
+./LeetCode/LongestCommonPrefix.java:[Tips]: Sort words; Compare first and last word's chars
+./LeetCode/LongestCommonPrefix.java-[Revision]: 0
+--
+./LeetCode/LongestSubstringWithoutRepeatingCharacters.java:[Pattern]: Unique Character tracking; HashSet
+./LeetCode/LongestSubstringWithoutRepeatingCharacters.java:[Tips]: Use HashSet to keep track of unique string; If a char is repeated - clear the HashSet; Finally return only the longest subString use max value;
+./LeetCode/LongestSubstringWithoutRepeatingCharacters.java-[Revision]: 1
+--
+./LeetCode/MergeSortedArray.java:[Pattern]: Copy will you exhaust; reverse
+./LeetCode/MergeSortedArray.java:[Tips]: 
+./LeetCode/MergeSortedArray.java-[Revision]: 0
+--
+./LinkedList/LinkedListCycle.java:[Pattern]: slow and fast LL
+./LinkedList/LinkedListCycle.java:[Tips]: while - fast and fast next, first move pointer and then check
+./LinkedList/LinkedListCycle.java-[Revision]: 1
+--
+./LinkedList/LRUCache.java:[Pattern]: HashMap and LL
+./LinkedList/LRUCache.java:[Tips]: Create everything and implement addNode and deleteNode
+./LinkedList/LRUCache.java-[Revision]: 0
+--
+./LinkedList/PalindromeLinkedList.java:[Pattern]: Split in 2, reverse, compare
+./LinkedList/PalindromeLinkedList.java:[Tips]: split, reverse, compare 
+./LinkedList/PalindromeLinkedList.java-[Revision]: 0
+--
+./LinkedList/PartitionList.java:[Pattern]: 2 pointers and merge
+./LinkedList/PartitionList.java:[Tips]: create 2 heads and 2 tail pointers, create the list, merge them. 
+./LinkedList/PartitionList.java-[Revision]: 0
+--
+./LinkedList/RemoveDuplicatesfromSortedList.java:[Pattern]: Modify links of LL
+./LinkedList/RemoveDuplicatesfromSortedList.java:[Tips]: Once we reset the pointers, other nodes will still be pointing to the LL, but since they are not in our line when we accesusing head, we will ignore them.
+./LinkedList/RemoveDuplicatesfromSortedList.java-[Revision]: 0
+--
+./LinkedList/RemoveDuplicatesfromSortedListII.java:[Pattern]: Find dupicate first then alter pointers		
+./LinkedList/RemoveDuplicatesfromSortedListII.java:[Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
+./LinkedList/RemoveDuplicatesfromSortedListII.java-[Revision]: 0
+--
+./LinkedList/ReorderList.java:[Pattern]: reverse; reorder & merge all in one
+./LinkedList/ReorderList.java:[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs
+./LinkedList/ReorderList.java-[Revision]: 0
+--
+./LinkedList/RotateList.java:[Pattern]: Modify links of LL
+./LinkedList/RotateList.java:[Tips]: we very conscios of the modification of link ; never loose the pointer to links ; sequence of modificationis important
+./LinkedList/RotateList.java-[Revision]: 0
+--
+./LinkedList/SwapNodesPairs.java:[Pattern]: Swap nodes of LL
+./LinkedList/SwapNodesPairs.java:[Tips]: Have a pointer before and after the first and second (to be switched; point prev = first && first = after;
+./LinkedList/SwapNodesPairs.java-[Revision]: 1
+--
+./MiddleoftheLinkedList.java:[Pattern]: slow and fast pointers
+./MiddleoftheLinkedList.java:[Tips]: initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
+./MiddleoftheLinkedList.java-[Revision]: 0
+--
+./README.md:[Pattern]: 
+./README.md:[Tips]: 
+./README.md-[Revision]: 0
