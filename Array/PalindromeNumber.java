@@ -1,4 +1,22 @@
-/**
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/palindrome-number/
+[Pattern]: Trick
+[Tips]: check*10 + x%10; x/=10;; find the no , divide the no to loose it. 
+[Revision]: 1
+[Confidence]: 50%
+[Next]: Practice 
+[Steps]: while given no is > reverse no; make the reverse no. 
+[Code]	
+	 while(x>check){
+            check = check*10 + x%10;
+            x/=10;            
+        }
+[/Code]
+[Tags]: #ReverseInteger
+[/Note]
+*//**
  * https://leetcode.com/problems/palindrome-number/
  * Given an integer x, return true if x is a 
 palindrome

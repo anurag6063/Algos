@@ -1,3 +1,19 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: 
+[Pattern]: 2 pointers; opposite direction; 
+[Tips]: 2 poniters; special initali while loop to skip invalid chars, compare only when needed. 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 2 pointer; left++ till char or digit is found, right -- till char or digit is found, compare the char (now the chars ara valid and can be compared) 
+[Code]	
+	!Character.isLetterOrDigit(s.charAt(l)) && l<r )
+[/Code]
+[Tags]: 
+[/Note]
+*/
 /**
  * https://leetcode.com/problems/valid-palindrome/
  * 

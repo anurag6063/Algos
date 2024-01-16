@@ -2,7 +2,7 @@
 [Note]
 [Reference]: 
 [Problem]: https://leetcode.com/problems/merge-strings-alternately/description/?envType=list&envId=ph9f65i7
-[Pattern]: Merge till either one has length.
+[Pattern]: While Loop + length ; Merge till either one has length.
 [Tips]: Check length and then append.
 [Revision]: 0
 [Confidence]: 10%

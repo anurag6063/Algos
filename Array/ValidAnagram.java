@@ -1,3 +1,21 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/valid-anagram/
+[Pattern]: Counter
+[Tips]: mainitain a counter for all the possible chars, increase, decrease, for anangram all should be 0 finally.
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: convert to charArray, if only aplhabets stores, size of a int[] -> 'z' - a + 1; now in this counter add, remove and check if anything left. This same thing can be done using a hMap. 
+[Code]	
+	int size = 'z'-'a'+1;
+    int[] note = new int[size];
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
 /**
  * https://leetcode.com/problems/valid-anagram/
  * 

@@ -34,6 +34,7 @@ grep -rh -A 1 -E '^\[(Pattern|Tips|Problem)\]' . > notesLink.txt
 [Code]	
 	
 [/Code]
+[Tags]: 
 [/Note]
 */
 

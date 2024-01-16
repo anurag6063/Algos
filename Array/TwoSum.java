@@ -1,3 +1,19 @@
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/two-sum/
+[Pattern]: HashMap
+[Tips]: Use hashmap to do quick lookup.
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: for a incoming no if the HMap already contains sum-givenNo, that's the asnwer.
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
 import java.util.HashMap;
 import java.util.Map;
 

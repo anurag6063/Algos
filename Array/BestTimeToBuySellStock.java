@@ -2,7 +2,7 @@
 [Note]
 [Reference]: 
 [Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-[Pattern]: Min , Max Math.min/max
+[Pattern]: Min , Max Math.min/max, And the diff
 [Tips]: Find the Min profit, Find max profit at each step;
 [Revision]: 0
 [Confidence]: 50%

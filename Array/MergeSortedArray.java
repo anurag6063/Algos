@@ -8,7 +8,7 @@
 [Confidence]: 10%
 [Next]: Practice 
 [Steps]: 
- we need to put the result in same array 1, but we have extra space too.  that is m+n-1  start placing num from back since that way will avoid overriting.  can't use for loop at all since the array that i would like to write to, itself is changing.
+ we need to put the result in same array 1, but we have extra space too.  that is m+n-1  start placing num from back since that way will avoid overr iterating.  can't use for loop at all since the array that i would like to write to, itself is changing.
 [Code]	
  initialize: NA
 

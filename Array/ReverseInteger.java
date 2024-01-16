@@ -1,4 +1,21 @@
 /*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/reverse-integer/
+[Pattern]: Trick
+[Tips]: since 32 bit no, storage 2^31; do mod to find the last digit and add with * 10; divide the no. 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: since 32 bit no, storage 2^31; do mod to find the last digit and add with * 10; divide the no. 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+/*
  * https://leetcode.com/problems/reverse-integer/
  * Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the
  * value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
