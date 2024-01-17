@@ -1,3 +1,22 @@
+
+/*
+[Note]
+[Reference]: 
+[Problem]: https://www.educative.io/courses/grokking-coding-interview-patterns-java/sum-of-three-values
+[Pattern]: 2 pointers;
+[Tips]: duplicate is acceptable here. 
+[Revision]: 0
+[Confidence]: 30%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: #3Sum_15
+[/Note]
+*/
+
+
 /*
 https://www.educative.io/courses/grokking-coding-interview-patterns-java/sum-of-three-values
 

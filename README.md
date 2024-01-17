@@ -8,18 +8,20 @@ git push origin
 
 
 Find all files wil Tips in it - recursively inall sub dir too: 
-grep -r '^\[Tips\]' .
+	grep -r '^\[Tips\]' .
 
 Find all files with Pattern and Tips: 
-grep -r -E '^\[(Pattern|Tips)\]' .
+	grep -r -E '^\[(Pattern|Tips)\]' .
 
 Find all files with Pattern and Tips with spaces and o/p file:
-grep -r -A 1 -E '^\[(Pattern|Tips)\]' . > notes.txt
+	grep -r -A 1 -E '^\[(Pattern|Tips)\]' . > notes.txt
 
 
 Find all files with Pattern and Tips with spaces and o/p file without filename:
-grep -rh -A 1 -E '^\[(Pattern|Tips|Problem)\]' . > notesLink.txt
+	grep -rh -A 1 -E '^\[(Pattern|Tips|Problem)\]' . > notesLink.txt
 
+Find all file ending with .java
+	find . -type f -name "*.java" | wc -l
 
 /*
 [Note]
