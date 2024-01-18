@@ -3,15 +3,15 @@
 [Reference]: 
 [Problem]: 
 [Pattern]: 2 pointers; opposite direction; 
-[Tips]: 2 poniters; special initali while loop to skip invalid chars, compare only when needed. 
-[Revision]: 0
+[Tips]: 2 poniters; special initali while loop to skip invalid chars, compare only when needed. !Character.isLetterOrDigit(s.charAt(r)) && l<r)
+[Revision]: 1
 [Confidence]: 10%
 [Next]: Practice 
 [Steps]: 2 pointer; left++ till char or digit is found, right -- till char or digit is found, compare the char (now the chars ara valid and can be compared) 
 [Code]	
 	!Character.isLetterOrDigit(s.charAt(l)) && l<r )
 [/Code]
-[Tags]: 
+[Tags]: #2Pointers
 [/Note]
 */
 /**

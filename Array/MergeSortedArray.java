@@ -4,7 +4,7 @@
 [Problem]: https://leetcode.com/problems/merge-sorted-array/
 [Pattern]: Copy will you exhaust; reverse
 [Tips]: 
-[Revision]: 0
+[Revision]: 1
 [Confidence]: 10%
 [Next]: Practice 
 [Steps]: 
@@ -45,6 +45,33 @@ while (j >= 0) {
 // ------
 // own solution
 class Solution {
+	// latest code 17 Jan
+	public void merge(int[] nums1, int m, int[] nums2, int n) {
+    int i = m-1;
+    int j = n-1;
+    int k = m+n-1;
+
+    while( i >= 0 && j >= 0){
+        System.out.printf(" k ");
+        // merge 
+        if(nums1[i] > nums2[j]){
+            nums1[k--] = nums1[i--];
+        }else{
+            nums1[k--] = nums2[j--];
+        }
+    }
+        while(i >= 0){
+            System.out.printf(" i ");
+            nums1[k--] = nums1[i--];
+        }
+
+        while( j >= 0){
+            System.out.printf(" j ");
+             nums1[k--] = nums2[j--];
+        }
+    
+    }
+	
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         
         // find length of both

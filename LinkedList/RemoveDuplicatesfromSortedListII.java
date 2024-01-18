@@ -2,7 +2,7 @@
 [Note]
 [Reference]: ChatGPT
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=list&envId=ruypfpvi
-[Pattern]: Find dupicate first then alter pointers		
+[Pattern]: Find dupicate first then alter pointers	; #2Pointers
 [Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
 [Revision]: 0
 [Confidence]: 20%

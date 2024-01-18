@@ -4,7 +4,7 @@
 [Reference]: https://leetcode.com/problems/reorder-list/solutions/1640806/java-2-approach-2-pointer-approach
 [Problem]: https://leetcode.com/problems/reorder-list/?envType=list&envId=ruypfpvi
 [Pattern]: reverse; reorder & merge all in one
-[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs
+[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs; to reverse  //  sequence to reverse is:: next -> curr.next -> prev -> curr 
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
@@ -28,6 +28,7 @@ class Solution {
 
     public ListNode reverse(ListNode head){
         ListNode curr = head, prev = null, next = null;
+		 //  sequence to reverse is:: next -> curr.next -> prev -> curr 
         while(curr != null){
             next = curr.next;
             curr.next = prev;
@@ -43,8 +44,9 @@ class Solution {
       ListNode nextToMid = midNode.next;
       midNode.next = null; // we got a pointer to this and now ended the link, this will make it into 2 lists.
       
+	  ListNode p1 = head, p1Next;
       ListNode p2 = reverse(nextToMid);
-      ListNode p1 = head, p1Next;
+      
 
       while(p1 != null && p2 != null){
           p1Next = p1.next;

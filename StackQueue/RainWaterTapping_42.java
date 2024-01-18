@@ -1,3 +1,22 @@
+
+/*
+[Note]
+[Reference]: Striver course
+[Problem]: https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointer; Stack 
+[Tips]: find Max in both side
+[Revision]: 1
+[Confidence]: 20%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+
 /*
 
 3,0,0,2,0,4
@@ -27,6 +46,87 @@ https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=pheho7s5
 4. find the diff /0 between current height and the min.
 5. the sum of step 4 is ans.
 */
+
+
+ public int trap(int[] height) {
+        // return trap2ExtraSpace(height);
+        return trapSimple(height);
+    }
+
+    public int trapSimple(int[] height){
+
+        // in this the base code is 
+        // minHeight = Math.min(maxLeft[i], maxRight[i]);
+        // trapped water = Math.max(0, height[i]-minHight )
+
+        if(height == null || height.length < 2){ 
+            return 0;
+        }
+
+        int left = 0;
+        int right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        int ans = 0;
+   
+        while(left <= right){
+        // if left is less of equal
+        if(height[left] <= height[right]){
+            // minHeight = Math.min(maxLeft[i], maxRight[i]);
+            if(height[left] >= leftMax){
+                leftMax = height[left];
+            }else{
+                ans += leftMax - height[left];
+            }
+
+            left++;           
+
+        }else{
+
+            if(height[right] >= rightMax){
+                rightMax = height[right];
+            }else{
+                ans += rightMax - height[right];
+            }
+            right--;
+
+        }
+       
+        }
+         return ans;
+    }
+
+    public int trap2ExtraSpace(int[] height) {
+        if(height == null || height.length < 2){
+            return 0;
+        }
+
+        int n = height.length;
+        // find max to wareds int's left and right
+        int[] maxLeft = new int[n];
+        int[] maxRight = new int[n];
+
+
+        maxLeft[0]= height[0];
+        for(int i=1; i< n ; i++){
+            maxLeft[i]= Math.max(height[i], maxLeft[i-1]);
+        }
+
+        maxRight[n-1] = height[n-1];
+        for(int i=n-2; i >= 0; i--){
+            maxRight[i] = Math.max(height[i], maxRight[i+1]);
+        }
+
+        int trappedWater = 0;
+
+        for(int i=0; i< n; i++){
+            int minHeight = Math.min(maxRight[i], maxLeft[i]);
+            trappedWater += Math.max(0, minHeight-height[i]);
+        }
+
+        return trappedWater;
+    }
+
+}
 
 class Solution {
 
