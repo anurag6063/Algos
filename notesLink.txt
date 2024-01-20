@@ -1,17 +1,22 @@
-[Problem]: NA
-[Pattern]: Common code
-[Tips]: Any collection can be printed with forEach. ArrayList, List, HashMap
-[Revision]: 4
---
-[Problem]:
-[Pattern]: Modify links of LL
-[Tips]: BFS uses queue
+[Problem]: 
+[Pattern]: 
+[Tips]: 
 [Revision]: 0
 --
-[Problem]: NA
-[Pattern]: DFS ; recursion, base case and for loop to go deep
-[Tips]: Use recursion and keep marking when you see one. 
+[Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+[Pattern]: Min , Max Math.min/max, And the diff
+[Tips]: Find the Min profit, Find max profit at each step;
 [Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/contains-duplicate/
+[Pattern]: HashMap
+[Tips]: Use a hashMap for quick lookup
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/equal-row-and-column-pairs/description/?envType=list&envId=ph9f65i7Given
+[Pattern]: Matrix
+[Tips]: 2 loops outside to go to each element, 1 inside loop to find the equality. grid[row][x] != grid[x][col]
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/find-the-highest-altitude/?envType=list&envId=ph9f65i7
 [Pattern]: keep adding and always find the max
@@ -28,31 +33,6 @@
 [Tips]: Remember it's not about reaching the last index exactly, it's just about reaching the finish line. The only time it can not reach is when the index where its stands is greater than reachable limit, (this is how it's designed)
 [Revision]: 1
 --
-[Problem]: https://leetcode.com/problems/merge-strings-alternately/description/?envType=list&envId=ph9f65i7
-[Pattern]: Merge till either one has length.
-[Tips]: Check length and then append.
-[Revision]: 0
---
-[Problem]: https://leetcode.com/problems/integer-to-roman/?envType=list&envId=ph9f65i7
-[Pattern]: Trick 	
-[Tips]: Use list of valid nums and list of valid corresponding char;
-[Revision]: 0
---
-[Problem]:  https://leetcode.com/problems/roman-to-integer/description/?envType=list&envId=ph9f65i7
-[Pattern]: Trick
-[Tips]: Have a list of valid nums and associated char; here i used a switch ; List no used like in Num to Roman since we will not loop the num list. Here Add or Substract both can happen. Use a LL/Stack; We need to keep the value.
-[Revision]: 1
---
-[Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
-[Pattern]: Min , Max Math.min/max
-[Tips]: Find the Min profit, Find max profit at each step;
-[Revision]: 0
---
-[Problem]: https://leetcode.com/problems/contains-duplicate/
-[Pattern]: HashMap
-[Tips]: Use a hashMap for quick lookup
-[Revision]: 0
---
 [Problem]: https://leetcode.com/problems/longest-common-prefix/
 [Pattern]: Trick; Sort words; Compare first and last word's chars
 [Tips]: Sort words; Compare first and last word's chars
@@ -66,11 +46,71 @@
 [Problem]: https://leetcode.com/problems/merge-sorted-array/
 [Pattern]: Copy will you exhaust; reverse
 [Tips]: 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/merge-strings-alternately/description/?envType=list&envId=ph9f65i7
+[Pattern]: While Loop + length ; Merge till either one has length.
+[Tips]: Check length and then append.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/integer-to-roman/?envType=list&envId=ph9f65i7
+[Pattern]: Trick 	
+[Tips]: Use list of valid nums and list of valid corresponding char;
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/palindrome-number/
+[Pattern]: Trick
+[Tips]: check*10 + x%10; x/=10;; find the no , divide the no to loose it. 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/reverse-integer/
+[Pattern]: Trick
+[Tips]: since 32 bit no, storage 2^31; do mod to find the last digit and add with * 10; divide the no. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/reverse-words-in-a-string/
+[Pattern]: Array and reverse
+[Tips]: to read in reverse direction use int i = array.length -1 and i >= 0
+[Revision]: 1
+--
+[Problem]:  https://leetcode.com/problems/roman-to-integer/description/?envType=list&envId=ph9f65i7
+[Pattern]: Trick
+[Tips]: Have a list of valid nums and associated char; here i used a switch ; List no used like in Num to Roman since we will not loop the num list. Here Add or Substract both can happen. Use a LL/Stack; We need to keep the value.
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/two-sum/
+[Pattern]: HashMap
+[Tips]: Use hashmap to do quick lookup.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/valid-anagram/
+[Pattern]: Counter
+[Tips]: mainitain a counter for all the possible chars, increase, decrease, for anangram all should be 0 finally.
+[Revision]: 0
+--
+[Problem]: 
+[Pattern]: 2 pointers; opposite direction; 
+[Tips]: 2 poniters; special initali while loop to skip invalid chars, compare only when needed. !Character.isLetterOrDigit(s.charAt(r)) && l<r)
+[Revision]: 1
+--
+[Problem]:
+[Pattern]: Modify links of LL
+[Tips]: BFS uses queue
+[Revision]: 0
+--
+[Problem]: NA
+[Pattern]: DFS ; recursion, base case and for loop to go deep
+[Tips]: Use recursion and keep marking when you see one. 
 [Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/linked-list-cycle/description/?envType=list&envId=ruypfpvi
 [Pattern]: slow and fast LL
-[Tips]: while - fast and fast next, first move pointer and then check
+[Tips]: while - fast and fast next, first move pointer and then check; while -> fast.next != null && fast.next.next != null
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/linked-list-cycle-ii/?envType=list&envId=ecumdrrd
+[Pattern]: LL, slow fast; 2 pointers
+[Tips]: slow and fast; both together
 [Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/lru-cache/description/?envType=list&envId=ruypfpvi
@@ -78,10 +118,15 @@
 [Tips]: Create everything and implement addNode and deleteNode
 [Revision]: 0
 --
-[Problem]: https://leetcode.com/problems/palindrome-linked-list/?envType=list&envId=ruypfpvi
-[Pattern]: Split in 2, reverse, compare
-[Tips]: split, reverse, compare 
+[Problem]: https://leetcode.com/problems/middle-of-the-linked-list/?envType=list&envId=ruypfpvi
+[Pattern]: slow and fast pointers
+[Tips]: initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
 [Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/palindrome-linked-list/?envType=list&envId=ruypfpvi
+[Pattern]: 2 Pointers , LL , Reversal 
+[Tips]: Go to middle Split in 2, reverse, compare
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/partition-list/?envType=list&envId=ruypfpvi
 [Pattern]: 2 pointers and merge
@@ -89,18 +134,18 @@
 [Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/?envType=list&envId=ruypfpvi
-[Pattern]: Modify links of LL
+[Pattern]: Modify links of LL; #2Pointers
 [Tips]: Once we reset the pointers, other nodes will still be pointing to the LL, but since they are not in our line when we accesusing head, we will ignore them.
-[Revision]: 0
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=list&envId=ruypfpvi
-[Pattern]: Find dupicate first then alter pointers		
+[Pattern]: Find dupicate first then alter pointers	; #2Pointers
 [Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
 [Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/reorder-list/?envType=list&envId=ruypfpvi
 [Pattern]: reverse; reorder & merge all in one
-[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs
+[Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs; to reverse  //  sequence to reverse is:: next -> curr.next -> prev -> curr 
 [Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/rotate-list/?envType=list&envId=ruypfpvi
@@ -114,12 +159,102 @@
 [Tips]: Have a pointer before and after the first and second (to be switched; point prev = first && first = after;
 [Revision]: 1
 --
-[Problem]: https://leetcode.com/problems/middle-of-the-linked-list/?envType=list&envId=ruypfpvi
-[Pattern]: slow and fast pointers
-[Tips]: initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
+[Problem]: https://leetcode.com/problems/minimum-window-substring/?envType=list&envId=ecumdrrd
+[Pattern]: sliding window 
+[Tips]: UNSOLVED
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/next-permutation/?envType=list&envId=ecumdrrd
+[Pattern]: #2pointers
+[Tips]: 
 [Revision]: 0
 --
 [Problem]: 
 [Pattern]: 
 [Tips]: 
 [Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=list&envId=ecumdrrd
+[Pattern]: Trick, Copy when needed. 
+[Tips]: Simple trick
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointer; Stack 
+[Tips]: find Max in both side
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/3sum-closest/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointers, opposite dir
+[Tips]: Calculate sum, and move pointer accordingly; comapre target-sum < target-sum 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/3sum/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointers, opp end
+[Tips]: instead of 3, use 2 pointers to reduce one inside loop, sort the values. use while loop to skip same number since we don't want dupicate nums. Use a linkedList; keep sum = 0 - nums[i] i.e A, 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/4sum/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointers, opposite
+[Tips]: use 2 for loop and one 2 pointer, sort the values first
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/circular-array-loop/
+[Pattern]: 2 pointers, slow and fast	
+[Tips]: Find next position in cycle, to avoid overflow. Check direction mismacth, do for all indexs.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/container-with-most-water/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointers; opposite end
+[Tips]: Keep on edges and increase of the minimum only
+[Revision]: 2
+--
+[Problem]: https://leetcode.com/problems/find-the-duplicate-number
+[Pattern]: 2 pointer with slow and fast in array
+[Tips]: use a slow and fast and detect the cycle, now find the duplicate node by resetting the slow and moving both at same speed. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/move-zeroes/
+[Pattern]: 2 pointers same direction;
+[Tips]: 2 pointers ; swap when right != 0
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=list&envId=ecumdrrd
+[Pattern]: 2 ponters, same direction (var + for loop)
+[Tips]: think when it does not matches, i will replace. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/remove-element/?envType=list&envId=ecumdrrd
+[Pattern]: 2 pointers, same direction (for loop)
+[Tips]: use left as index var, and right in for loop; same 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/reverse-string
+[Pattern]: 2 pointersl; reverse direction	
+[Tips]: keep incrementing and decrementing left++ and right--
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/reverse-vowels-of-a-string/
+[Pattern]: 2 pointers,  reverse, + inner while
+[Tips]: use inner while loop to skip non vowels; use "aeiouAEIOU".indexOf(c) != -1; to check vowels. 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/rotate-array/
+[Pattern]: NA
+[Tips]: Keep the last one asise, Move no from back in array. 
+[Revision]: 0
+--
+[Problem]: https://www.educative.io/courses/grokking-coding-interview-patterns-java/sum-of-three-values
+[Pattern]: 2 pointers;
+[Tips]: duplicate is acceptable here. 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/submissions/
+[Pattern]: 2 pointers
+[Tips]: calulate sum and move pointer l pr r as per comprision b/w sum and tartget
+[Revision]: 1
+--
+[Problem]: NA
+[Pattern]: Common code
+[Tips]: Any collection can be printed with forEach. ArrayList, List, HashMap
+[Revision]: 4
