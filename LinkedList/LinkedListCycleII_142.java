@@ -4,12 +4,12 @@
 [Problem]: https://leetcode.com/problems/linked-list-cycle-ii/?envType=list&envId=ecumdrrd
 [Pattern]: LL, slow fast; 2 pointers
 [Tips]: slow and fast; both together
-[Revision]: 1
+[Revision]: 2
 [Confidence]: 10%
 [Next]: Practice 
 [Steps]: find the loop if yes, set slow = head; till slow != fast; increase slow and fast by single step
 [Code]	
-	// fininf the head post finding the link
+	// find the head post finding the cyclic point
 	slow = head;
 	while(slow != fast){
 		slow = slow.next;
@@ -26,19 +26,25 @@ public class Solution {
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
-
+		
+		// find the intersection point with slow and fast
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
 
+			// this is when we have found the intersection point.
             if(slow == fast){
                 // when they meet
-
+				// now to find the point from where the cycle started.
                 slow = head;
+				
+				// till they don't meet keep moving slow and fast both
                 while(slow != fast){
                     slow = slow.next;
                     fast = fast.next;
                 }
+				
+				// now slow is the answer. 
                 return slow;
             }
         }

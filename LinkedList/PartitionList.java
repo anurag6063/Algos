@@ -7,8 +7,8 @@
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
-[Steps]: Initialize tails and left and right, go till head!=null check the value of x ; accordinglt increase leftTail or rightTail, increase the current. Merge the LL, return left.next;
-[Code]	
+[Steps]: Initialize tails and left and right, go till head!=null check the value of x ; according to increase leftTail or rightTail, increase the current. Merge the LL, return left.next; ;; Create web for leftTail pointer and rightTailPointer, set leftTail to right Head; use head as current to move;
+[Code]
 	 while(head!=null){
             // the leftTail and rightTail are acting like 2 pointers
             if(head.val < x){
@@ -26,6 +26,35 @@
 [/Note]
 */
 class Solution {
+	// better variable names
+	 public ListNode partition(ListNode head, int x) {
+        ListNode leftHead = new ListNode(0);
+        ListNode rightHead = new ListNode(0);
+
+        ListNode leftTail = leftHead;
+        ListNode rightTail = rightHead;
+        ListNode curr = head;
+
+        while(curr != null){
+            if(curr.val < x){ // left tail moves
+                leftTail.next = curr; // spin the web
+                leftTail = leftTail.next ;  // move
+            }else{
+                rightTail.next = curr;
+                rightTail = rightTail.next;
+            }
+
+            curr = curr.next;
+        }
+
+        // merge the two list 
+        leftTail.next = rightHead.next;
+        rightTail.next = null;
+
+        return leftHead.next;
+    }
+	
+	
     public ListNode partition(ListNode head, int x) {
         ListNode left = new ListNode(0);
         ListNode right = new ListNode(0);

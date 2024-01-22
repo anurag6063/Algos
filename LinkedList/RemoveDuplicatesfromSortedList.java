@@ -36,4 +36,28 @@ class Solution {
 
         return dummy.next;
     }
+	
+	
+	// we cannot use this can need to have a while loop inside the while loop, so that it can skip multipl duplicate values. In this code it misses skipping multiple duplicates-from-sorted-list/
+	
+	 public ListNode deleteDuplicates_incorrect(ListNode head) {
+
+        ListNode dummy = new ListNode(0, head);
+        ListNode curr = head;
+        ListNode prev = dummy;
+
+        while(curr != null){
+            System.out.println(prev.val + " "+ curr.val);
+            if(curr.val != prev.val){
+                System.out.println("nums don't match");
+                prev.next = curr;
+                prev = curr;
+            }
+            curr = curr.next;
+        }
+
+        return dummy.next;
+     }
 }
+
+
