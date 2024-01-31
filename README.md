@@ -1,5 +1,20 @@
 # Algos
-
+/*
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: 
+[Tips]: 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
 git pull
 git status
 git add *
