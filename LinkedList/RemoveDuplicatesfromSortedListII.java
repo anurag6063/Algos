@@ -4,8 +4,8 @@
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=list&envId=ruypfpvi
 [Pattern]: Find dupicate first then alter pointers	; #2Pointers
 [Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
-[Revision]: 0
-[Confidence]: 20%
+[Revision]: 2
+[Confidence]: 50%
 [Next]: Practice 
 [Steps]: Dummy Node, start prev at dummy and curr at head; go till last node. IN : mark isDuplicate falg as False; IN: Till second last node and till value of current node and the next remains same, go ahead and marl iSDuplicate flag as true. OUT: if iSDuplicate is true prev.next = curr.next ++ Else prev = curr ++
 [Code]	
@@ -39,6 +39,7 @@ class Solution {
                 isDup = true; // if values are same
                 curr = curr.next; // keep going ahead 
             }
+			// this loop will end when the curent is at the last elemnt that id duplicate. 
 
             // now this will end after running while loop else not too. 
             // if while loop then it needs to skip all the dups in b/w

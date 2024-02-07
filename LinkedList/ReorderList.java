@@ -5,8 +5,8 @@
 [Problem]: https://leetcode.com/problems/reorder-list/?envType=list&envId=ruypfpvi
 [Pattern]: reverse; reorder & merge all in one
 [Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs; to reverse  //  sequence to reverse is:: next -> curr.next -> prev -> curr 
-[Revision]: 0
-[Confidence]: 10%
+[Revision]: 1
+[Confidence]: 20%
 [Next]: Practice 
 [Steps]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs 
 [Code]	
