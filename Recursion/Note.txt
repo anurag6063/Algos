@@ -1,0 +1,134 @@
+When a function calls itself till the time a condition is satified, that's called base condition. 
+
+When a problem can be divided into sub parts, just that input keep changing each time. 
+
+
+--
+
+In case of multiple recursion call from same function, i will call the function sequentially, the function that is declared first will go till it hits the base case will get called, once base case is resolved it will come back and do the other operation. 
+
+so for in Fibonacci series, first will go till f(0) find it's value for the last no, when it returns to second last, it will do f(0) + f(1) , the f(1) was waiting till f(0) hits base case. 
+So which ever function is declared first will get called first. 
+
+return f(0)+f(1);
+MEANS
+int a = f(0);
+int b = f(1);
+return a + b ;
+
+So find first the A then the B and then do a sum and return, so it's sequential.
+
+Here left is called first, this makes a tree structure. 
+Since for every branch i called 2 sub nodes, so 
+TC -> 0(2^n)
+This is like birth of children
+
+---
+
+
+Here reverse an array done in 2 ways. 
+1 - using 2 pointers
+2 - using 2 pointers but only one variable / parameter for the function. In the right is derived from left i.e N-i-1
+
+for 2: 
+Base case:
+if( i > n/2) return;
+
+swap( arr[i], arr[ N-i-1]);
+
+---
+
+// Pallindrome:
+In this we can just check the end strings;
+in this functional recursion i will have 2 return statement
+1- Base case, then it will say TRUE
+2 - IF end left != end Right return FALSE;
+
+Space O(N/2)
+
+
+
+---
+
+backtracking is essentially recursion in which action is done at the end of function , ie after it calls itself, ie from end to first function. 
+
+Base case
+Modify The input params
+Call itself
+Do real work
+
+Since recursion is able to call itself and go deep in stack, its used in DFS
+In a tree for BFS i need to use reverse of Stack - Queue.
+
+In a recursion we have base case that is checked, like for(int i=0 (done by the caller function); i<n (this is actually the base case); i++ (What ever value is used in base case needs to be updated in every function call) same needs to be done for Recursion calls too. 
+Also in a for call there is soft end, that is decided by closing } brace, but we don't have same in recursion, so we use the return statement.
+
+Now how do i pass a sum variable to FOR loop, I initialize and give to for loop, now apart from everything else, at every loop call, i know the updated value of sum is used,
+int sum = 0;
+for(int i = 0; i< 10; i++){
+sum = sum + i;
+}
+I get the value of old sum and add to i and make it new. 
+
+So in recursion 
+PARAMETERIZED RECURSION CALL
+sum(i, sum){
+sum = i+sum;
+}
+
+PARAMETERIZED: can be used only when we want the end to give us the answer but then this generally means it will just print the final sum / parameter value, it will not be able to return back to the caller. not so useful
+
+FUNCTIONAL RECURSION: can return value to its caller.
+
+IN functional recursion there is a return statement, this will carry the value, in functional recursion we reduce the value, IN parameterized i was increasing the value of i variable.
+IN Functional recursion the return statement in the base case also returns something. 
+
+IN RECURSION WATEVER CHANGES HAS TO BE PASSED AHEAD.
+
+IN RECURSION IF I WANT TO PASS A VARIABLE FROM BEFOR TO AFTER SELF CALL USE A TEMP VARIABLE.
+
+
+
+----
+
+
+
+In this, 
+
+initialize ip with little preprocessing. Since we do not need space in start and end.
+
+So first start with o/p as first element ie A and ip stands as BC. 
+From above we start the tree. 
+
+Input Transformation
+Keep removing as element
+OP Transformation:
+OP1 - Add with a space
+OP2 - Add without a space
+
+Base case: When to stop:
+When IP becomes empty
+
+
+---
+
+
+Tower of hanoi
+
+
+
+we would like to move the largest one to destination rod. 
+
+for point 1, we can move the smallest to destination, then secoond smallest to aux, then smallest to aux, then largest to destination. 
+
+No we want to move the second smallest and smallest to destination
+
+so move smallest to first, move 2ns smallest to destination, move smallest from first to destination. 
+
+---
+
+
+recursion - choice + decision
+Input or output method 
+No of choice is no of branch
+Lead node gives the answer when input is empty
