@@ -1,3 +1,19 @@
+/*
+[Note]
+[Reference]: own
+[Problem]: 
+[Pattern]: recursion
+[Tips]: do till node == null; and go left and right, going means calling itself and since its not returning anything, no need to handle anything.
+[Revision]: 2
+[Confidence]: 80%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
 // In-order traversal means to "visit" (often, print) the left branch, then the current node, and finally, the right
 // branch.
 void inOrderTraversal(TreeNode node) {

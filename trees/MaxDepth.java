@@ -1,3 +1,21 @@
+/*
+# Algos
+[Note]
+[Reference]: striver list tree
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: recursion, dfs, add when needed
+[Tips]: add +1 only to the max, or else even if i add to both and find the max it will work. just that we will do that operation unnecessarily. 
+[Revision]: 2
+[Confidence]: 70%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
 /**
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/
  */

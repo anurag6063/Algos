@@ -1,4 +1,5 @@
-# Algos
+
+/*
 [Note]
 [Reference]: chatgpt
 [Problem]: https://leetcode.com/problems/k-closest-points-to-origin/
