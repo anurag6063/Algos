@@ -1,8 +1,3 @@
-[Problem]: 
-[Pattern]: 
-[Tips]: 
-[Revision]: 0
---
 [Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 [Pattern]: Min , Max Math.min/max, And the diff
 [Tips]: Find the Min profit, Find max profit at each step;
@@ -63,6 +58,11 @@
 [Tips]: check*10 + x%10; x/=10;; find the no , divide the no to loose it. 
 [Revision]: 1
 --
+[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=list&envId=ecumdrrd
+[Pattern]: Trick, Copy when needed. 
+[Tips]: Simple trick
+[Revision]: 0
+--
 [Problem]: https://leetcode.com/problems/reverse-integer/
 [Pattern]: Trick
 [Tips]: since 32 bit no, storage 2^31; do mod to find the last digit and add with * 10; divide the no. 
@@ -103,6 +103,26 @@
 [Tips]: Use recursion and keep marking when you see one. 
 [Revision]: 0
 --
+[Problem]: https://leetcode.com/problems/last-stone-weight/
+[Pattern]: Heap, in reverse
+[Tips]: use PriorityQueue<Integer>((x,y)-> Integer.compare(y,x) to have a heap with max at top.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/kth-largest-element-in-a-stream/
+[Pattern]: Heap
+[Tips]: use add from cinstructor; keep K outside
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/k-closest-points-to-origin/
+[Pattern]: heap with complex DS inside it
+[Tips]: use map inside it
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/add-two-numbers/?envType=list&envId=ruypfpvi
+[Pattern]: 2 pointers; dirrerent array
+[Tips]: initiate ans, reset sum inside loop; don't reset carry,have 3 condition to sum, l1, l1 and carry
+[Revision]: 1
+--
 [Problem]: https://leetcode.com/problems/linked-list-cycle/description/?envType=list&envId=ruypfpvi
 [Pattern]: slow and fast LL
 [Tips]: while - fast and fast next, first move pointer and then check; while -> fast.next != null && fast.next.next != null
@@ -111,17 +131,22 @@
 [Problem]: https://leetcode.com/problems/linked-list-cycle-ii/?envType=list&envId=ecumdrrd
 [Pattern]: LL, slow fast; 2 pointers
 [Tips]: slow and fast; both together
-[Revision]: 1
+[Revision]: 2
 --
 [Problem]: https://leetcode.com/problems/lru-cache/description/?envType=list&envId=ruypfpvi
-[Pattern]: HashMap and LL
+[Pattern]: HashMap and Double LL
 [Tips]: Create everything and implement addNode and deleteNode
-[Revision]: 0
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=list&envId=ruypfpvi
+[Pattern]: 2 Pointers on diff array, merge with while loop
+[Tips]: use 3 while loop, onc to merge both, two to merge the other 2 ones. 
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/middle-of-the-linked-list/?envType=list&envId=ruypfpvi
 [Pattern]: slow and fast pointers
-[Tips]: initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
-[Revision]: 0
+[Tips]: Use && ; since if in case even no nodes if i don't checked fas.next != null; it whill givel bull pointer ; currFast != null && currFast.next != null ; initialize on head and move at diff speed, return slow, takes care of even and odd, returns the second element in case of even nodes
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/palindrome-linked-list/?envType=list&envId=ruypfpvi
 [Pattern]: 2 Pointers , LL , Reversal 
@@ -135,18 +160,18 @@
 --
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list/?envType=list&envId=ruypfpvi
 [Pattern]: Modify links of LL; #2Pointers
-[Tips]: Once we reset the pointers, other nodes will still be pointing to the LL, but since they are not in our line when we accesusing head, we will ignore them.
-[Revision]: 1
+[Tips]: Think what to do whe they match. Just Move ahead, and when i complete that set the pointers;; Once we reset the pointers, other nodes will still be pointing to the LL, but since they are not in our line when we accesusing head, we will ignore them.
+[Revision]: 2
 --
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/?envType=list&envId=ruypfpvi
 [Pattern]: Find dupicate first then alter pointers	; #2Pointers
 [Tips]: Since we have to skip the dupilicates altogether, the prev should never come to a duplicate value; the current will also just miss the values.
-[Revision]: 0
+[Revision]: 2
 --
 [Problem]: https://leetcode.com/problems/reorder-list/?envType=list&envId=ruypfpvi
 [Pattern]: reverse; reorder & merge all in one
 [Tips]: First split the LL in 2 , then reverse the second half, then merge the 2 halfs; to reverse  //  sequence to reverse is:: next -> curr.next -> prev -> curr 
-[Revision]: 0
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/rotate-list/?envType=list&envId=ruypfpvi
 
@@ -159,30 +184,70 @@
 [Tips]: Have a pointer before and after the first and second (to be switched; point prev = first && first = after;
 [Revision]: 1
 --
-[Problem]: https://leetcode.com/problems/minimum-window-substring/?envType=list&envId=ecumdrrd
-[Pattern]: sliding window 
-[Tips]: UNSOLVED
-[Revision]: 0
---
-[Problem]: https://leetcode.com/problems/next-permutation/?envType=list&envId=ecumdrrd
-[Pattern]: #2pointers
-[Tips]: 
-[Revision]: 0
---
-[Problem]: 
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 [Pattern]: 
 [Tips]: 
 [Revision]: 0
 --
-[Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=list&envId=ecumdrrd
-[Pattern]: Trick, Copy when needed. 
-[Tips]: Simple trick
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: 
+[Tips]: 
 [Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/k-th-symbol-in-grammar/
+[Pattern]: recursion
+[Tips]: find mid, reduce k carefully as per mid, call itself
+[Revision]: 1
+--
+[Problem]: https://www.geeksforgeeks.org/delete-middle-element-stack/
+[Pattern]: Resursion
+[Tips]: It's like passing to myself to side, first remove all the elements, then add back except the middle one. 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/queue-reconstruction-by-height
+[Pattern]: trick
+[Tips]: Sort it by height and then position, insert in LL
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters
+[Pattern]: Sliding Window - variable size
+[Tips]: non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. 
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=ecumdrrd
 [Pattern]: 2 pointer; Stack 
 [Tips]: find Max in both side
 [Revision]: 1
+--
+[Problem]: 
+[Pattern]: recursion
+[Tips]: do till node == null; and go left and right, going means calling itself and since its not returning anything, no need to handle anything.
+[Revision]: 2
+--
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: Recursion, DFS
+[Tips]: first go till the deep once i reach the depth, flip it. 
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: recursion, dfs, add when needed
+[Tips]: add +1 only to the max, or else even if i add to both and find the max it will work. just that we will do that operation unnecessarily. 
+[Revision]: 2
+--
+[Problem]: 
+[Pattern]: recursion
+[Tips]: do till node == null; and go right and left then print, going means calling itself and since its not returning anything, no need to handle anything.
+[Revision]: 2
+--
+[Problem]: https://leetcode.com/problems/same-tree/
+[Pattern]: recursion
+[Tips]: while going in itself check it, if a condtiton does not match return false, true is returned only if i reach p==null and q==null and return is left&&right.
+[Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/is-subsequence/
+[Pattern]: 2 pointers, array
+[Tips]: Use 2 pointers on each string, loop longer one
+[Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/3sum-closest/?envType=list&envId=ecumdrrd
 [Pattern]: 2 pointers, opposite dir
@@ -197,6 +262,16 @@
 [Problem]: https://leetcode.com/problems/4sum/?envType=list&envId=ecumdrrd
 [Pattern]: 2 pointers, opposite
 [Tips]: use 2 for loop and one 2 pointer, sort the values first
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/next-greater-element-iii/
+[Pattern]: 2 pointers; swap; reverse
+[Tips]: find first dip from back; swap no with just greater than dip; reverse post the dip. Brute Force: find all permutations, sort them; return first no that's greater than given number.
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/subarray-product-less-than-k/submissions
+[Pattern]: 2 pointers, same direction
+[Tips]: 2 pointers, same direction; move left conditionally; when product >= k; then move the left; else not.
 [Revision]: 0
 --
 [Problem]: https://leetcode.com/problems/circular-array-loop/
@@ -253,6 +328,21 @@
 [Pattern]: 2 pointers
 [Tips]: calulate sum and move pointer l pr r as per comprision b/w sum and tartget
 [Revision]: 1
+--
+[Problem]: 
+[Pattern]: 
+[Tips]: 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/minimum-window-substring/?envType=list&envId=ecumdrrd
+[Pattern]: sliding window 
+[Tips]: UNSOLVED
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/next-permutation/?envType=list&envId=ecumdrrd
+[Pattern]: #2pointers
+[Tips]: 
+[Revision]: 0
 --
 [Problem]: NA
 [Pattern]: Common code
