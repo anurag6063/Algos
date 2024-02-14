@@ -1,3 +1,80 @@
+/*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/maximum-average-subarray-i/
+[Pattern]: sliding window
+[Tips]: use k-1 as check, keep left usage; whenever i have to find a Math.max, one of the value needs to initialized with Integer.MIN_VALUE / Max
+[Revision]: 2
+[Confidence]: 100%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+// written on own; 
+// printing helps
+class Solution {
+    public double findMaxAverage(int[] nums, int k) {
+
+      
+        int sumMax = Integer.MIN_VALUE;
+        int sum = 0;
+        // nums = [1,12,-5,-6,50,3], k = 4 ; sum =0; sumMax=0;
+        // System.out.printf(" k %d, sum %d, sumMax %d \n",  k, sum, sumMax);
+        int left =0;
+        for(int i=0; i<nums.length; i++){ 
+            
+            printArrayAndIndices(nums, left, i);
+            
+            sum = sum + nums[i]; 
+            // System.out.printf(" nums[] %d, k %d, sum %d, sumMax %d \n", nums[i], k, sum, sumMax);
+            if(i >= k-1){  
+                sumMax = Math.max(sumMax,sum); 
+                sum = sum - nums[left]; // 
+                left++;
+                // System.out.printf("IN:  nums[] %d, k %d, sum %d, sumMax %d \n", nums[i], k, sum, sumMax);
+            }
+
+        }
+
+        return (double)sumMax/k;
+    }
+
+   private void printArrayAndIndices(int[] nums, int left, int i) {
+    System.out.print("Index: ");
+    for (int j = 0; j < nums.length; j++) {
+        System.out.printf("%-4d", j);
+    }
+    System.out.println();
+    
+    System.out.print("Array: ");
+    for (int j = 0; j < nums.length; j++) {
+        System.out.printf("%-4d", nums[j]);
+    }
+    System.out.println();
+    
+    System.out.print("      ");
+    for (int j = 0; j < nums.length; j++) {
+        if (j < left || j > i) {
+            System.out.print("    ");
+        } else {
+            System.out.print("  ^ ");
+        }
+    }
+    System.out.println();
+    System.out.println("Left index: " + left);
+    System.out.println("Current index (i): " + i);
+    System.out.println();
+}
+
+}
+
+
 // sliding window 
 
 // 2 pointer approach:

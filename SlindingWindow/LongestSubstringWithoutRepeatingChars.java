@@ -3,7 +3,7 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters
 [Pattern]: Sliding Window - variable size
-[Tips]: non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. 
+[Tips]: non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. SubString -> slidingWindow; NonRepeatig Character -> HashSet ; No window size given -> dynamic wondow
 [Revision]: 1
 [Confidence]: 40%
 [Next]: Practice 
@@ -14,7 +14,43 @@
 [Tags]: 
 [/Note]
 */
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
 
+        int ans = 0;
+        int maxSize = 0; // will work since there will not be any negative value.
+
+        Set<Character> set = new HashSet<>();
+        // dynamic sliding window
+        int left =0;
+        int right =0;
+        while(right < s.length()){
+
+            // no k so both will move dynamically
+            // condition to move is substing with NO REPEATING character
+            // how to maintain that? HashSet
+            if(!set.contains(s.charAt(right))){
+                set.add(s.charAt(right));
+                // find the max
+                maxSize = Math.max(maxSize, right-left+1);
+                right++;
+            }else{
+                // if the incoming right character is present in set, i will have to remove all the elements to the left of this repeated character
+                while(set.contains(s.charAt(right))){
+                    set.remove(s.charAt(left));
+                    left++;
+                }
+                // will not do the max here becuase it will never be the answer. 
+                set.add(s.charAt(right));
+                right++;
+            }
+
+            
+        }
+
+    return maxSize;
+    }
+}
 
 import java.util.*;
 
@@ -39,6 +75,8 @@ class Solution {
                 // System.out.println("repeated - left: "+ left + " right: "+ right);
 
                 // we need to check for right and remove char left from the set irrespective of positin because the dupicate can be at any place in the window. 
+                // we need this since the the duplicate characted may not be the first left character
+                // to reach and remove everything till the character occurs, i am using a while loop. 
                 while(set.contains(s.charAt(right))){
                     set.remove(s.charAt(left));
                     left++;
