@@ -3,9 +3,9 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters
 [Pattern]: Sliding Window - variable size
-[Tips]: non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. SubString -> slidingWindow; NonRepeatig Character -> HashSet ; No window size given -> dynamic wondow
-[Revision]: 1
-[Confidence]: 40%
+[Tips]: Remember to add the right char in else condition too; non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. SubString -> slidingWindow; NonRepeatig Character -> HashSet ; No window size given -> dynamic wondow
+[Revision]: 2
+[Confidence]: 70%
 [Next]: Practice 
 [Steps]: 
 [Code]	
@@ -14,6 +14,40 @@
 [Tags]: 
 [/Note]
 */
+
+
+// my clear solution.
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        // substring = sliding window - no k, dynamic window size
+        // repeating char = hashset
+
+        int left = 0;
+        int right = 0;
+        int maxLen = 0;
+        Set<Character> set = new HashSet<Character>();
+
+        while(right < s.length()){
+            if(!set.contains(s.charAt(right))){
+                set.add(s.charAt(right));          
+            }else{
+                while(set.contains(s.charAt(right))){
+                    set.remove(s.charAt(left));
+                    left++;
+                }      
+                set.add(s.charAt(right));        
+            }
+            maxLen = Math.max(maxLen, right-left+1); // becuse 0 indexed
+            right++;
+            
+        }
+
+        return maxLen;
+    }
+}
+
+
+
 class Solution {
     public int lengthOfLongestSubstring(String s) {
 

@@ -3,9 +3,9 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 [Pattern]: Min , Max Math.min/max, And the diff
-[Tips]: Find the Min profit, Find max profit at each step;
-[Revision]: 0
-[Confidence]: 50%
+[Tips]: Find the Min price, Find max profit at each step and compare it with last maxProfit; Think top down, I need to find max Profit, max profit = current price - min price, now this can or cannot be the maxprofit, so Max(max, current price - minPrice)
+[Revision]: 1
+[Confidence]: 80%
 [Next]: Practice 
 [Steps]: For(prices)-> 0 to <len ; find min ( minPrice, current value); maxP = Math.max(prices[i] - minPrice , maxP);; return the max profit;
 [Code]		   
