@@ -23,6 +23,11 @@
  */
 
 
+    
+        // bfs always needs a quque, since it has to process nodes in a level wise order.
+        // in bidirectional graph we always need a visited array since we may repeat ourselves and get stuck in a loop
+        // in a graph algo if i exceed time, check for visited == false while going ahead, this may have started a infinite loop. 
+
 class Solution {
     // Function to return Breadth First Traversal of given graph.
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
