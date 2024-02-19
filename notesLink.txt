@@ -1,7 +1,7 @@
 [Problem]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 [Pattern]: Min , Max Math.min/max, And the diff
-[Tips]: Find the Min profit, Find max profit at each step;
-[Revision]: 0
+[Tips]: Find the Min price, Find max profit at each step and compare it with last maxProfit; Think top down, I need to find max Profit, max profit = current price - min price, now this can or cannot be the maxprofit, so Max(max, current price - minPrice)
+[Revision]: 1
 --
 [Problem]: https://leetcode.com/problems/contains-duplicate/
 [Pattern]: HashMap
@@ -93,12 +93,12 @@
 [Tips]: 2 poniters; special initali while loop to skip invalid chars, compare only when needed. !Character.isLetterOrDigit(s.charAt(r)) && l<r)
 [Revision]: 1
 --
-[Problem]:
+[Problem]: https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=bfs_of_graph
 [Pattern]: Modify links of LL
 [Tips]: BFS uses queue
 [Revision]: 0
 --
-[Problem]: NA
+[Problem]: https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=dfs_of_graph
 [Pattern]: DFS ; recursion, base case and for loop to go deep
 [Tips]: Use recursion and keep marking when you see one. 
 [Revision]: 0
@@ -209,15 +209,30 @@
 [Tips]: Sort it by height and then position, insert in LL
 [Revision]: 0
 --
+[Problem]: https://leetcode.com/problems/maximum-average-subarray-i/
+[Pattern]: sliding window
+[Tips]: use k-1 as check, keep left usage; whenever i have to find a Math.max, one of the value needs to initialized with Integer.MIN_VALUE / Max
+[Revision]: 2
+--
 [Problem]: https://leetcode.com/problems/longest-substring-without-repeating-characters
 [Pattern]: Sliding Window - variable size
-[Tips]: non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. 
-[Revision]: 1
+[Tips]: Remember to add the right char in else condition too; non repeating chars, use HashSet, if chars dont match simple add the right, else while set contains the element first remove char in left, then add it into it. SubString -> slidingWindow; NonRepeatig Character -> HashSet ; No window size given -> dynamic wondow
+[Revision]: 2
 --
 [Problem]: https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=ecumdrrd
 [Pattern]: 2 pointer; Stack 
 [Tips]: find Max in both side
 [Revision]: 1
+--
+[Problem]: https://leetcode.com/problems/balanced-binary-tree/
+[Pattern]: recursion; find max depth ++ difference
+[Tips]: Use max depth of BT solution add difference logic and a check of difference to find the answer. Have +1 only in the Max . 
+[Revision]: 0
+--
+[Problem]: https://leetcode.com/problems/diameter-of-binary-tree/description/
+[Pattern]: recursion, dfs, maxdepth ++ 
+[Tips]: use dia[] to store referenced dai, done to know max depth of each side
+[Revision]: 0
 --
 [Problem]: 
 [Pattern]: recursion

@@ -22,6 +22,45 @@
 
     Return true if you can reach the last index, or false otherwise.
  */
+class Solution {
+
+    public boolean canJump(int[] nums){
+
+        // initialize
+        int stepsICantake = nums[0];
+        int getStepsOf = 1;
+
+        while(stepsICanTake > 0){
+            if(getStepsOf == nums.length-1) return true;
+            stepsICanTake = Math.max(stepsICanTake-1, nums[getStepsOf]);
+            getStepsOf++;
+        }
+        return false;        
+    }
+}
+
+
+class Solution4 {
+
+    public boolean canJump(int[] nums){
+        if(nums.length < 2) return true;
+        // initialize 
+        // starting point
+
+        // i will always have at the start, initialize the data in same way.
+        int stepsLeft = nums[0]; // this is how much it can go initally
+        int index = 1 ; // this is what it can get next
+
+        while(stepsLeft > 0){ // i can go ahead till i have steps remaining
+            if(index == nums.length-1) return true; // if i reached end ; return true
+            stepsLeft = Math.max(stepsLeft-1, nums[index]);  // how many more steps can i go, its max of how many steps i am left or else i can take the new steps power that i have
+            // go to next index
+            index++;
+        }
+
+        return false;
+    }
+}
 
 class Solution {
     public boolean canJump(int[] nums) {

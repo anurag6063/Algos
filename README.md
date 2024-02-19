@@ -29,7 +29,7 @@ Find all files with Pattern and Tips:
 	grep -r -E '^\[(Pattern|Tips)\]' .
 
 Find all files with Pattern and Tips with spaces and o/p file:
-	grep -r -A 1 -E '^\[(Pattern|Tips)\]' . > notes.txt
+	grep -r -A 1 -E '^\[(Pattern|Tips|Problem)\]' . > notes.txt
 
 
 Find all files with Pattern and Tips with spaces and o/p file without filename:
