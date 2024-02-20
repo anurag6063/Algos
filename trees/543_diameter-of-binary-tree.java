@@ -4,9 +4,9 @@
 [Reference]: https://www.youtube.com/watch?v=Rezetez59Nk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=17
 [Problem]: https://leetcode.com/problems/diameter-of-binary-tree/description/
 [Pattern]: recursion, dfs, maxdepth ++ 
-[Tips]: use dia[] to store referenced dai, done to know max depth of each side
-[Revision]: 0
-[Confidence]: 30%
+[Tips]: use dia[] to store referenced dai, done to know max depth of each side, dia can have it's existing  value or math.max(r+l)
+[Revision]: 1
+[Confidence]: 70%
 [Next]: Practice 
 [Steps]: 
 [Code]	
@@ -17,7 +17,7 @@
 */
 
 class Solution {
-    int maxDia = 0;
+
     public int diameterOfBinaryTree(TreeNode root) {
 	
 		// we need to use this since it will hold the max depth of each side. 
@@ -33,6 +33,7 @@ class Solution {
         int l = maxDia(node.left, dia);
         int r = maxDia(node.right, dia);
 
+        // backtracking
         dia[0] = Math.max(dia[0], l+r);
 
         return 1+Math.max(l,r);
