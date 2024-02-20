@@ -4,8 +4,8 @@
 [Problem]: https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=dfs_of_graph
 [Pattern]: DFS ; recursion, base case and for loop to go deep
 [Tips]: Use recursion and keep marking when you see one. 
-[Revision]: 0
-[Confidence]: 10%
+[Revision]: 1
+[Confidence]: 70%
 [Next]: Practice 
 [Steps]: Base case is root == null; visit the node and mark it as visited,then use for loop to go in. Check if not visited do a search ( call itself)
 [Code]	
@@ -33,9 +33,13 @@ void search(Node node){
 
 
 // algo from take u forward
+// remember in this DFS allgo the top node will come first in the ans list, then the bottom, this is unlike in tree.
+// but in tree i had direction so there is no sense of direction here as which one is top and bottom. Cool :) 
 
 class Solution {
     // Function to return a list containing the DFS traversal of the graph.
+    // V is no of nodes it has; i have List os List since if i declare a single List it can hold only one item in each of it's element
+    // here i need to store a list of items in a array position so List of List.
     public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         // Code here
         

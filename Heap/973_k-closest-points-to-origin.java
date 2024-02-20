@@ -22,7 +22,10 @@ import java.util.AbstractMap;
 
 class Solution {
     public int[][] kClosest(int[][] points, int k) {
-        // Create a priority queue to store the distance and point pairs
+        // Create a priority queue to store the distance and point pairs 
+        // by default it will be a min heap
+        // since it follows NATURAL ORDERING, ie less to more.
+        // smart way of avoiding to create a object to store the key and the value for it. 
         PriorityQueue<Map.Entry<Integer, int[]>> heap = new PriorityQueue<>((a, b) -> Integer.compare(a.getKey(), b.getKey()));
 
         // Calculate the distance for each point and add it to the priority queue

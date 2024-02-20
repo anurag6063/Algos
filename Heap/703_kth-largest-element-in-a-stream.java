@@ -3,9 +3,9 @@
 [Reference]: https://leetcode.com/problems/kth-largest-element-in-a-stream/solutions/3553822/java-priorityqueue-7-lines-clean-code
 [Problem]: https://leetcode.com/problems/kth-largest-element-in-a-stream/
 [Pattern]: Heap
-[Tips]: use add from cinstructor; keep K outside
-[Revision]: 0
-[Confidence]: 10%
+[Tips]: use add from instructor; keep K outside
+[Revision]: 1
+[Confidence]: 50%
 [Next]: Practice 
 [Steps]: 
 [Code]	
@@ -28,11 +28,15 @@ class KthLargest {
     }
     
     public int add(int val) {
+        // the queue does not has a size, it lets add whatever comes in. 
         top.offer(val);  
+        // i have to make cure if the elements have increased too many, then reduce an element 
+        // so tat finally i can get tthe top when i finally do a peek.
         if(top.size() > k){
             top.poll();
         }  
-        
+        // the pd size has been set to reuqired one. 
+        // queue peek will have the answer/ 
         return top.peek();
     }
 }
