@@ -3,9 +3,9 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/equal-row-and-column-pairs/description/?envType=list&envId=ph9f65i7Given
 [Pattern]: Matrix
-[Tips]: 2 loops outside to go to each element, 1 inside loop to find the equality. grid[row][x] != grid[x][col]
-[Revision]: 1
-[Confidence]: 30%
+[Tips]: 2 loops outside to go to each element, 1 inside loop to find the equality. grid[row][x] != grid[x][col], remember its x and col and row and x; 
+[Revision]: 2
+[Confidence]: 70%
 [Next]: Practice 
 [Steps]: 
 [Code]:

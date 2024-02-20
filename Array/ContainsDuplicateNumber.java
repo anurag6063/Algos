@@ -3,9 +3,9 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/contains-duplicate/
 [Pattern]: HashMap
-[Tips]: Use a hashMap for quick lookup
-[Revision]: 0
-[Confidence]: 10%
+[Tips]: Use a hashMap for quick lookup, with brute approach i look for duplicate foreward, with HashMap, i am looking for the duplicate backward, that too in constant time since i amusing a hashMap.
+[Revision]: 1
+[Confidence]: 90%
 [Next]: Practice 
 [Steps]: Loop, check in HMap if present return false; else finally out return true;
 [Code]	
