@@ -35,8 +35,17 @@ Find all files with Pattern and Tips with spaces and o/p file:
 Find all files with Pattern and Tips with spaces and o/p file without filename:
 	grep -rh -A 1 -E '^\[(Pattern|Tips|Problem)\]' . > notesLink.txt
 
+---
+
 Find all file ending with .java
 	find . -type f -name "*.java" | wc -l
+
+--
+ to make a note
+#Note: 
+
+---
+
 
 /*
 [Note]

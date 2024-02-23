@@ -4,7 +4,7 @@
 [Reference]: https://www.youtube.com/watch?v=4775IgUKfww
 [Problem]: https://leetcode.com/problems/subarray-product-less-than-k/submissions
 [Pattern]: 2 pointers, same direction
-[Tips]: 2 pointers, same direction; move left conditionally; when product >= k; then move the left; else not.
+[Tips]: 2 pointers, same direction; move left conditionally; when product >= k; then move the left; else not. if product not reached add count = r-l+1, once reached, i need to loose the LHS till the left reaches apoint when the product again comes below given K.
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
