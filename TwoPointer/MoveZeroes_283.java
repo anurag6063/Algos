@@ -3,10 +3,10 @@
 
 /*
 [Note]
-[Reference]: 
+[Reference]: https://leetcode.com/problems/move-zeroes/solutions/2685367/js-es6-two-pointers-93-with-explanation
 [Problem]: https://leetcode.com/problems/move-zeroes/
 [Pattern]: 2 pointers same direction;
-[Tips]: 2 pointers ; swap when right != 0
+[Tips]: 2 pointers ; swap when right != 0; swap when needed with if and increment the left counter, else always increase right pointer.
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
@@ -17,7 +17,9 @@
 [Tags]: 
 [/Note]
 */
-
+/*
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+*/
 
 
 class Solution {

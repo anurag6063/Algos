@@ -5,7 +5,7 @@
 [Note]
 [Reference]: 
 [Problem]: https://leetcode.com/problems/reverse-string
-[Pattern]: 2 pointersl; reverse direction	
+[Pattern]: 2 pointersl; reverse direction; swap 
 [Tips]: keep incrementing and decrementing left++ and right--
 [Revision]: 0
 [Confidence]: 10%

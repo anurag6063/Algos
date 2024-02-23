@@ -3,7 +3,7 @@
 
 /*
 [Note]
-[Reference]: 
+[Reference]: https://leetcode.com/problems/rotate-array/solutions/1730142/java-c-python-a-very-very-well-detailed-explanation
 [Problem]: https://leetcode.com/problems/rotate-array/
 [Pattern]: NA
 [Tips]: Keep the last one asise, Move no from back in array. 

@@ -26,7 +26,7 @@ class Solution {
          // slow and fast
          int slow = 0;
          int fast = 0;
-         
+  // did not ceck the condition first since initally yhey both will be at some starting point       
          do{
              slow = nums[slow];
              fast = nums[nums[fast]];

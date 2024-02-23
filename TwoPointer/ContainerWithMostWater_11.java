@@ -28,6 +28,8 @@ class Solution {
         int min = Math.min(height[left], height[right]);
         int area = (right - left) * min ;
         maxArea = Math.max(maxArea, area);
+        // i move the one who's height is smaller since i want max water to get stored. 
+        // so given 2 options it's better to move the less height one
         if(height[left] < height[right]){
             left++;
         }else{

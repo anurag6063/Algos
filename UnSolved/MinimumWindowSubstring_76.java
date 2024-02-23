@@ -3,7 +3,7 @@
 [Note]
 [Reference]: https://leetcode.com/problems/minimum-window-substring/solutions/26808/here-is-a-10-line-template-that-can-solve-most-substring-problems
 [Problem]: https://leetcode.com/problems/minimum-window-substring/?envType=list&envId=ecumdrrd
-[Pattern]: sliding window 
+[Pattern]: sliding window , dynamic size
 [Tips]: UNSOLVED
 [Revision]: 0
 [Confidence]: 10%
@@ -21,7 +21,7 @@ class Solution {
     public String minWindow(String s, String t) {
         int m = s.length(), n = t.length();
         HashMap<Character, Integer> mp = new HashMap<>();
-
+// #Note: When i am about to do Math.min or the value has to be less to start with. Use Integer.MAX_VALUE
         int ans = Integer.MAX_VALUE;
         int start = 0;
 

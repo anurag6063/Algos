@@ -3,7 +3,7 @@
 [Note]
 [Reference]: 
 [Problem]: https://www.educative.io/courses/grokking-coding-interview-patterns-java/sum-of-three-values
-[Pattern]: 2 pointers;
+[Pattern]: 2 pointers; + for loop, 2 pointers inside a for loop. 
 [Tips]: duplicate is acceptable here. 
 [Revision]: 0
 [Confidence]: 30%
@@ -34,7 +34,7 @@ public class SumOfThree{
       // the 2 pointers can work on extreme, but the inside condition needs to change the calue of the 
       // 2 pointers according to some condition, for that we will find sum and then change the value 
       // of pointer, so we need to get the sum.
-
+// #Note: Arrays.sort(nums); Here nums is int[] nums can sort a one dimentional array only
       Arrays.sort(nums);
       // loop outer this will be static for a while loop, this is easier
 
@@ -42,6 +42,7 @@ public class SumOfThree{
       // i need the one more for loop. 
 
       // the i value will be the basic outter loop, the 2 pointers will run from i+1 to n-1.
+// #Note: primitive array's no of element can be found by .length; for int[] nums its nums.length
       int len = nums.length;
 
       // outer loop

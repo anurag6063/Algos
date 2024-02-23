@@ -3,8 +3,8 @@
 [Note]
 [Reference]: 
 [Problem]: https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=list&envId=ecumdrrd
-[Pattern]: 2 ponters, same direction (var + for loop)
-[Tips]: think when it does not matches, i will replace. 
+[Pattern]: 2 pointers, same direction (var + for loop); replace when does not matches
+[Tips]: REVERSE THINKING; think when it does not matches, i will replace. 
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
