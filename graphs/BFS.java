@@ -4,8 +4,8 @@
 [Problem]: https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=bfs_of_graph
 [Pattern]: Modify links of LL
 [Tips]: BFS uses queue
-[Revision]: 1
-[Confidence]: 60%
+[Revision]: 2
+[Confidence]: 80%
 [Next]: Practice 
 [Steps]: Create a queue; mark root as true, put root into the queue; while there are elements in queue, remove the element and visit it. Now since we have to go deeper have a for loop that finds all the sub nodes and if they are not visited; mark them as visited and queues it.
 [Code]	
