@@ -284,6 +284,8 @@
 [Tips]: find first dip from back; swap no with just greater than dip; reverse post the dip. Brute Force: find all permutations, sort them; return first no that's greater than given number.
 [Revision]: 0
 --
+C:\Users\Anura\OneDrive - Pegasystems Inc\Desktop\current\code\Algos\stack\ReplaceElementsGreatestElementRightSide_E.java
+
 [Problem]: https://leetcode.com/problems/subarray-product-less-than-k/submissions
 [Pattern]: 2 pointers, same direction
 [Tips]: 2 pointers, same direction; move left conditionally; when product >= k; then move the left; else not.
