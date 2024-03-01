@@ -15,6 +15,15 @@
 [Tags]: 
 [/Note]
 */
+
+--
+ to make a note
+// #Note: 
+
+---
+
+
+
 git pull
 git status
 git add *
@@ -40,11 +49,7 @@ Find all files with Pattern and Tips with spaces and o/p file without filename:
 Find all file ending with .java
 	find . -type f -name "*.java" | wc -l
 
---
- to make a note
-#Note: 
 
----
 
 
 /*
