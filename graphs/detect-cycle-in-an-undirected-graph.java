@@ -17,6 +17,7 @@
 */
 
 
+
 class Solution {
     // Function to detect cycle in an undirected graph.
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
@@ -41,7 +42,7 @@ class Solution {
         
         // Code here
         
-        // start bfs + have a parent thing too.
+        // start bfs + have a parent thing too. I need to know parent of each node. As I go bfs to each level down. Each node can have different parent. So best is to have parent known for each node. 
         
         Queue<Map.Entry<Integer, Integer>> q = new  LinkedList<Map.Entry<Integer, Integer>>();
         q.add(new AbstractMap.SimpleEntry<>(s, -1));
