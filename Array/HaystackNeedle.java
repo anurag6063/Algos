@@ -2,7 +2,7 @@
 [Note]
 [Reference]: 
 [Problem]: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=list&envId=ph9f65i7
-[Pattern]: 2 loops, oue out, other in to match
+[Pattern]: 2 loops, one out, other in to match
 [Tips]: The inisde for loop should go till haystack.len-needle.len because inside this for loop again i will go from o to len of needle. 
 [Revision]: 1
 [Confidence]: 30%

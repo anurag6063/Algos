@@ -38,16 +38,16 @@ class Solution {
 
         int count = 0;
 
-        for(int row=0; row < grid[0].length; row++){
+        for(int row=0; row < grid[0].length; row++){ // this should be grid.length
             for(int col =0; col< grid[0].length; col++){
                 System.out.println("row: "+ row+ " col: "+ col);
                 System.out.println(grid[row][col]);
                 boolean equal = true;
                 for(int x =0; x < grid[0].length; x++){
-                if (grid[row][x] != grid[x][col]){
-                    equal = false;
-                    break;
-                }
+                    if (grid[row][x] != grid[x][col]){
+                        equal = false;
+                        break;
+                    }
                 }
                 if(equal) count++;
             }

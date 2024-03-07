@@ -3,7 +3,7 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/contains-duplicate/
 [Pattern]: HashMap
-[Tips]: Use a hashMap for quick lookup, with brute approach i look for duplicate foreward, with HashMap, i am looking for the duplicate backward, that too in constant time since i amusing a hashMap.
+[Tips]: Use a hashMap for quick lookup, with brute approach i look for duplicate foreward, with HashMap, i am looking for the duplicate backward, that too in constant time since i am using a hashMap.
 [Revision]: 1
 [Confidence]: 90%
 [Next]: Practice 

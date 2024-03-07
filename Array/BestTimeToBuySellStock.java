@@ -25,22 +25,54 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  */
 
+// #Note: if there is double for loop and i am looking forward and finding something, i can rather look back and do both the things in one shot.
+// #Note: looking forward sometimes makes things complex, so look back.
+// Here i am looking behind. I am finding the min till now and then can i have a max profit from the found min profit. 
+
+
+// brute force algorithm
+
+class Solution {
+  public int maxProfit(int[] prices) {
+    int maxProfit = 0;
+    int n = prices.length;
+    for( int i=0; i< n; i++){
+      for(int j=i+1; j<n; j++){
+        System.out.println(maxProfit);
+          maxProfit = Math.max(maxProfit, prices[j]- prices[i]);
+        }
+    }
+    return maxProfit;
+  }
+}
+
+
  class Solution {
     public int maxProfit(int[] prices) {
+    
+    // initialize
      int minPrice = prices[0];
+
+     // set default value. and the answer
      int maxP = 0;
+
+     // do sanity check
      if(prices.length < 2)
      return 0;
 
+    // process
      for(int i=0; i< prices.length ; i++){
          
+        // ideally i should have found first the min price and then fro then the max profit. but math.min will find the min till now.
         minPrice = Math.min(prices[i], minPrice);
+        // ideally i should have found all the profits and then the max of it. so Math.max shortens it.
         maxP = Math.max(prices[i] - minPrice , maxP);
 
      }
     return maxP;
 }
 }
+
 
  // in this we just need to find the min and the max.
  // get the result.
@@ -55,6 +87,8 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
     // else 
       //  max will be Max of current profit or else previous max
       // maxP = Math.max(prices[i] - minPrice , maxP);
+
+// the brute force looks forward. so here. i need to find the min first and then the max profit. so it's double task. 
 
  class Solution {
     public int maxProfit(int[] prices) {
@@ -75,22 +109,6 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 }
 }
 
-
-// brute force algorithm
-
-class Solution {
-  public int maxProfit(int[] prices) {
-    int maxProfit = 0;
-    int n = prices.length;
-    for( int i=0; i< n; i++){
-      for(int j=i+1; j<n; j++){
-        System.out.println(maxProfit);
-          maxProfit = Math.max(maxProfit, prices[j]- prices[i]);
-        }
-    }
-    return maxProfit;
-  }
-}
 
 
 // my same modified code
