@@ -52,22 +52,7 @@ Find all file ending with .java
 
 
 
-/*
-[Note]
-[Reference]: 
-[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
-[Pattern]: 
-[Tips]: 
-[Revision]: 0
-[Confidence]: 10%
-[Next]: Practice 
-[Steps]: 
-[Code]	
-	
-[/Code]
-[Tags]: 
-[/Note]
-*/
+
 
 DSA Strategy
 
@@ -122,3 +107,29 @@ Confidence: in percentage
 Next: What is next to be done about this.
 
 Steps: the steps that were followed
+
+//-----
+
+
+$sourceFile = "C:\Users\Anura\OneDrive - Pegasystems Inc\Desktop\dustbin\StackQueue\CarsFleet.txt"
+$pdfFile = "C:\Users\Anura\OneDrive - Pegasystems Inc\Desktop\dustbin\StackQueue\CarsFleet.pdf"
+
+Start-Process -FilePath "C:\Windows\System32\cmd.exe" -ArgumentList "/c notepad.exe /p `"$sourceFile`"" -Wait
+Start-Sleep -Seconds 5
+
+Add-Type -AssemblyName System.Windows.Forms
+$printer = [System.Drawing.Printing.PrinterSettings]::InstalledPrinters.Cast([string]) | Where-Object { $_ -eq 'Microsoft Print to PDF' }
+
+if ($printer) {
+    $p = New-Object System.Drawing.Printing.PrintDocument
+    $p.PrinterSettings.PrinterName = 'Microsoft Print to PDF'
+    $p.DefaultPageSettings.Landscape = $false
+
+    $p.PrinterSettings.PrintFileName = $pdfFile
+    $p.PrinterSettings.PrintToFile = $true
+    $p.PrinterSettings.PrinterName = 'Microsoft Print to PDF'
+    $p.Print()
+}
+else {
+    Write-Host "Microsoft Print to PDF printer not found."
+}

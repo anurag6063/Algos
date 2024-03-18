@@ -1,4 +1,23 @@
 /*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/asteroid-collision/?envType=list&envId=pheho7s5
+[Pattern]: Stack + cond
+[Tips]: Always consider the sigh, direction first as a case for collision and then the size value of N. Here if a value being pushed is +ve no issues, only when -ve think. When collision starts it can continue for the other existing ones too. 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+
+/*
 https://leetcode.com/problems/asteroid-collision/?envType=list&envId=pheho7s5
 need to revisit. - ans fails in submit.
 

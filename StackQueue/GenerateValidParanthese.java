@@ -1,4 +1,22 @@
 /*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/generate-parentheses/?envType=list&envId=pheho7s5
+[Pattern]: Recursion
+[Tips]: base case open and close should be n, else resursion if open < n ; recursion if close < open
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+/*
 https://leetcode.com/problems/generate-parentheses/?envType=list&envId=pheho7s5
 
 here stack is used automatically, it's not stack rather recursion.
@@ -47,3 +65,5 @@ public class GenerateParentheses {
         }
     }
 }
+
+

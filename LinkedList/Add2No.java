@@ -5,8 +5,8 @@
 [Problem]: https://leetcode.com/problems/add-two-numbers/?envType=list&envId=ruypfpvi
 [Pattern]: while loop; LL
 [Tips]: better for all te cases is use a while loop with OR and then do if inside.
-[Revision]: 1
-[Confidence]: 40%
+[Revision]: 2
+[Confidence]: 80%
 [Next]: Practice 
 [Steps]: 
 [Code]	
