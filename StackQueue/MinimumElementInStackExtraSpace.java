@@ -1,4 +1,22 @@
 /*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/min-stack/description/?envType=list&envId=pheho7s5
+[Pattern]: Stack - 2 of them. one for all ops except min, one for min
+[Tips]: 
+[Revision]: 1
+[Confidence]: 80%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+/*
 1. minimum element in stack with extra space, supporting stack.
 2. push and pop is done on the main stack and it's also supported from there.
 3. then to support the minimum element finding. use supporting stack.
@@ -16,8 +34,11 @@
 */
 
 class MinStack {
+    // kept outside so that all the functions can use it
     Stack<Integer> minStack;
     Stack<Integer> min;
+
+    // initialize and empty one
     public MinStack() {
        minStack = new Stack<>();
        min = new Stack<>();
@@ -27,20 +48,21 @@ class MinStack {
         minStack.push(val);
         // if(min.isEmpty()) min.push(val);
 
+        // push in min only when the value is really minimum or equal
+        // equal is handeled in case duplicate values are present in other stack.
         if(min.isEmpty() || val <= min.peek()){
             min.push(val);
         }
-        // if(min.size()>0){
-        //     System.out.println(min.peek() + " MIN " +min.size());
-        // }
-        // System.out.println(minStack.peek() + " "+ minStack.size());
-    }
+        
+        }
 
     public void pop() {
-    if (minStack.peek().equals(min.peek())) {
-        min.pop();
-    }
-    minStack.pop();
+        // so the peeking first so that i don't have to pop and then add it again back
+        if (minStack.peek().equals(min.peek())) {
+// #Note: equals works here and not == or else i had to get them in 2 variables and them compare. for stack.peek()
+            min.pop();
+        }
+        minStack.pop();
 
 }
 

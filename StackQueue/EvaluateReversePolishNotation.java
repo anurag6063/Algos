@@ -1,8 +1,126 @@
 /*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=list&envId=pheho7s5
+[Pattern]: Min Stack
+[Tips]: Using String and Integer .valueOf for conversion, assume if not 4 valid symbol its a number.
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+
+/*
 https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=list&envId=pheho7s5
 
 */
+/**
+ * My solution using extra space of a stack but much simplifies and straight
+ * 
+ */
 class Solution {
+    public int evalRPN(String[] tokens) {
+        
+        Stack<String> st = new Stack<>();
+
+        for(String x : tokens){
+            System.out.println(" x "+ x);
+            // char x = tokens[i];
+            // check the token type
+            // chekc for special chars first. Since it said only 4 valid char types will be there
+            // at end i am assuming to be no and pushing in
+            if(x.equalsIgnoreCase("/")){
+                System.out.println("in / ");
+// #Note: lot of Integer.valueOf and String.valueOf being used for conversion
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b/a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("+")){
+                System.out.println("in + ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = a+b;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("-")){
+                System.out.println("in - ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b-a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("*")){
+                System.out.println("in * ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b*a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else{
+                st.push(x);
+            }
+        }
+
+        return Integer.valueOf(st.peek());
+    }
+}
+
+// --- 
+
+class Solution {
+
+    class Solution {
+    public int evalRPN(String[] tokens) {
+        
+        Stack<String> st = new Stack<>();
+
+        for(String x : tokens){
+            System.out.println(" x "+ x);
+            // char x = tokens[i];
+            if(x.equalsIgnoreCase("/")){
+                System.out.println("in / ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b/a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("+")){
+                System.out.println("in + ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = a+b;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("-")){
+                System.out.println("in - ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b-a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else if( x.equalsIgnoreCase("*")){
+                System.out.println("in * ");
+                int a = Integer.valueOf(st.pop());
+                int b = Integer.valueOf(st.pop());
+                int res = b*a;
+                st.push(String.valueOf(res));
+                System.out.println("res : " + res);
+            }else{
+                st.push(x);
+            }
+        }
+
+        return Integer.valueOf(st.peek());
+    }
+}
     public int evalRPN(String[] tokens) {
         int ans = 0;
         int n = tokens.length;

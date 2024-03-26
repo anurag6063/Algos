@@ -1,3 +1,29 @@
+/*
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
+[Pattern]: 
+[Tips]: 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Need to implement myown sol.  
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[/Note]
+*/
+/**
+ * 
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+Input: heights = [2,1,5,6,2,3]
+Output: 10
+Explanation: The above is a histogram where width of each bar is 1.
+The largest rectangle is shown in the red area, which has an area = 10 units.
+*/
 import java.util.Stack;
 
 public class LargestRectangleInHistogram {

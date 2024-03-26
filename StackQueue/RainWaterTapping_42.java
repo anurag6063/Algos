@@ -52,6 +52,48 @@ https://leetcode.com/problems/trapping-rain-water/?envType=list&envId=pheho7s5
         // return trap2ExtraSpace(height);
         return trapSimple(height);
     }
+    
+     public int trapSimple2(int[] height){
+        int ans = 0;
+        if(height.length == 0){
+            return 0;
+        }
+
+        int len = height.length;
+        // 3 steps process
+        // find max in left for all
+        int[] maxLeft = new int[len];
+        int maxL = 0;
+        for(int i =0; i < height.length; i++){
+            maxL = Math.max(maxL, height[i]);
+            // System.out.printf(" maxL %d , height %d \n", maxL, height[i]);
+            maxLeft[i] = maxL;
+        }
+         System.out.printf("------- \n");
+        // find max in left for all
+        int[] maxRight = new int[len];
+        int maxR = 0;
+        for(int i = len-1; i >=  0; i--){
+            maxR = Math.max(maxR, height[i]);
+            // System.out.printf(" maxR %d , height %d \n", maxR, height[i]);
+            maxRight[i] = maxR;
+        }
+
+        
+        System.out.println(Arrays.toString(height));
+        System.out.println(Arrays.toString(maxLeft));
+        System.out.println(Arrays.toString(maxRight));
+
+        int water = 0;
+        for(int i=0; i< len; i++){
+            water = water + Math.abs( Math.min(maxLeft[i], maxRight[i]) - height[i]) ;
+            System.out.println("water "+ water);
+        }
+
+        return water;
+    }
+
+
 
     public int trapSimple(int[] height){
 
