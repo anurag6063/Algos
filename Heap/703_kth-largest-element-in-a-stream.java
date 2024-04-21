@@ -31,11 +31,11 @@ class KthLargest {
         // the queue does not has a size, it lets add whatever comes in. 
         top.offer(val);  
         // i have to make cure if the elements have increased too many, then reduce an element 
-        // so tat finally i can get tthe top when i finally do a peek.
+        // so that finally i can get the top when i finally do a peek.
         if(top.size() > k){
             top.poll();
         }  
-        // the pd size has been set to reuqired one. 
+        // the pq size has been set to reuqired one. 
         // queue peek will have the answer/ 
         return top.peek();
     }

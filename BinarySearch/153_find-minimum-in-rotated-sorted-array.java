@@ -7,7 +7,7 @@
 [Tips]: find flux point, ex the point where value is less than prev but creater than next, thats answer, else if val at right < num[mid] move to right else left
 [Revision]: 0
 [Confidence]: 10%
-[Next]: Practice 
+[Next]: Understand
 [Steps]: 
 [Code]	
 	
