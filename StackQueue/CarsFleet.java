@@ -3,6 +3,10 @@
 
 need to understand this.
 https://leetcode.com/problems/car-fleet/?envType=list&envId=pheho7s5
+
+https://www.youtube.com/watch?v=Pr6T-3yB9RM&pp=ygUSY2FyIGZsZWV0IGxlZXRjb2Rl
+
+
 */
 import java.util.Arrays;
 

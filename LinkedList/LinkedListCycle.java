@@ -8,7 +8,7 @@
 [Revision]: 1
 [Confidence]: 30%
 [Next]: Practice 
-[Steps]: initilaize 2 pointers slow and fast, run while, move forward, check slow == fast; return; else at eld return false.
+[Steps]: initilaize 2 pointers slow and fast, run while, move forward, check slow == fast; return; else at end return false.
 [Tags]: #2Pointers
 [Code]	
 	
