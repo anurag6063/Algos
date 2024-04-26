@@ -1,6 +1,8 @@
-/*
-https://leetcode.com/problems/removing-stars-from-a-string/description/?envType=list&envId=pheho7s5
-*/
+/**
+ * 
+ * https://leetcode.com/problems/removing-stars-from-a-string/description/?envType=list&envId=pheho7s5
+ * 
+ */
 
 class Solution {
     public String removeStars(String s) {
