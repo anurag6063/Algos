@@ -17,27 +17,51 @@
 */
 
 /**
- * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+ * 
+ #Question: """
+ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
 An input string is valid if:
 
-Open brackets must be closed by the same type of brackets.
-Open brackets must be closed in the correct order.
+Open brackets must be closed by the same type of brackets. // so i need to care about type
+Open brackets must be closed in the correct order. // i need to care about order. 
 Every close bracket has a corresponding open bracket of the same type.
+"""
  * 
  * /
  
  /**
-  * 
+  #Intution: """
   * here i have only 3 brackets to handle
   * total 6 cases
-  * in 6 cases, 3 have insert, 3 ie closinf, just pop and check for starter being present
-  * while popping what the edge case. 
-  * it can be empty, so check that.
+  * in 6 cases, 3 have insert, 3 ie closing, just pop and check for starter being present; i am checking while i get a close
+  * beacuse mostly i should have already inserted it's open by now.
+  * while popping what the edge case. - it can be empty, so check that. So
+  * So if the stack is empty and a found a close, it's invalid string.
+  * If i found a close and the open is of not the same type, it's invalid.
   * 
-  * Also before starting if count is odd it's anyways invalid.
+  * At end if the stack is empty, then it's a valid string. 
+  * 
+  * Basic check:  Also before starting if count is odd it's anyways invalid.
+  * 
+  * Here why i used stack as a DS:
+  * Because it helped me to maintain order and check against it. 
+  * The array will have open and close in varied distance. 
+  * Using stack it helped me in checking ordering with nested brackets. 
+  * """
   */
 
+/**
+ * #Steps: """
+ * 1. Since given is a string, convert to charArray
+ * 2. Loop over the array formed.
+ * 2.1: If any open type encountered push to stack
+ * 2.2: If a close of any type is encounterd, check if stack is not empty also it should have the open for the close bracket. 
+ * 
+ *  
+ * """
+ * 
+ */
 class Solution {
     public boolean isValid(String s) {
         System.out.println(s);
@@ -111,6 +135,7 @@ class Solution {
         return stackChar.empty();
     }
 
+// Applicable when here is no nesting, code not correct for the above question
     boolean simpleOne(String s){
             char[] c =  s.toCharArray();
         int len = c.length;

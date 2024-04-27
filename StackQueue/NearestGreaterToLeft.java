@@ -9,15 +9,15 @@ class Solution {
             
            // here we will do from the backside.
            // use a stack to know the lrgest element.
-           // i am using stack because the sequence is important 
-           // doing from back becasuse it's ro the right algo needed. 
+           // i am using stack because the sequence/order is important 
+           // doing from back becasuse it's to the right algo needed. 
            
            
             int[] ans = new int[size];
             System.out.println(ans.length);
             Stack<Integer> stack = new Stack<>();
             // @Important direction of loop got reversed here. 
-            for(int i= 0; i < size ; i ++){
+            for(int i = 0; i < size ; i ++){
                 // think when to insert in the stack. and when to pop
                 // if empty then ans has to -1
                 if(stack.isEmpty()){ans[i] = -1; }

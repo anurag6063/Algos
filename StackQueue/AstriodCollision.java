@@ -4,7 +4,8 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/asteroid-collision/?envType=list&envId=pheho7s5
 [Pattern]: Stack + cond
-[Tips]: Always consider the sigh, direction first as a case for collision and then the size value of N. Here if a value being pushed is +ve no issues, only when -ve think. When collision starts it can continue for the other existing ones too. 
+[Tips]: Always consider the sigh, direction first as a case for collision and then the size value of N. Here if a value being
+ pushed is +ve no issues, only when -ve think. When collision starts it can continue for the other existing ones too. 
 [Revision]: 0
 [Confidence]: 10%
 [Next]: Practice 
@@ -18,15 +19,16 @@
 
 
 /*
-https://leetcode.com/problems/asteroid-collision/?envType=list&envId=pheho7s5
 need to revisit. - ans fails in submit.
 
 
 We are given an array asteroids of integers representing asteroids in a row.
 
-For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.
+For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, 
+negative meaning left). Each asteroid moves at the same speed.
 
-Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
+Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. 
+If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.
 */
 
 class Solution {
@@ -41,7 +43,7 @@ class Solution {
                 stack.push(asteroids[i]); // [0] stack = 10 [1] stack = 10,2
             }
             else{
-                // we know it's  negative, for collosion we hant the stack top to be postive
+                // we know it's  negative, for collosion we want the stack top to be postive
                 while(!stack.isEmpty() && stack.peek() > 0){  // stack = 10,2 // stack = 10,-5
                     int pop = stack.pop(); // pop = 2
                     if(pop == Math.abs(asteroids[i])){ // 2 == 5
