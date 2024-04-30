@@ -28,14 +28,17 @@ class Solution {
     }
 
     private int maxDia(TreeNode node, int[] dia){
-        if(node == null) return 0;
+        if(node == null) return 0; // BC: Base Case 
 
-        int l = maxDia(node.left, dia);
+        // SC: Self calls 
+        int l = maxDia(node.left, dia); 
         int r = maxDia(node.right, dia);
 
         // backtracking
+        // OPS: Operations while going in 
         dia[0] = Math.max(dia[0], l+r);
 
+        // RETURN: 
         return 1+Math.max(l,r);
     }
 }

@@ -38,6 +38,8 @@ class Solution {
     // now recreate
 
     StringBuilder pathForm = new StringBuilder("/");
+
+// #Note: When i simply loop the stack with a for loop without using peek it will read from bootm. Though better way is to use a ArrayDeque
     for(String dir: stack){
         pathForm.append(dir).append("/");
         System.out.println(pathForm.toString());

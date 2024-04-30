@@ -15,6 +15,13 @@ https://leetcode.com/problems/remove-nth-node-from-end-of-list/?envType=list&env
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
+/**
+ * Here since i need to remove a element it's best to srtart from dummy the fast and slow.
+ * Also with this i am able to stop just before the element to be removed
+ * compare till n < 0 ; no use to = since that will land me at the removable element
+ * need to just point back.next = back.next.next; now since nobody will be refering the central element it will be GCd
+ */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         
