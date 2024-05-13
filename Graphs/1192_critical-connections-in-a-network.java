@@ -13,6 +13,22 @@
 	
 [/Code]
 [Tags]: 
+[Intution]: 
+"""
+Also known as Tarjan's strongly connected components algorithm.
+
+1. Timer is used to know the time at which each node was visited. It's the time keeper. The timer can then later help me to find 
+how deep one branch can go. 
+2. Initially for each not low is the timer value itself. 
+3. Lowest depth, means the smallest/loest distance from the root/starting point/ 
+4. So here i need to find the lowest depth of a node. Is the minimum value of timer of all the component that it's connected to
+So the lowest can be found when i an coming back/ backtracking.  when i have just visited or else when i have already seen the node, 
+but maybe while doing other operations the timer value could have changed. 
+Timer value is just used just for comparision ( low[it] > toi[node])
+low is initially equal to timer and then it's mutated while backtracking and if the IT (connected node) is already seen. 
+the low is recalculated as Math.min(low[node], low[it]);
+"""
+
 [/Note]
 */
 
