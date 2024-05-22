@@ -62,7 +62,9 @@ public class binarySearchRecursion{
     }
 
     private static int binarySearchIteration(int[] nums, int target){
-        while(left < right){
+        int left = 0;
+        int right = nums.length -1;
+        while(left <= right){
             int mid = left + ((right - left)/2);
             if(nums[mid] == target){
                 return mid;
@@ -78,8 +80,8 @@ public class binarySearchRecursion{
     }
 
     public static void main(String[] args){
-        int[] nums = {1,3,5,7,8,9};
-        int target = 9;
+        int[] nums = {-1, 1,3,5,7,8,9};
+        int target = -1;
         int taregtIndexRecur = binarySearchRecursion(nums, target);
         System.out.println(taregtIndexRecur);
 
