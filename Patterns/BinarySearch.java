@@ -34,8 +34,8 @@
 [/Note]
 */
 
-public class BinarySearch{
-    public static int binarySearch (int []nums, int target) {
+public class binarySearchRecursion{
+    public static int binarySearchRecursion (int []nums, int target) {
         
         // Replace this placeholder return statement with your code
         return findIndexOfTarget(nums, target, 0, nums.length -1);
@@ -61,10 +61,29 @@ public class BinarySearch{
 
     }
 
+    private static int binarySearchIteration(int[] nums, int target){
+        while(left < right){
+            int mid = left + ((right - left)/2);
+            if(nums[mid] == target){
+                return mid;
+            }
+            else if (target < nums[mid]){
+                right = mid-1;
+            }else{
+                left = mid +1;
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args){
         int[] nums = {1,3,5,7,8,9};
         int target = 9;
-        int taregtIndex = binarySearch(nums, target);
-        System.out.println(taregtIndex);
+        int taregtIndexRecur = binarySearchRecursion(nums, target);
+        System.out.println(taregtIndexRecur);
+
+        int taregtIndexIter = binarySearchIteration(nums, target);
+        System.out.println(taregtIndexIter);
     }
 }
