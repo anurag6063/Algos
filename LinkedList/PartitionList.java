@@ -35,7 +35,16 @@ class Solution {
         ListNode rightTail = rightHead;
         ListNode curr = head;
 
-        while(curr != null){
+	 /*
+	If i had to just iterate the original list. I will do while(curr != null) and then to move
+ 	dummy.next = curr;
+  	dummy = dummy.next
+
+   	since here i need to just sping as per some condition. 
+    	i have added it befor the do dummy.next things. 
+        */
+        
+	while(curr != null){
             if(curr.val < x){ // left tail moves
                 leftTail.next = curr; // spin the web
                 leftTail = leftTail.next ;  // move
