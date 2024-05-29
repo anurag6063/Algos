@@ -26,6 +26,13 @@ class Solution {
         return slow;
     }
 
+	/*
+	Mnemonic: "Never Catch Pussy Cats"/"Never Catch Purple Cats" return P (Pussy Cats)
+	N: Next (next = curr.next)
+	C: Connect (curr.next = prev)
+	P: Previous (prev = curr)
+	C: Current (curr = next)
+	*/
     public ListNode reverse(ListNode head){
         ListNode curr = head, prev = null, next = null;
 		 //  sequence to reverse is:: next -> curr.next -> prev -> curr 
