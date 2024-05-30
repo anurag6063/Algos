@@ -47,3 +47,92 @@ class Solution {
 
     }
 }
+
+// full code
+
+public class Main{
+    public static void main(String[] args){
+        
+        System.out.println("start");
+        
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(3); // diff
+        
+        
+        TreeNode root2 = new TreeNode(1);
+        root2.left = new TreeNode(2);
+        root2.right = new TreeNode(3);
+        
+        root2.left.left = new TreeNode(4);
+        root2.left.right = new TreeNode(5);
+        
+        
+        Main main = new Main();
+        System.out.println(main.sameTree(root, root2));
+    }
+    
+    private boolean sameTree(TreeNode t1, TreeNode t2){
+        
+        // BC
+        // when the tree is most basic check / single StackTraceElement
+         
+        if(t1 == null && t2 == null){
+            
+            return true;
+        }
+        
+        System.out.println(t1.val + " : " + t2.val);
+        
+        if(t1 == null && t2 != null || t1 != null && t2 == null) 
+        {
+            System.out.println("mismatch");
+            return false;
+            
+        }
+      
+        if(t1.val != t2.val){
+            return false;
+        }
+        
+        boolean left = sameTree(t1.left, t2.left) ;
+        boolean right = sameTree(t1.right, t2.right);
+        
+        return left &&  right;
+    }
+    
+    void inOrderSearch(TreeNode node){
+        // start
+        
+        // BC 
+        if(node == null){
+            return;
+        }
+        
+        // in order = left - mid - right 
+        System.out.println("node: "+ node.val);
+        inOrderSearch(node.left);
+        inOrderSearch(node.right);
+        
+        
+    }
+}
+  // Creating a simple binary tree
+        //        1
+        //       / \
+        //      2   3
+        //     / \
+        //    4   5
+
+class TreeNode{
+    int val;
+    TreeNode left;
+    TreeNode right;
+    
+    TreeNode(int val){
+        this.val = val;
+    }
+}
