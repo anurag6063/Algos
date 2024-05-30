@@ -26,3 +26,51 @@ void inOrderTraversal(TreeNode node) {
 
 // When performed on a binary search tree, it visits the nodes in ascending order (hence the name "in-order"). 
 // since we had to just return void the whole recursive function has been put in if 
+
+// full code
+class TreeNode{
+    int val;
+    TreeNode left;
+    TreeNode right;
+    
+    TreeNode(int val){
+        this.val = val;
+    }
+    
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Start--");
+		
+		 //        1
+        //       / \
+        //      2   3
+        //     / \
+        //    4   5
+        
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        
+        Main main = new Main();
+        main.inOrderTraversal(root);
+	}
+	
+	public void inOrderTraversal(TreeNode node){
+	    // BC
+	    if(node == null){
+	        return;
+	    }
+	    // left - mid - right 
+	    inOrderTraversal(node.left);
+	    System.out.println( node.val + " : m:");
+	    inOrderTraversal(node.right);
+	    // Output should be: 4 2 5 1 3
+	}
+}
