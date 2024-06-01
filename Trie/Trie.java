@@ -17,14 +17,11 @@
 [/Note]
 */
 
-
-/******************************************************************************
-
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
+/*
+    Node[] of alphabets - get set and contains`
+    and a flag - set , and get - set = true abd get flag vlaue. 
+*/
+	    
 class Node{
     
     Node links[] = new Node[26];
