@@ -49,6 +49,34 @@ class GFG {
         return ans;
     }
 
+  static int maxSum(int arr[], int n, int k)
+    {   int ans = 0;
+    
+        // static window 
+        System.out.println(n-k);
+        int sum =0;
+        int left = 0;
+        for(int i =0 ; i < n ; i++){
+            
+            sum += arr[i];
+            System.out.println("element: "+arr[i]);
+            
+
+            if( i >= k-1){ // as window hit 
+                ans = Math.max(ans, sum);
+                sum = sum - arr[left];
+                left++;
+                
+            }
+            
+            System.out.println("sum: "+ sum);
+            System.out.println("max: "+ ans);
+            
+           
+        }
+        return ans;
+    }
+ 
     // Driver code
     public static void main(String[] args)
     {
