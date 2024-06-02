@@ -29,7 +29,26 @@ class GFG {
  
         return max_sum;
     }
- 
+
+// brute force
+  static int maxSum(int arr[], int n, int k)
+    {   int ans = 0;
+    
+        // static window synchronized
+        System.out.println(n-k);
+        for(int i =0 ; i < n-k+1 ; i++){ // add +1 ; else last window is missed 
+            System.out.println("element: "+arr[i]);
+            int sum = 0;
+            for(int j = i ; j < i+k ; j++){ // since i started from j = i; need to do j < i + k ; else the window of k will keep decreasing. 
+                System.out.println("in: "+arr[j]);
+                sum += arr[j];
+            }
+            
+            ans = Math.max(ans, sum);
+        }
+        return ans;
+    }
+
     // Driver code
     public static void main(String[] args)
     {
