@@ -14,7 +14,17 @@
 [Tags]: 
 [/Note]
 */
+/*
+Intution: 
+HS is used to control the window. 
+The window size is determined by boundary set by left and right, do a +1 since we have 0 indexed DS.
+While the HS has the character i saw on right, then remove it from the HS. 
 
+else always i need to put char at right in HS 
+and find the max window i can see. 
+
+
+*/
 
 // my clear solution.
 class Solution {
@@ -148,4 +158,34 @@ System.out.println("not repeated- left: "+ left + " right: "+ right);
     }
 	
 	
+}
+
+
+
+/*
+A better solution with less line, saw earlier code and made it simpler.
+*/
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        
+        int left = 0;
+        int maxLen = 0;
+
+        HashSet<Character> hs = new HashSet<>();
+
+        for(int right = 0; right < s.length(); right++){
+
+            while(hs.contains(s.charAt(right))){
+                hs.remove(s.charAt(left));
+                left++;
+                System.out.println(s.charAt(right));
+            }
+
+            maxLen = Math.max(maxLen, right - left +1);
+            hs.add(s.charAt(right));
+        }
+        
+        return maxLen;
+    }
 }
