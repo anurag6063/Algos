@@ -11,6 +11,23 @@
 [Code]	
 	
 [/Code]
+
+[Intution]: 
+"""
+Its a greedy approach,
+i would not skip any index, rather go to each and every index and just validate if jumping from here takes me to final desitination. 
+and i would like to make the longest jump from each index. 
+the longest jump is the jump allowed from index, but i will see if had  been at this place what, would i choose the the jump param of cuttent index of the 
+jump param (max reachable) that was already running. Because see if my current jump to futher place, then why to choose my current jump coordinates. 
+
+And at any time if the current index becomes greater that max i can jump return false. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+
+"""
+[QuestionNote]
 [/Note]
 */
 
