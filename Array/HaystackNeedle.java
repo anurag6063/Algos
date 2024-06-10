@@ -12,6 +12,18 @@
 	for(int i=0; i< haystack.length()- needle.length() ; i++){ // outside loop
 		for(int j=i; j < needle.length(); j++) // inside 
 [/Code]
+[Intution]: 
+"""
+1. I need to look through the haystack so looping over it. and since it's larger and i am finding in it. It's outside.
+2. Since needle is small it's inside loop. 
+3. Need to find the whole needle. So using a flag in the inner loop.
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+It's all about finding a smaller sequence of characters in a larger/longer sequence of characters. 
+"""
+[QuestionNote]
 [/Note]
 */
 /**
