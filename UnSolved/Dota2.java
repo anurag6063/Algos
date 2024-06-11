@@ -1,8 +1,38 @@
 /*
-https://leetcode.com/problems/dota2-senate/?envType=list&envId=pheho7s5
+# Algos
+[Note]
+[Reference]: 
+[Problem]: https://leetcode.com/problems/dota2-senate/?envType=list&envId=pheho7s5
+[Pattern]: 2 Stack
+[Tips]: 
+[Revision]: 0
+[Confidence]: 10%
+[Next]: Practice 
+[Steps]: 
+[Code]	
+	
+[/Code]
+[Tags]: 
+[Intution]: 
+"""
+action: cancel the next guy
+action: check which remains at last
+action: remove the one that has lower index
+action: add the remaining one to last.
 
-
+need two queues, here better to use LL queue so that i can insert at end and get element from front. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+- Cancel means remove.
+- 
+"""
+[QuestionNote]
+[/Note]
 */
+
+
 class Solution {
     public String predictPartyVictory(String senate) {
         
