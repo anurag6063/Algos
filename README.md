@@ -2,8 +2,8 @@
 """
 /*
 # Algos
-[Note]
-[Reference]: 
+ [Note]
+ [Reference]: 
 [Problem]: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 [Pattern]: 
 [Tips]: 
