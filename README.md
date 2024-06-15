@@ -1,3 +1,5 @@
+
+"""
 /*
 # Algos
 [Note]
@@ -25,7 +27,7 @@
 [QuestionNote]
 [/Note]
 */
-
+"""
 --
  to make a note
 // #Note: 
