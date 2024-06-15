@@ -5,8 +5,8 @@
 [Problem]: https://leetcode.com/problems/add-two-numbers/?envType=list&envId=ruypfpvi
 [Pattern]: while loop; LL
 [Tips]: better for all the cases is use a while loop with OR and then do if inside.
-[Revision]: 2
-[Confidence]: 80%
+[Revision]: 3
+[Confidence]: 100%
 [Next]: Practice 
 [Steps]: 
 [Code]	
@@ -32,67 +32,48 @@ then create a dummy node and bring everything together.
 
 */
 
+
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        
-        ListNode ans = new ListNode(0);
-        ListNode curr = ans;
-        int carry = 0;
+        // validate:
+        if(l1 == null || l2 == null){
+            return new ListNode(0);
+        }
 
+        // init:
+        int carry =0;
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy;
+
+        // process:
+        // loop: 
         while(l1 != null || l2 != null || carry == 1){
-            int sum =0;
-
+            // init:
+            int sum = 0;
+            // check:
             if(l1 != null){
-                sum = sum + l1.val;
+                sum += l1.val;
+                // increase:
                 l1 = l1.next;
             }
-
+            
             if(l2 != null){
-                sum = sum + l2.val;
+                sum += l2.val;
                 l2 = l2.next;
             }
-            sum = sum + carry;
 
+            sum += carry;
+
+            // find digit, carry and create ListNode
+            int digit = sum%10; //the remainder gets written // 35+89 = 5+9 -> 4 14 so we will here write 1 and carry forward 4 so 14/10= 
             carry = sum/10; // we need the extra one here as carry forward
-            System.out.println(sum + " "+ sum/10 + " "+ sum%10) ;
-            ListNode node = new ListNode(sum%10); //the remainder gets written // 35+89 = 5+9 -> 4 14 so we will here write 1 and carry forward 4 so 14/10= 
-            curr.next = node;
-            curr = curr.next;
-        }
-    return ans.next;
-    }
 
-
-
-
-/*
-        ListNode res = new ListNode(0);
-        ListNode curr = res;
-        int carry = 0;
-        while(l1 != null ||  l2 != null || carry ==1){
-            int sum =0;
-            // System.out.println(l1.val + " " + l2.val);
-
-            if(l1 != null ){
-                sum = sum + l1.val;
-                l1 = l1.next;
-            }
-
-            if(l2 != null){
-                sum = sum + l2.val;
-                l2 = l2.next;
-            }
-
-            sum = sum + carry;
-            carry = sum/10;
-
-            ListNode node = new ListNode(sum%10);
-            curr.next = node;
-            curr = curr.next;
+            ListNode curr = new ListNode(digit);
+            head.next = curr;
+            head = head.next;
         }
 
-
-        return res.next;
+        return dummy.next;
     }
-    */
+        
 }

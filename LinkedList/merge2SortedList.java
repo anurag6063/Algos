@@ -3,7 +3,7 @@
 [Reference]: 
 [Problem]: https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=list&envId=ruypfpvi
 [Pattern]: 2 Pointers on diff array, merge with while loop
-[Tips]: use 3 while loop, onc to merge both, two to merge the other 2 ones. 
+[Tips]: use 3 while loop, onc to merge both, two to merge the other 2 ones when only one of them has elements. 
 [Revision]: 1
 [Confidence]: 30%
 [Next]: Practice 
@@ -12,85 +12,63 @@
 	
 [/Code]
 [Tags]: 
+[Intution]: 
+"""
+For merging, i can have onlt 2 conditions, 
+when both have the value, or when only one list has the values left. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+
+"""
+[QuestionNote]
 [/Note]
 */
 
 /*
 https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=list&envId=ruypfpvi
 */
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+
 class Solution {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {      
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
-        ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
+        // validate:
 
+        // init:
+        ListNode curr = new ListNode(0);
+        ListNode head = curr;
         
+        // process:
+        // loop & condition and increment:
+        // when both the LL has elements. 
         while(l1 != null && l2 != null){
-            if(l1.val < l2.val){
-                System.out.println(current.val);
-                current.next = l1;
+            if(l1.val <= l2.val){
+                // to weave it, i need to set current.next = l1; curr's next should point to found node. 
+                curr.next = l1;
+                curr = curr.next;
                 l1 = l1.next;
-            }else{
-                System.out.println(current.val);
-                current.next = l2;
+                
+            } else{
+                curr.next = l2;
+                curr = curr.next;
                 l2 = l2.next;
             }
-
-            current = current.next;
+        }
+        // when only one list still has elements
+        while(l1 != null){
+            curr.next = l1;
+                curr = curr.next;
+                l1 = l1.next;
         }
 
-        // remaining, we just need to change the head. no other action required.
-        if(l1 != null){
-            System.out.println("l1 "+current.val);
-            current.next = l1;
-        }else{
-            System.out.println("l2 "+current.val);
-            current.next = l2;
+
+        while(l2 != null){
+            curr.next = l2;
+                curr = curr.next;
+                l2 = l2.next;
         }
 
-        // System.out.println(current.val + " "+ node.val + " "+ node.next.val);
-        return dummy.next;
-        
+        return head.next;
     }
 }
-
-
-  // ListNode dummy = new ListNode(0);
-        // ListNode current = dummy;
-
-        // while (l1 != null && l2 != null) {
-        //     if (l1.val < l2.val) {
-                 
-        //         current.next = l1;
-        //         l1 = l1.next;
-        //         System.out.println(current.val);
-        //     } else {
-                 
-        //         current.next = l2;
-        //         l2 = l2.next;
-        //         System.out.println(current.val);
-        //     }
-        //     current = current.next;
-        // }
-
-        // // If one of the lists is not empty, append the remaining nodes
-        // if (l1 != null) {
-        //     System.out.println("l1 "+current.val);
-        //     current.next = l1;
-        // } else {
-        //     System.out.println("l2 "+current.val);
-        //     current.next = l2;
-        // }
-
-        // return dummy.next;
-        

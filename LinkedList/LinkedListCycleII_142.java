@@ -18,6 +18,17 @@
 	return slow;
 [/Code]
 [Tags]: 2Pointers
+[Intution]: 
+"""
+To find cycle the only way is to have a slow and fast pointers. 
+Reset inside slow to head and then move at same pace. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+
+"""
+[QuestionNote]
 [/Note]
 */
 
@@ -40,6 +51,7 @@ public class Solution {
 				
 				// till they don't meet keep moving slow and fast both
                 while(slow != fast){
+                    // MEM: now both needs to go at same speed.
                     slow = slow.next;
                     fast = fast.next;
                 }

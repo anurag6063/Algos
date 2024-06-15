@@ -13,23 +13,41 @@
 [Code]	
 	
 [/Code]
+[Intution]: 
+"""
+To find cycle the only way is to have a slow and fast pointers. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+
+"""
+[QuestionNote]
 [/Note]
 */
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        
+        // validate:
+        if(head == null) return false;
+
+        // init:
         ListNode slow = head;
         ListNode fast = head;
 
+        // loop & condition; 
         while(fast != null && fast.next != null){
+            // init:
 
+            // increment:
             slow = slow.next;
             fast = fast.next.next;
 
+            // process:
             if(slow == fast){
                 return true;
             }
-            
+
         }
 
         return false;
