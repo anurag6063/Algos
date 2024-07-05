@@ -15,23 +15,42 @@
 [/Note]
 */
 
-class Solution {
+class ReverseWordsinaString_151 {
     public String reverseWords(String s) {
         /*
-        trim spaces 
-        "the sky is blue" - split by space
-        - the / sky / is / blue - read from back 
-        - loop ad trim space
-        
+        Task: reverse words , create line again and return
+        Word? - non space characters, atleast one space is needed
+        return? - string reverse seperated by 1 space
+        Limit- s may. have white space is front and back
         */
+
+        /*
+
+        Limit - Trim
+        Validate - s has length
+
+        Work -
+        - spilt by space
+        - trim
+        - read from back (for)
+            - if has chars add to line with a trailing space
+
+        - trim last space.
+        */
+
+        if(s == null) return "";
         s = s.trim();
-        String[] tokens = s.split(" ");
-        StringBuilder ans = new StringBuilder();
-        for(int i = tokens.length-1; i >= 0 ; i--){
-            String token = tokens[i].trim();
-            ans.append(token).append(" ");
+        if(s.length() == 0 ) return "";
+
+        String[] parts = s.split("\\s+");
+
+        StringBuffer reversedLine = new StringBuffer();
+        int len = parts.length;
+        for(int i = 0 ; i < parts.length; i++){
+            reversedLine.append(parts[len-i-1].trim() + " ");
         }
-        
-        return ans.toString().trim();
+
+        return reversedLine.toString().trim();
+
     }
 }
