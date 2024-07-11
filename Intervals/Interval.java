@@ -35,7 +35,7 @@ Stream.of(PrimtiveArrray).
 [QuestionNote]
 [/Note]
 */
-"""
+
 
 class Solution {
     public int[][] merge(int[][] intervals) {
