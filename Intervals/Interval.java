@@ -81,6 +81,38 @@ class Solution {
         return ans.toArray(new int[ans.size()][]);
     }
 }
+
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        if(intervals.length < 2){
+            return intervals;
+        }
+
+        Arrays.sort(intervals, Comparator.comparingInt(x -> x[0]));
+        Stream.of(intervals).forEach(i -> System.out.println(i[0] + " " + i[1]));
+
+        List<int[]> ans = new ArrayList<>();
+        int[] last = intervals[0];
+        ans.add(last);
+
+        for(int[] interval : intervals){
+            int lastStart = last[0];
+            int lastEnd = last[1];
+
+            int currentStart = interval[0];
+            int currentEnd = interval[1];
+
+            if(lastEnd >= currentStart){
+                last[1] = Math.max(lastEnd, currentEnd);
+            }else{
+                last = interval;
+                ans.add(last);
+            }
+        }
+        return ans.toArray(new int[ans.size()][]);
+    }
+}
+
 /**
 https://leetcode.com/problems/merge-intervals/
 https://github.com/Chanda-Abdul/Several-Coding-Patterns-for-Solving-Data-Structures-and-Algorithms-Problems-during-Interviews/blob/main/%E2%9C%85%20%20Pattern%2004%20:%20Merge%20Intervals.md
