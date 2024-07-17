@@ -8,12 +8,26 @@
     that will be in middle.
 6. the return will do some calculation and then return.
 */
-basic is to understand how to do this iteraction. 
+//basic is to understand how to do this iteraction.
 
 // this will mostly be true when there is one tree. 
 // return value need to be Node type of object.
 // any function name
-// should take TreeNode type of object. 
+// should take TreeNode type of object.
+
+/*
+class TreeNode{
+  int val;
+  TreeNode left;
+  TreeNode right;
+
+  TreeNode(int val){
+    this.val = val;
+  }
+
+}
+
+
 public TreeNode dfs(TreeNode root){ 
 
     return root; // TreeNode
@@ -56,3 +70,6 @@ public TreeNode dfs(TreeNode root){
 
 
 // doing additional calculation on the tree like max depth etc.
+
+
+*/
