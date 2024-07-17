@@ -1,5 +1,4 @@
 
-"""
 /*
 # Algos
 [Note]
@@ -36,12 +35,17 @@ String str = new String(charrray);
 [QuestionNote]
 [/Note]
 */
-"""
 
-  class Solution {
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+class GroupAnagrams_49 {
     public List<List<String>> groupAnagrams(String[] strs) {
 
-   
     Map<String, List<String>> map = new HashMap<>();
     
     for(String str: strs){

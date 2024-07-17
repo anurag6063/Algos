@@ -1,5 +1,5 @@
 
-"""
+
 /*
 # Algos
 [Note]
@@ -29,10 +29,11 @@ Kept hold of longest sequence using max count.
 [QuestionNote]
 [/Note]
 */
-"""
 
 
-class Solution {
+import java.util.Arrays;
+
+class LongestConsecutiveSequence_128 {
     public int longestConsecutive(int[] nums) {
          // validate
         if(nums == null || nums.length == 0){

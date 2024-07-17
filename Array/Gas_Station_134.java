@@ -1,5 +1,4 @@
 
-"""
 /*
 # Algos
 [Note]
@@ -17,7 +16,7 @@
 [Tags]: 
 [Intution]: 
 """
-1. First check if i have enoughh fuel to complete the circuit. That its total gas shlould be greater than total cost
+1. First check if i have enough fuel to complete the circuit. That its total gas should be greater than total cost
   Next i need to check for each index (skipping why not really sure) 
   Then for each outer index, fuel up and burn, just after fuel up check if current total gas is enough to go till next destination. 
   If not then move the start point to j set flag as false and break away the inner loop.
@@ -34,9 +33,9 @@
 [QuestionNote]
 [/Note]
 */
-"""
+
   
-  class Solution {
+  class Gas_Station_134 {
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int len = gas.length;
         long totalCost = 0;
