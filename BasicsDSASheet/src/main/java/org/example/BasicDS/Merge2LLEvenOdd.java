@@ -38,6 +38,11 @@ class Merge2LLEvenOdd{
 
   static ListNode SegregatetoOddEVen()
   {
+
+// #Question: When do we need to use the temp reference
+// Why do i need to use temp to break the reference first and move the curr ahead.
+// Why did the below code not work.
+
     ListNode evenHead = new ListNode(0);
     ListNode evenTail = evenHead;
 
