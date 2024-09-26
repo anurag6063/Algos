@@ -34,46 +34,46 @@
 [/Note]
 */
 
-  
-  class Gas_Station_134 {
-    public int canCompleteCircuit(int[] gas, int[] cost) {
-        int len = gas.length;
-        long totalCost = 0;
-        long totalGas = 0;
 
-        for (int i = 0; i < len; i++) {
-            totalCost += cost[i];
-            totalGas += gas[i];
-        }
+class Gas_Station_134 {
+  public int canCompleteCircuit(int[] gas, int[] cost) {
+    int len = gas.length;
+    long totalCost = 0;
+    long totalGas = 0;
 
-        if (totalCost > totalGas) {
-            return -1;
-        }
-
-        for (int i = 0; i < len; i++) {
-            boolean flag = true;
-            totalGas = 0;
-
-            int j;
-            for (j = i; j < len; j++) {
-                totalGas += gas[j];
-                if (cost[j] > totalGas) {
-                    flag = false;
-                    i = j;
-                    break;
-                } else {
-                    // System.out.println("breaking away");
-                }
-                totalGas -= cost[j];
-                // System.out.printf("IN total gas %d, i %d, j %d \n", totalGas, i, j);
-
-            }
-            // System.out.printf("OUT total gas %d, i %d, j %d \n", totalGas, i, j);
-
-            if (j == len && flag) {
-                return i;
-            }
-        }
-        return -1;
+    for (int i = 0; i < len; i++) {
+      totalCost += cost[i];
+      totalGas += gas[i];
     }
+
+    if (totalCost > totalGas) {
+      return -1;
+    }
+
+    for (int i = 0; i < len; i++) {
+      boolean flag = true;
+      totalGas = 0;
+
+      int j;
+      for (j = i; j < len; j++) {
+        totalGas += gas[j];
+        if (cost[j] > totalGas) {
+          flag = false;
+          i = j;
+          break;
+        } else {
+          // System.out.println("breaking away");
+        }
+        totalGas -= cost[j];
+        // System.out.printf("IN total gas %d, i %d, j %d \n", totalGas, i, j);
+
+      }
+      // System.out.printf("OUT total gas %d, i %d, j %d \n", totalGas, i, j);
+
+      if (j == len && flag) {
+        return i;
+      }
+    }
+    return -1;
+  }
 }

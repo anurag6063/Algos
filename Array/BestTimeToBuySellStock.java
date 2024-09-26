@@ -46,8 +46,22 @@ class Solution {
   }
 }
 
+// in this we just need to find the min and the max.
+// get the result.
 
- class Solution {
+// initialze the maxProfit value that needs to be returned.
+// initialize minPrince
+
+// loop all.
+//     if current price is lower than min
+// set new min
+// else
+//  max will be Max of current profit or else previous max
+// maxP = Math.max(prices[i] - minPrice , maxP);
+// the brute force looks forward. so here. i need to find the min first and then the max profit. so it's double task.
+
+
+class Solution {
     public int maxProfit(int[] prices) {
     
     // initialize
@@ -57,12 +71,12 @@ class Solution {
      int maxP = 0;
 
      // do sanity check
-     if(prices.length < 2)
-     return 0;
+      if (prices.length < 2) {
+        return 0;
+      }
 
     // process
      for(int i=0; i< prices.length ; i++){
-         
         // ideally i should have found first the min price and then fro then the max profit. but math.min will find the min till now.
         minPrice = Math.min(prices[i], minPrice);
         // ideally i should have found all the profits and then the max of it. so Math.max shortens it.
@@ -74,60 +88,5 @@ class Solution {
 }
 
 
- // in this we just need to find the min and the max.
- // get the result.
-
-
- // initialze the maxProfit value that needs to be returned.
- // initialize minPrince 
-
- // loop all.
- //     if current price is lower than min
-            // set new min
-    // else 
-      //  max will be Max of current profit or else previous max
-      // maxP = Math.max(prices[i] - minPrice , maxP);
-
-// the brute force looks forward. so here. i need to find the min first and then the max profit. so it's double task. 
-
- class Solution {
-    public int maxProfit(int[] prices) {
-     int minPrice = prices[0];
-     int maxP = 0;
-     if(prices.length < 2)
-     return 0;
-
-     for(int i=0; i< prices.length ; i++){
-
-         if(prices[i]<minPrice)
-            minPrice = prices[i];
-
-        maxP = Math.max(prices[i] - minPrice , maxP);
-
-     }
-    return maxP;
-}
-}
-
-
-
-// my same modified code
-class Solution {
-  public int maxProfit(int[] prices) {
-    int maxProfit = 0;
-    int min=prices[0];
-    int n = prices.length;
-    for( int i=0; i< n; i++){
-     // find the minimum and the maximum post the minimum
-     if(prices[i] < min)
-        min = prices[i];
-
-      //  System.out.println(maxProfit);
-     // even though the min price did not change, may be the max profit can change, since prices[i] is changing.
-        maxProfit = Math.max(maxProfit, prices[i]- min);        
-    }
-    return maxProfit;
-  }
-}
 
 
