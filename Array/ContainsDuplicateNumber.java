@@ -29,7 +29,7 @@ import java.util.Set;
 // the basics brute force idea. 
 // here i am checking each i element with i+1 to n element. 
 
-class Solution {
+class ContainsDuplicateNumber_BF {
 
     public boolean containsDuplicate(int[] nums) {
     boolean result = false;
@@ -48,7 +48,7 @@ class Solution {
 // the bottleneck is that the second loop seems the same element that the first element sees. So i need to find a better way
 // to see and check the elements.
 
-class Solution {
+class ContainsDuplicateNumber_OP_Set {
 
     public boolean containsDuplicate(int[] nums) {
     boolean result = false;
@@ -69,7 +69,7 @@ class Solution {
 // below we still have 2 valid answers. 
 // but Set is better than Map. 
 // in second below ans, the array will be too huge. 
-class Solution {
+class ContainsDuplicateNumber_Map {
 
     public boolean containsDuplicate(int[] nums) {
         Map<Integer, Integer> counter = new HashMap<>();
@@ -86,7 +86,7 @@ class Solution {
     }
 }
 
-class Solution {
+class ContainsDuplicateNumber_Array {
     public boolean containsDuplicate(int[] nums) {
         int[] unique = new int[nums.length];
         Arrays.fill(unique, Integer.MAX_VALUE); // #Memorize

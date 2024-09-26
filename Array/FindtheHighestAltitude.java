@@ -31,7 +31,7 @@ You are given an integer array gain of length n where gain[i] is the net gain in
 // i= 0->n
 //max cum sum
 
-class Solution {
+class FindtheHighestAltitude {
   public int largestAltitude(int[] gain) {
     int maxAltitude = 0;
     int currentAltitude = 0;
@@ -40,7 +40,6 @@ class Solution {
       currentAltitude += gain[i];
       maxAltitude = Math.max(maxAltitude, currentAltitude);
     }
-
     return maxAltitude;
   }
 }

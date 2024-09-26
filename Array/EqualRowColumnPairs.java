@@ -29,7 +29,7 @@
  * (i.e., an equal array).
  */
 
-class Solution {
+class EqualRowColumnPairs {
   public int equalPairs(int[][] grid) {
     // 0 indexed
     // n * n - that's equal size

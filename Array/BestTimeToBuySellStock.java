@@ -32,7 +32,7 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 
 // brute force algorithm
 
-class Solution {
+class BestTimeToBuySellStock_BF {
   public int maxProfit(int[] prices) {
     int maxProfit = 0;
     int n = prices.length;
@@ -61,7 +61,7 @@ class Solution {
 // the brute force looks forward. so here. i need to find the min first and then the max profit. so it's double task.
 
 
-class Solution {
+class BestTimeToBuySellStock_OP {
     public int maxProfit(int[] prices) {
     
     // initialize
