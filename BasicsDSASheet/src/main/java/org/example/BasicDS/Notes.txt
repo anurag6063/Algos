@@ -1,0 +1,39 @@
+
+In linked list to check if it has 0 or 1 element only.
+if (head == null || head.next == null)
+   return null;
+
+
+---
+
+  Reverse a singly linked list:
+the main operation is:
+ 'curr.next = prev;'
+Now to do the above i need to first keep handle to next data element. so save it first and then do the reversal.
+ 'next = curr.next;'
+ 'curr.next = prev;'
+Now how do we initialize the pointer is prev is null, because that's what i would want finally. can curr and next on same head.
+and post the above ops i will have to make sure same state. so 1st i should move prev to curr. and then only curr to next.
+
+"
+// initialize
+Node curr = heead;
+Node next = head;
+Node prev = null;
+
+// start
+while(curr != null) { // do till the last element of null and the last element's next also need to be changed.
+  next = curr.next;
+  curr.next = prev;
+
+  // move and resent
+  prev = next;
+  curr = next;
+}
+"
+
+---
+
+
+
+
