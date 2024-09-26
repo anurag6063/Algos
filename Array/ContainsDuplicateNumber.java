@@ -23,18 +23,15 @@ import java.util.*;
 // the basics brute force idea. 
 // here i am checking each i element with i+1 to n element. 
 
-class Solution {
+class ContainsDuplicateNumber {
     public boolean containsDuplicate(int[] nums) {
-    
     boolean result = false;
-
     for(int i=0; i< nums.length; i++){
         for(int j=i+1; j< nums.length; j++){
             if(nums[i]==nums[j])
                 result = true;
         }
     }
-
     return result;
     }
 }
