@@ -29,6 +29,7 @@ import java.util.Set;
 // the basics brute force idea. 
 // here i am checking each i element with i+1 to n element. 
 
+
 class ContainsDuplicateNumber_BF {
 
     public boolean containsDuplicate(int[] nums) {
