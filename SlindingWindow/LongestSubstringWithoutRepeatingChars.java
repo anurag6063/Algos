@@ -26,6 +26,9 @@ and find the max window i can see.
 
 */
 
+import java.util.HashSet;
+import java.util.Set;
+
 // my clear solution.
 class Solution {
     public int lengthOfLongestSubstring(String s) {
@@ -41,8 +44,8 @@ class Solution {
             if(!set.contains(s.charAt(right))){
                 set.add(s.charAt(right));          
             }else{
-                while(set.contains(s.charAt(right))){
-                    set.remove(s.charAt(left));
+                while(set.contains(s.charAt(right))){ // needed for string like "pwwkew"
+                    set.remove(s.charAt(left)); // remove from set element that's there in left. and do left++
                     left++;
                 }      
                 set.add(s.charAt(right));        

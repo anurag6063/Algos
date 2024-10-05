@@ -1,0 +1,61 @@
+https://takeuforward.org/pattern/pattern-7-star-pyramid/
+
+https://takeuforward.org/arrays/print-fibonacci-series-up-to-nth-term/ # unable to find hunch
+
+https://takeuforward.org/arrays/find-the-number-that-appears-once-and-the-other-numbers-twice/
+
+
+
+
+
+import java.util.*;
+
+public class tUf {
+	public static int getSingleElement(int []arr) {
+		// Size of the array:
+
+		int n = arr.length;
+		System.out.println( "n " + n );
+
+		for(int i = 0; i < n-1; i++) {
+		    boolean[] mark = new boolean[n];
+			boolean flag = false;
+			System.out.println( "i " + i );
+			for(int j = i+1; j < n ; j++) {
+			    System.out.println( "j " + j + " ele "+ arr[j]);
+				if(arr[j] == arr[i] && mark[j] == false) {
+				    System.out.println( "duplicate " );
+					flag = true;
+					mark[j] = true;
+				}
+			}
+
+			if(flag == false) {
+				return arr[i];
+			}
+
+		}
+		//This line will never execute
+		//if the array contains a single element.
+		return -1;
+	}
+
+	public static void main(String args[]) {
+		int[] arr = {4, 1, 2, 1, 2, 4};
+		int ans = getSingleElement(arr);
+		System.out.println("The single element is: " + ans);
+
+	}
+}
+
+
+
+https://takeuforward.org/data-structure/remove-duplicates-in-place-from-sorted-array/
+
+https://takeuforward.org/data-structure/rotate-array-by-k-elements/
+
+---
+
+https://takeuforward.org/data-structure/reverse-a-doubly-linked-list/
+
+

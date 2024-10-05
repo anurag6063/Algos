@@ -13,6 +13,26 @@
 	
 [/Code]
 [Tags]: 
+[Intution]: 
+"""
+The tree can be called same when? 
+I finally reach the bottom and still it's has never bronken the condition. 
+So base condition should only return true. 
+i.e tree1 == null && tree2 == null. 
+and it should satisfy for both left and right. 
+so - dfs(tree1.left, tree2.left) && dfs(tree1.right, tree2.right)
+
+and other condition should return false only.
+i.e 
+if eithr node is not null 
+if it both has values but are different. 
+"""
+[/Intution]
+[QuestionNote]: 
+"""
+
+"""
+[QuestionNote]
 [/Note]
 */
 

@@ -34,7 +34,7 @@ It's all about finding a smaller sequence of characters in a larger/longer seque
 
 // not working yet
 
-class Solution {
+class HaystackNeedle {
     public int strStr(String haystack, String needle) {
         
         if(needle.length() == 0) return -1;
