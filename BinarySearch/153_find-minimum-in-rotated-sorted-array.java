@@ -71,7 +71,7 @@ public class RotatedSortedArray {
             if (arr[mid] > arr[mid + 1]) {
                 return arr[mid + 1];
             }
-            // Check if mid+1 is the minimum element
+            // Check if mid is the minimum element by comparing with mid-1
             if (arr[mid - 1] > arr[mid]) {
                 return arr[mid];
             }

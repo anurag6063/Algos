@@ -27,3 +27,43 @@ class Solution {
         return left && right;
     }
 } // TC: O(m * n), SC: O(m)
+
+
+class Solution {
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        return start(root, subRoot);
+    }
+
+    static boolean start(TreeNode node, TreeNode subRoot) {
+        if (node == null) {
+            return false;
+        }
+
+        if (isSameTree(node, subRoot)) {
+            // boolean ans = isSameTree(node, subRoot); // DO NOT DO THIS with just a check of node.val == subRoot.val check as if condition.
+            // System.out.println(" ans is "+ node.val + " : "+ ans );
+            // return ans;
+            return true;
+        }
+        System.out.println("Start tree" + node.val);
+
+        return start(node.left, subRoot) || start(node.right, subRoot);
+    }
+
+    static boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p == null || q == null) {
+            return false;
+        }
+
+        if (p.val != q.val) {
+            return false;
+        }
+        System.out.println("In same tree" + p.val + ":" + q.val);
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}

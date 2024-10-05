@@ -51,6 +51,6 @@ class MaxConsecutiveOnesIII {
       }
       return i - left;
     }
-  }
+
 }
 
