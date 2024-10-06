@@ -32,8 +32,8 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 
 // brute force algorithm
 
-class BestTimeToBuySellStock_BF {
-  public int maxProfit(int[] prices) {
+class BestTimeToBuySellStock {
+  public int bestTimeToBuySellStock_BF_maxProfit(int[] prices) {
     int maxProfit = 0;
     int n = prices.length;
     for( int i=0; i< n; i++){
@@ -44,7 +44,7 @@ class BestTimeToBuySellStock_BF {
     }
     return maxProfit;
   }
-}
+
 
 // in this we just need to find the min and the max.
 // get the result.
@@ -59,9 +59,6 @@ class BestTimeToBuySellStock_BF {
 //  max will be Max of current profit or else previous max
 // maxP = Math.max(prices[i] - minPrice , maxP);
 // the brute force looks forward. so here. i need to find the min first and then the max profit. so it's double task.
-
-
-class BestTimeToBuySellStock_OP {
     public int maxProfit(int[] prices) {
     
     // initialize
@@ -85,6 +82,20 @@ class BestTimeToBuySellStock_OP {
      }
     return maxP;
 }
+
+ public static void main(String[] args) {
+        // Create an instance of the class
+        BestTimeToBuySellStock solution = new BestTimeToBuySellStock();
+
+        // Define test case
+        int[] prices = {7, 1, 5, 3, 6, 4};
+
+        // Call the maxProfit method
+        int result = solution.maxProfit(prices);
+
+        // Print the result
+        System.out.println("Max Profit: " + result);
+    }
 }
 
 

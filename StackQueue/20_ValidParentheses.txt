@@ -65,16 +65,36 @@ Every close bracket has a corresponding open bracket of the same type.
 class Solution {
     public boolean isValid(String s) {
         System.out.println(s);
-
-        // return simpleOne(s);
-
         return stackOne(s);
-
-    
     }
 
-    boolean stackOne(String s){
+     public boolean isValidBetterFormattedAndSimple(String s) {
+            if(s.length() < 2){
+                return false;
+            }
+            char[] chars = s.toCharArray();
+            Stack<Character> stack = new Stack<Character>();
 
+            for(char x: chars){
+                if(x == '(' || x == '[' || x == '{'){
+                    stack.push(x);
+                }else{
+                    if(stack.isEmpty()) return false;
+                    // find the corresponding value in stack.
+                    char var = stack.pop();
+                    if( var == '(' && x == ')' ||
+                     var == '{' && x == '}' ||
+                     var == '[' && x == ']'){
+                        continue;
+                     } else{
+                        return false;
+                     }
+                }
+            }
+            return stack.empty();
+     }
+
+    boolean stackOne(String s){
         if(s.length() < 2){
             return false;
         }
@@ -82,8 +102,7 @@ class Solution {
         Stack<Character> stackChar = new Stack<Character>();
 
         for(char x: chars){
-
-            if(x == '('){
+            if(x == '(' || ){
                 stackChar.push(x);
             }
 
@@ -134,40 +153,3 @@ class Solution {
 
         return stackChar.empty();
     }
-
-// Applicable when here is no nesting, code not correct for the above question
-    boolean simpleOne(String s){
-            char[] c =  s.toCharArray();
-        int len = c.length;
-        int i= 0;
-        while(i < len){
-             System.out.println(c[i] + " : "+ c[i+1]);
-             System.out.println(s.charAt(i) == s.charAt(i+1));
-          
-            if(c[i] == '('){
-                if(!(c[i+1] == ')')){
-                    return false;
-                }
-
-            }
-
-             if(c[i] == '['){
-                if(!(c[i+1] == ']')){
-                    return false;
-                }
-
-            }
-
-             if(c[i] == '{'){
-                if(!(c[i+1] == '}')){
-                    return false;
-                }
-
-            }
-            i = i+2 ;
-        }
-    
-        return true;
-    }
-}
-
