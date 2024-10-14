@@ -2,6 +2,9 @@
 
 package org.example.recursion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AllSubSets {
     public List<List<Integer>> subsets(int[] nums) {
       List<List<Integer>> res = new ArrayList<> ();
@@ -11,7 +14,6 @@ public class AllSubSets {
     }
 
     void recursion(int[] nums, int index , List<Integer> data , List<List<Integer>> res){
-
       if(index >= nums.length){
         res.add(new ArrayList<>(data));
         return;

@@ -6,7 +6,7 @@ import java.util.List;
 public class CombinationSum {
 
   public static void main(String[] args) {
-    Solution sol = new Solution();
+    CombinationSum sol = new CombinationSum();
 
     // Example input
     int[] candidates = {2, 3, 6, 7};

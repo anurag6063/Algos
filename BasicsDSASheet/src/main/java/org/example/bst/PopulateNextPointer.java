@@ -1,47 +1,24 @@
 package BasicsDSASheet.src.main.java.org.example.bst;
 
-// Definition for a binary tree node with a 'next' pointer.
-class Node {
-  public int val;
-  public Node left;
-  public Node right;
-  public Node next;
-
-  public Node() {}
-
-  public Node(int _val) {
-    val = _val;
-  }
-
-  public Node(int _val, Node _left, Node _right, Node _next) {
-    val = _val;
-    left = _left;
-    right = _right;
-    next = _next;
-  }
-}
-
-class Solution {
-  public Node connect(Node root){
-    // need to loop over the left most and that is the way.
-    Node leftmost = root;
-    while(leftmost.left != null){
-      Node curr = leftmost;
-
-      while(curr != null){ // this goes next - doing a BFS across tree itself.
-        curr.left.next = curr.right;
-        if(curr.next != null){
-          curr.right.next = curr.next.left;
-        }
-        curr = curr.next;
-      }
-      leftmost = leftmost.left;
-    }
-    return root;
-  }
-}
-
 public class PopulateNextPointer {
+    public Node connect(Node root){
+      Node leftmost = root;
+      while(leftmost.left != null){
+        Node curr = leftmost;
+
+        while (curr != null){
+          curr.left.next = curr.right;
+          if(curr.next != null){
+            curr.right.next = curr.next.left;
+          }
+          curr = curr.next;
+        }
+        leftmost = leftmost.left;
+      }
+      return root;
+    }
+
+
   public static void main(String[] args) {
     // Sample Example:
     // Constructing the following perfect binary tree:
@@ -59,7 +36,7 @@ public class PopulateNextPointer {
     root.right.left = new Node(6);
     root.right.right = new Node(7);
 
-    Solution solution = new Solution();
+    PopulateNextPointer solution = new PopulateNextPointer();
     solution.connect(root);
     System.out.println("---");
 //    solution.connect2(root);
