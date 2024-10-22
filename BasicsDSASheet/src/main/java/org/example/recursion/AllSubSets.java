@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AllSubSets {
     public List<List<Integer>> subsets(int[] nums) {
-      List<List<Integer>> res = new ArrayList<> ();
+      List<List<Integer>> res = new ArrayList<> (); // #Memorize - to create a list of list
       List<Integer> data = new ArrayList<>();
       recursion(nums, 0 , data, res);
       return res;

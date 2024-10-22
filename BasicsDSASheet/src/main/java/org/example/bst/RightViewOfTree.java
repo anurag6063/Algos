@@ -29,6 +29,7 @@ I need to go till last. So maybe.
 
 package BasicsDSASheet.src.main.java.org.example.bst;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -36,27 +37,119 @@ import java.util.Queue;
 public class RightViewOfTree {
 
   public static void main(String[] args) {
-    Node root = new Node(1);
-    root.left = new Node(2);
-    root.left.left = new Node(4);
-    root.left.right = new Node(10);
-    root.left.left.right = new Node(5);
-    root.left.left.right.right = new Node(6);
-    root.right = new Node(3);
-    root.right.right = new Node(10);
-    root.right.left = new Node(9);
-    Node.printTree(root);
+    TreeNode root = new TreeNode(0);
+    root.left = new TreeNode(1);
+    root.right = new TreeNode(2);
+    root.left.left = new TreeNode(3);
+    root.left.right = new TreeNode(4);
+    root.right.left = new TreeNode(5);
+    root.right.right = new TreeNode(6);
+    TreeNode.printTree(root);
 
     RightViewOfTree rightViewOfTree = new RightViewOfTree();
 //    rightViewOfTree.viewWrongDoesNotAccountLeftAlsoHavingLongerBranch(root);
-    rightViewOfTree.view(root, 0, new ArrayList<>());
+//    rightViewOfTree.view(root, 0, new ArrayList<>());
 //    List<Integer> res = rightViewOfTree.viewLevelOrder(root);
 //    res.forEach(System.out::println);
 
 //    List<Integer> res2 = rightViewOfTree.viewLevelOrder(root);
 //    res2.forEach(System.out::println);
 
+
+//    List<Integer> ans = rightViewOfTree.rightViewSelf2(root);
+//    ans.forEach(System.out::println);
+
+    List<Integer> ans = rightViewDFS(root);
+    System.out.println();
+    ans.forEach(System.out::print);
   }
+
+  private static List<Integer> rightViewDFS(TreeNode root) {
+    List<Integer> ans = new ArrayList<>();
+    if(root == null) {
+      return  ans;
+    }
+    HashMap<Integer, Integer> map = new HashMap<>();
+    rightViewSelfDF(root, ans, map, 0);
+    return ans;
+  }
+
+  private static void rightViewSelfDF(TreeNode node, List<Integer> ans,
+      HashMap<Integer, Integer> map, int level){
+    if(node == null){
+      return;
+    }
+    if(!map.containsKey(level)){
+      map.put(level, node.val);
+      ans.add(node.val);
+    }
+    System.out.println(node.val);
+    rightViewSelfDF(node.right, ans, map, level+1);
+    rightViewSelfDF(node.left, ans, map, level+1);
+
+
+  }
+  private static List<Integer> rightViewSelf2(TreeNode node){
+    List<Integer> ans = new ArrayList<>();
+
+    if(node == null){
+      return ans;
+    }
+
+    Queue<TreeNode> queue = new LinkedList<>();
+    // setup
+    queue.add(node);
+
+    while(!queue.isEmpty()){
+      // find elements initially and loop over them
+      int size = queue.size();
+
+      for(int i = 0; i < size; i++){
+        TreeNode curr = queue.poll();
+        if(i == size-1){
+          ans.add(curr.val);
+        }
+
+        if(curr.right != null){
+          queue.add(curr.left);
+        }
+        if(curr.left != null){
+          queue.add(curr.right);
+        }
+      }
+    }
+    return ans;
+  }
+
+  private static void rightViewSelf(TreeNode node){
+    if(node == null){
+      return;
+    }
+
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.add(node);
+
+    while(!queue.isEmpty()){
+      queue.forEach(x -> System.out.print(x.val));
+      System.out.println();
+      int size = queue.size();
+      for(int i =0; i < size; i++){
+
+        TreeNode curr = queue.poll();
+        if(size-1 == i){
+          System.out.println("Found "+curr.val);
+        }
+        if(curr.left != null){
+          queue.offer(curr.left);
+        }
+        if(curr.right != null){
+          queue.offer(curr.right);
+        }
+      }
+    }
+  }
+
+
 
   private void view(Node node, int level, List<Integer> ans) {
     if(node == null) {

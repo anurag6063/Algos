@@ -1,11 +1,14 @@
-package org.example.recursion;
+package BasicsDSASheet.src.main.java.org.example.misc;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class FindStringMostDistinctCharacters {
     public static String betterString(String str1, String str2) {
       // Code here
       // i have 2 string.
       // if i find the count of distinct chars in both.
-      // and find that which one has more no of distict chars.
+      // and find that which one has more no of distinct chars.
       // that will be the ans.
 
       Set<Character> s1 = new HashSet<>();

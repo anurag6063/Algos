@@ -1,7 +1,7 @@
 // https://www.geeksforgeeks.org/problems/perfect-sum-problem5633/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=perfect-sum-problem
-package org.example.recursion;
+package BasicsDSASheet.src.main.java.org.example.recursion;
 
-class Solution{
+class PerfectSum{
   int MOD = 1000000007;
   public int perfectSum(int arr[],int n, int sum)
   {

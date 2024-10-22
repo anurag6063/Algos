@@ -1,10 +1,8 @@
-package org.example.recursion;
+package BasicsDSASheet.src.main.java.org.example.recursion;
 
 //https://www.geeksforgeeks.org/generate-binary-strings-without-consecutive-1s/?utm_source=youtube
 
 // Do not forget to add return in the base condition block.
-
-// "static void main" must be defined in a public class.
 public class GenerateBinaryStringWithoutConsecutiveOnes {
   public static void main(String[] args) {
     int k =3;
@@ -12,13 +10,10 @@ public class GenerateBinaryStringWithoutConsecutiveOnes {
   }
 
   static void fun(int k){
-
     if(k <= 0){
       return;
     }
-
     char[]  ch = new char[k];
-
     ch[0]= '0';
     generate(k, ch, 1);
 
@@ -43,8 +38,5 @@ public class GenerateBinaryStringWithoutConsecutiveOnes {
       ch[n] = '0';
       generate(k, ch, n+1);
     }
-
   }
-
-
 }
