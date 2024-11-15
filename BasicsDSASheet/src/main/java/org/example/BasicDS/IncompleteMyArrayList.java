@@ -1,10 +1,8 @@
-/*
-package org.example.BasicDS;
+package BasicsDSASheet.src.main.java.org.example.BasicDS;
 
 import java.util.Iterator;
 
-public class MyArrayList<T> implements Iterable<T> {
-
+public class IncompleteMyArrayList<T> implements Iterable<T> {
   private int size;
   private int capacity;
   private Object[] elements;
@@ -24,7 +22,7 @@ public class MyArrayList<T> implements Iterable<T> {
     if (size >= makeCopy) {
       // create a list with double size and copy the elements.
     }
-    
+    return 0;
   }
 
   public int size() {
@@ -33,7 +31,6 @@ public class MyArrayList<T> implements Iterable<T> {
 
   @Override
   public Iterator<T> iterator() {
-
+    return null;
   }
 }
-*/
