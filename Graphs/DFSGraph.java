@@ -13,30 +13,21 @@
 [/Code]
 [/Note]
 */
-/**
- * cracking the coding interview.
- * pseudocide for DFS
- */
 
-void search(Node node){
-    if(root == null) return;
-
-    visit(node);
-    root.visited = true;
-
-    for(Node n : root.adjacent){
-        if(n.visited == false){
-            search(n);
-        }
-    }
-}
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 
 // algo from take u forward
 // remember in this DFS allgo the top node will come first in the ans list, then the bottom, this is unlike in tree.
 // but in tree i had direction so there is no sense of direction here as which one is top and bottom. Cool :) 
 
-class Solution {
+public class DFSGraph {
     // Function to return a list containing the DFS traversal of the graph.
     // V is no of nodes it has; i have List os List since if i declare a single List it can hold only one item in each of it's element
     // here i need to store a list of items in a array position so List of List.
@@ -77,22 +68,19 @@ class Solution {
                 dfs(it, vis, adj, ans);
             }
         }
-        
-        
     }
-}
+
 
 
 /*
 
 alternate way, this code is very close to bfs and used own stack instead of metgod call stack */
 
-import java.util.*;
 
-public class Graph {
+//public class GraphSelfStack {
     private Map<Integer, List<Integer>> adjacencyList;
 
-    public Graph() {
+    public void DFSGraph() {
         adjacencyList = new HashMap<>();
     }
 
@@ -130,7 +118,7 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph();
+        DFSGraph graph = new DFSGraph();
         
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
