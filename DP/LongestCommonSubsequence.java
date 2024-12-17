@@ -48,7 +48,7 @@ public class LongestCommonSubsequence {
     }
 
     if(text1.charAt(m) == text2.charAt(n)){
-      return 1+ lcs(text1, text2, m-1, n-1);
+      return 1 + lcs(text1, text2, m-1, n-1);
     }else{
       return Math.max( lcs(text1, text2, m-1, n),
           lcs(text1, text2, m, n-1));

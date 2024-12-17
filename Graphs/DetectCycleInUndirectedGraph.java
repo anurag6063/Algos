@@ -1,7 +1,7 @@
 /*
 [Note]
-[Reference]: https://www.youtube.com/watch?v=BPlrALf1LDU&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw
-[Problem]: https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=detect-cycle-in-an-undirected-graph
+[Reference]: https://www.youtube.com/watch?v=BPlrALf1LDU&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw ; https://www.youtube.com/watch?v=zQ3zgFypzX4&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=8
+[Problem]: https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=detect-cycle-in-an-undirected-graph ; https://www.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=detect-cycle-in-an-undirected-graph
 [Pattern]: BFS ; store node + it's Parent; check it should have been visited only if it came from it's parent; IF NOT through as TRUE has a cycle.
 [Tips]: 
 [Revision]: 0
@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Queue;
 
 class DetectCycleInUndirectedGraph {
-    private static boolean checkForCycle(Integer s, boolean[] vis, ArrayList<ArrayList<Integer>> adj ){
+    private static boolean checkForCycleBFS(Integer s, boolean[] vis, ArrayList<ArrayList<Integer>> adj ){
         // start bfs + have a parent thing too. I need to know parent of each node. As I go bfs to each level down. Each node can have different parent.
         // So best is to have parent known for each node.
         Queue<Map.Entry<Integer, Integer>> q = new LinkedList<>();
@@ -56,19 +56,49 @@ class DetectCycleInUndirectedGraph {
     }
 
     // Function to detect cycle in an undirected graph.
-    public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
+    public boolean isCycleBFS(int V, ArrayList<ArrayList<Integer>> adj) {
 
         boolean[] vis = new boolean[V];
         Arrays.fill(vis, false);
 
         for(int i = 0; i< V; i++){
             if(!vis[i]){
-                if(checkForCycle(i,vis, adj)){
+                if(checkForCycleBFS(i,vis, adj)){
                     return true;
                 }
             }
         }
+        return false;
+    }
 
+    private static boolean checkForCycleDFS(int node, int parent, boolean[] vis, ArrayList<ArrayList<Integer>> adj){
+        vis[node] = true;
+        for(Integer it: adj.get(node)){
+            if(vis[it] == false){
+                if(checkForCycleDFS(it,node,vis,adj) == true){
+                    return true;
+                }
+            } else{
+                if(it != parent){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    // Function to detect cycle in an undirected graph.
+    public boolean isCycleDFS(int V, ArrayList<ArrayList<Integer>> adj) {
+
+        boolean[] vis = new boolean[V];
+        Arrays.fill(vis, false);
+
+        for(int i = 0; i< V; i++){
+            if(!vis[i]){
+                if(checkForCycleDFS(i,-1, vis, adj)){
+                    return true;
+                }
+            }
+        }
         return false;
     }
 }
