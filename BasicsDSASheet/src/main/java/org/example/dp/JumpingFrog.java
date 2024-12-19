@@ -11,10 +11,10 @@ package BasicsDSASheet.src.main.java.org.example.dp;
 [Next]: Practice
 [Steps]:
 [Code]
-Basic recurdion,
+Basic recursion,
 just that i need to tc of finding height so i need height[] to be passed around.
 also height array is needed to find energy so it's height[i] - height[i-1]
-also as an second option it can be height[i] - height[i-1]
+also as an second option it can be height[i] - height[i-2]
 since i-2 for jump 2 will be invalid when index is 0 since it will become -1, so i have a check stating i > 1.
 Also since once the jumpTwo will not be present and at end i am doing math.min so i will assigh jumpTwo as Integer.MAX_VALUE.
 [/Code]
