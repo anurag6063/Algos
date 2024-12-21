@@ -1,5 +1,14 @@
 
 """
+question: ""
+problemStatement: ""
+intuition: ""
+diagram: ""
+pattern: []
+solutionReference: ""
+confidence: ""
+
+
 /*
 # Algos
 [Note]
