@@ -4,52 +4,15 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-class Main{
-	static BufferedReader br;
-    static PrintWriter ot;
-    public static void main(String[] args) throws IOException{
-        
-        br = new BufferedReader(new InputStreamReader(System.in));
-        ot = new PrintWriter(System.out);
-
-        int t = Integer.parseInt(br.readLine());
-
-        while(t-->0){
-            
-            String s[] = br.readLine().trim().split(" ");
-            
-            int n = Integer.parseInt(s[0]);
-            int k = Integer.parseInt(s[1]);
-            int a[] = new int[n];
-            s = br.readLine().trim().split(" ");
-            for(int i = 0; i < n; i++)
-                a[i] = Integer.parseInt(s[i]);
-            Solution obj = new Solution();
-            ArrayList<Integer> res = obj.subarraySum(a, n, k);
-            for(int ii = 0;ii<res.size();ii++)
-                ot.print(res.get(ii) + " ");
-            ot.println();
-        }
-        ot.close();
-    }
-
-}
-// } Driver Code Ends
-
-
-class Solution
-{
+class SubarrayWithGivenSum{
     //Function to find a continuous sub-array which adds up to a given number.
-    static ArrayList<Integer> subarraySum(int[] arr, int n, int s) 
-    {
+    static ArrayList<Integer> subarraySum(int[] arr, int n, int s){
         ArrayList<Integer> res = new ArrayList<>();
-        
-        int left =0;
-        int sum =0;
+        int left = 0;
+        int sum = 0;
         for( int right =0; right< n; right++){
             sum = sum+arr[right];
             // System.out.printf(" left %d, right %d sum %d %n", left, right, sum );
-
             // while loop will be always there when i don;t know the window size
             while(sum > s && left < right){ // its right < left because we need atlease 1 element to be there.
             // if(sum > s){
@@ -58,9 +21,7 @@ class Solution
                 left++;
                 // System.out.println("sum in greater"+ sum);
             }
-
             // if is after because sometime the above while loop will get the value equated. we need to check and exit now.
-            
             if(sum == s){
                 // System.out.println("sum in equal");
                 res.add(left+1);
@@ -68,7 +29,6 @@ class Solution
                 return res;
             }
         }
-        
         res.add(-1);
         return res;
     }
