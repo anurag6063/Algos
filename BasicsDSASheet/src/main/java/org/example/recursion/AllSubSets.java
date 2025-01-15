@@ -13,6 +13,26 @@ public class AllSubSets {
       return res;
     }
 
+    public List<List<Integer>> subsets2(int[] nums) {
+      List<List<Integer>> res = new ArrayList<>();
+      List<Integer> data = new ArrayList<>();
+      recursion2(nums, 0, data, res);
+      return res;
+    }
+
+    private static void recursion2(int[] nums, int index, List<Integer> data, List<List<Integer>> res) {
+      if(index == nums.length) {
+        res.add(new ArrayList<>(data));
+      }
+
+      data.add(nums[index]);
+      recursion2(nums, index + 1, data, res);
+
+      data.remove(data.size() - 1);
+      recursion2(nums, index + 1, data, res);
+    }
+
+
     void recursion(int[] nums, int index , List<Integer> data , List<List<Integer>> res){
       if(index >= nums.length){
         res.add(new ArrayList<>(data));

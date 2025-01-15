@@ -42,8 +42,22 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/*
+Question:
+group anagram
+given array if strings.
+return array of array with anagrams together.
+*/
 class GroupAnagrams {
-
+    /*
+    anagrams are just jumbeled character.
+    so first i can make then sorted. but also keep the original string that need to be returned.
+    so DS supporting will be.
+    HM - key will be the sorted string character.
+    then the value of HM of this.
+    aet = eat, tea, ate
+    ant = nat, tan
+    */
   public List<List<String>> groupAnagrams(String[] strs) {
     Map<String, List<String>> map = new HashMap<>();
 

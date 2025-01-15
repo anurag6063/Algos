@@ -39,7 +39,6 @@ class SlidingWindow {
           supportingDSreplacedK.remove(pattern.charAt(left));
           left++;
         }
-
         supportingDSreplacedK.add(pattern.charAt(right));
       }
 
@@ -72,7 +71,7 @@ class SlidingWindow {
         // generally answer is calculated here.
 
         tempAns = tempAns - arr[left];
-        // move left now since in the next loop i need to loose left element
+        // move left now since in the next loop I need to lose left element
         left++;
       }
     }

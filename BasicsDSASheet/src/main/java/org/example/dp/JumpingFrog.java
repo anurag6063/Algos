@@ -31,7 +31,7 @@ public class JumpingFrog {
     int jumpTwo = Integer.MAX_VALUE;
     int jumpOne = solve(index-1, height, dp) + Math.abs(height[index] - height[index-1]);
     if(index > 1){
-      jumpTwo = solve(index-1, height, dp) + Math.abs(height[index] - height[index-2]);
+      jumpTwo = solve(index-2, height, dp) + Math.abs(height[index] - height[index-2]);
     }
 
     dp[index] = Math.min(jumpOne, jumpTwo);

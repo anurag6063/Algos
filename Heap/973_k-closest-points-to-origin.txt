@@ -44,36 +44,3 @@ class Solution {
         return ans;
     }
 }
-
-
-/*class Solution {
-    public int[][] kClosest(int[][] points, int k) {
-        // find a closest point closest to origin
-        // origin distace is x = sqrt(x^2 + y^2);
-        // we don't need to caluculate just do a sum of x^2 + y^2 and
-        // put in priority queue, since closest we want, min heap is what ot generally maintains
-        // find the distance and put.
-        // then loop for no on k times and ket it out and put the value of point in the answer. 
-
-        PriorityQueue<Map.Entry<Integer, int[]>> heap = new PriorityQueue<>();
-        Map<Integer, int[]> map = new HashMap<>();
-
-        for(int[] point: points){
-            map.put( point[0]*point[0]+ point[1]*point[1], point);
-        }
-
-        for(Map.Entry<Integer, int[]> entry: map.entrySet()){
-            heap.add(entry);
-        }
-
-        int[][] ans = new int[k][2];
-        for(int i=0; i<k;i++){
-            Map.Entry<Integer, int[]> entry = heap.poll();
-            ans[i]= entry.getValue();
-        }
-        
-        return ans;
-    }
-}
-
-*/

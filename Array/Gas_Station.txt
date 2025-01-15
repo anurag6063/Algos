@@ -32,44 +32,79 @@
 [QuestionNote]
 [/Note]
 */
+class Solution {
+    /*
+    There are n gas station.
+    ith static - gas[i]
+    from i to i+1 - cost[i] - gas will get used up.
+    start - gas - 0;
 
-class GasStation {
-  public int canCompleteCircuit(int[] gas, int[] cost) {
-    int len = gas.length;
-    long totalCost = 0;
-    long totalGas = 0;
+    given gas , cost, tell starting from where can i complete the circuit.
+    -1 if cannot
+    start in clockwise.
 
-    for (int i = 0; i < len; i++) {
-      totalCost += cost[i];
-      totalGas += gas[i];
-    }
+    // understanding question:
+    i have a how much i can fill the gas
+    second array is how much will be needed to travel.
 
-    if (totalCost > totalGas) {
-      return -1;
-    }
+    ie it should never happen that i run out of fuel
+    thing to consider is that i will always have ledt out fuel in tank.
+    starting point is all.
+    Need to try all variation.
 
-    for (int i = 0; i < len; i++) {
-      boolean flag = true;
-      totalGas = 0;
+    Steps:
+    basic check.
+        gas should not be empty array.
+        i should have total gas > total cost. Else there is no way i can complete the circuit.
+    setup:
+    startGas = 0;
 
-      int j;
-      for (j = i; j < len; j++) {
-        totalGas += gas[j];
-        if (cost[j] > totalGas) {
-          flag = false;
-          i = j;
-          break;
-        } else {
-          // System.out.println("breaking away");
+    start from each point (loop)
+        completed = true;
+        fill gas as provided. -> 5 (loop over each gas fill)
+            travel
+            deduct gasInTaank (5) - cost
+            check if now gasInTank goes to negative.
+                if yes
+                completed = false;
+                exit
+
+    if completed == true
+        return
+
+    */
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int totalGas = 0;
+        int totalCost = 0;
+        for(int i = 0; i < gas.length; i++){
+            totalGas += gas[i];
+            totalCost += cost[i];
         }
-        totalGas -= cost[j];
-        // System.out.printf("IN total gas %d, i %d, j %d \n", totalGas, i, j);
-      }
-      // System.out.printf("OUT total gas %d, i %d, j %d \n", totalGas, i, j);
-      if (j == len && flag) {
-        return i;
-      }
+        if(totalCost > totalGas){
+            return -1;
+        }
+
+        for(int i = 0; i < gas.length; i ++){
+            boolean completed = true;
+            int gasInTank = 0;
+            for(int j = i; j < i + gas.length; j++){
+                int currStation = j % gas.length;
+                gasInTank = gasInTank + gas[currStation];
+                gasInTank = gasInTank - cost[currStation];
+                // System.out.println("j: "+j+" +gasInTank "+ gasInTank + " cost "+ cost[i]);
+
+                if(gasInTank < 0){
+                    completed = false;
+                    // System.out.println("breaking --");
+                    i = j;
+                    break;
+                }
+            }
+            if(completed == true){
+                return i;
+            }
+        }
+
+        return -1;
     }
-    return -1;
-  }
 }
