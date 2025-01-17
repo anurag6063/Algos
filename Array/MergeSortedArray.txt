@@ -129,3 +129,51 @@ class Solution {
         }
     }
 }
+
+/*
+2 array
+nums1 - m elements
+nums2 - n elements
+increasing order
+
+merge them into single sorted increasing order array
+merge them into nums1. it has length of M+n
+*/class Solution {
+    /**
+    to nums1
+    keep 2 pointers one at each index of elements. compare which ever if larger merge it.
+    Cannot do from start since elements will get overwritten.
+
+
+     */
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index = m+n-1;
+        m = m-1;
+        n= n-1;
+
+
+        while(m >= 0 && n >= 0){
+
+            if(nums1[m] >= nums2[n]){
+                nums1[index]=nums1[m];
+                m--;
+                index--;
+            }else{
+                nums1[index]=nums2[n];
+                n--;
+                index--;
+            }
+        }
+        while(m >= 0){
+            nums1[index]= nums1[m];
+            m--;
+            index--;
+        }
+        while(n >= 0){
+            nums1[index] = nums2[n];
+            n--;
+            index--;
+        }
+
+    }
+}

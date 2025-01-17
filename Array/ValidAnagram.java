@@ -55,13 +55,13 @@ class Solution {
         }
         return true;
     }
-}
+
 
 
 
 // Using sorting
-/*class Solution {
-    public boolean isAnagram(String s, String t) {
+
+    public boolean isAnagramSorting(String s, String t) {
 
         if(s.length() != t.length()){
             return false;
@@ -80,8 +80,8 @@ class Solution {
         }
         return false;
     }
-}
-*/
+
+
 
 // -------------------------
 
@@ -90,7 +90,7 @@ class Solution {
 // at last check for any element still having non 0. 
 
  class Solution {
-    public boolean isAnagram(String s, String t) {
+    public boolean isAnagramArraySame(String s, String t) {
         
         if(s.length() != t.length()){
             return false;
@@ -113,5 +113,45 @@ class Solution {
                 return false;
         }
          return true;
+    }
+
+
+/**
+ * Q)
+ * 2 strings
+ * s , t
+ * both need to have same charactes.
+ */
+
+    /**
+     * BF:
+     * sort both of them first.
+     * then use 2 pointers on each string and check if does not matches.
+     *
+     * another way is use 2 array and fill values in it. as count.
+     * then while looping another string deduct the number.
+     *
+     * Array will use more space so better to use HMap.
+     */
+    public boolean isAnagram(String s, String t) {
+
+        HashMap<Character, Integer> hmapS = new HashMap<>();
+
+        for (char x : s.toCharArray()) {
+            hmapS.merge(x, 1, Integer::sum);
+        }
+        hmapS.entrySet().stream().forEach(x -> System.out.println(x.getKey() + " " + x.getValue()));
+        for (char x : t.toCharArray()) {
+            hmapS.merge(x, -1, Integer::sum);
+        }
+        System.out.println("--");
+        hmapS.entrySet().stream().forEach(x -> System.out.println(x.getKey() + " " + x.getValue()));
+
+        for (Map.Entry<Character, Integer> e : hmapS.entrySet()) {
+            if (e.getValue() != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
