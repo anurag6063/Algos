@@ -35,7 +35,10 @@ import java.util.Queue;
 
 class BFSGraph {
 
-    // Function to return Breadth First Traversal of given graph.
+    /**
+     *  Function to return Breadth First Traversal of given graph.
+     *  As soom as i add element in queue mark it as visited too.
+     */
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         // my container 
         // get me the space and DS

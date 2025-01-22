@@ -11,16 +11,16 @@ public class TopKElements {
   public static int[] topKFrequent(int[] nums, int k) {
     // find frequency first
     Map<Integer, Integer> freqMap = new HashMap<>();
-    for(int i =0; i < nums.length; i++){
-      freqMap.put(nums[i], freqMap.getOrDefault(nums[i], 0 )+ 1);
-
+    for(int i =0; i < nums.length; i++) {
+      freqMap.put(nums[i], freqMap.getOrDefault(nums[i], 0) + 1);
+    }
       // Main issue was this logic.
       // if(freqMap.containsKey(nums[i])){
       //    freqMap.put(nums[i], freqMap.get(nums[i]+1));
       // }else{
       //     freqMap.put(nums[i], 1);
       // }
-    }
+//    }
 
     PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>((x,y) -> Integer.compare(x.getKey(),y.getKey()));
     //   PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>());

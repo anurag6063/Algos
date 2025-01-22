@@ -44,6 +44,17 @@ class DiameterOfTree {
     return diameter;
   }
 
+  private int calHeight(TreeNode root) {
+    if(root == null){
+      return 0;
+    }
+
+    int l = calHeight(root.left);
+    int r = calHeight(root.right);
+    diameter = Math.max(diameter, Math.max(l, r));
+    return 1+ Math.max(l,r);
+  }
+
 
   public int diameterOfBinaryTreeSelf(TreeNode root) {
     if(root == null){
