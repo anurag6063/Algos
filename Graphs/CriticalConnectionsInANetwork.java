@@ -2,7 +2,7 @@
 # Algos
 [Note]
 [Reference]: https://www.youtube.com/watch?v=qrAub5z8FeA&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=29
-[Problem]: https://leetcode.com/problems/critical-connections-in-a-network/description/
+    [Problem]: https://leetcode.com/problems/critical-connections-in-a-network/description/
 [Pattern]: DFS_Graph + time of inserting and lowest
 [Tips]: needs additional time of visit and lowest time array. 
 [Revision]: 0
@@ -37,6 +37,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ *
+ *
+ *
  * 
  * There are n servers numbered from 0 to n - 1 connected by undirected server-to-server connections forming a network
   where connections[i] = [ai, bi] represents a connection between servers ai and bi. Any server can reach other servers

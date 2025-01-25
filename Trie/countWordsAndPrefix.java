@@ -16,14 +16,6 @@
 [/Note]
 */
 
-/******************************************************************************
-
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
-
 /**
  * Problem Statement:  Implement a data structure ”TRIE” from scratch. Complete some functions.
 
@@ -86,7 +78,8 @@ class Node{
     int getPrefixCount(){
         return cntPrefix;
     }
-};
+}
+
 public class Trie
 {
     // i always need to start from here so it's kept at class level
@@ -98,7 +91,6 @@ public class Trie
     
     public void insert(String word){
         Node node = root;
-        
         for(int i =0; i< word.length(); i++){
             if(!node.containsKey(word.charAt(i))){
                 node.set(word.charAt(i), new Node());
@@ -120,7 +112,6 @@ public class Trie
                 return 0;
             }
         }
-        
         return node.getEndCount();
     }
     
@@ -133,13 +124,11 @@ public class Trie
                 return 0;
             }
         }
-        
         return node.getPrefixCount();
     }
     
     public void erase(String word){
         Node node = root;
-        
         for(int i =0; i< word.length(); i++){
             if(node.containsKey(word.charAt(i))){
                 node = node.get(word.charAt(i));
@@ -148,7 +137,6 @@ public class Trie
                 return;
             }
         }
-        
         node.decreaseEnd();
     }
 	public static void main(String[] args) {
@@ -171,6 +159,5 @@ public class Trie
   (word4));
   T.erase(word1);
   System.out.println("Count Words equal to "+word1+" "+T.countWordsEqualTo(word1));
-  
 	}
 }

@@ -49,6 +49,22 @@ public class MaximumPathSum {
     return maxi[0];
   }
 
+  int maxpathSum2(TreeNode root) {
+    int[] maxi = {-1};
+    return findMaxPathSum2(root, maxi);
+  }
+
+  private static int findMaxPathSum2(TreeNode node, int[] maxi) {
+    if(node == null){
+      return 0;
+    }
+     int l = findMaxPathSum2(node.left, maxi)+ node.val;
+     int r = findMaxPathSum2(node.right, maxi)+ node.val;
+
+     return Math.max(l,r);
+
+  }
+
   public static void main(String[] args) {
     // Creating a sample binary tree
     TreeNode root = new TreeNode(1);

@@ -57,4 +57,23 @@ class EqualRowColumnPairs {
     }
     return count;
   }
+
+   // Driver code to test the solution
+      public static void main(String[] args) {
+          // Create a matrix (grid)
+          int[][] grid = {
+              {1, 2, 3},
+              {4, 5, 6},
+              {7, 8, 9}
+          };
+
+          // Create an instance of Solution
+          Solution solution = new Solution();
+
+          // Call equalPairs and print the result
+          int result = solution.equalPairs(grid);
+
+          // Print the result
+          System.out.println("Number of equal pairs: " + result);
+      }
 }

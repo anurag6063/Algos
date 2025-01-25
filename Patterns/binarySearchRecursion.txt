@@ -24,7 +24,7 @@
     - when mid is found,
     - when target is left of mid; set right as mid -1
     - when taget is right of mid, set left as mid +1
-- remember since i alreay checked mid always set next left or right as mid + 1 or -1. 
+- remember since i already checked mid always set next left or right as mid + 1 or -1.
 
 
 [/Intution]
@@ -35,10 +35,10 @@
 */
 
 public class binarySearchRecursion{
-    public static int binarySearchRecursion (int []nums, int target) {
+    public static int binarySearchRecursion (int[] nums, int target) {
         
         // Replace this placeholder return statement with your code
-        return findIndexOfTarget(nums, target, 0, nums.length -1);
+        return findIndexOfTarget(nums, target, 0, nums.length-1);
     }
 
     private static int findIndexOfTarget(int[] nums, int target, int left, int right){
@@ -63,7 +63,7 @@ public class binarySearchRecursion{
 
     private static int binarySearchIteration(int[] nums, int target){
         int left = 0;
-        int right = nums.length -1;
+        int right = nums.length-1;
         while(left <= right){
             int mid = left + ((right - left)/2);
             if(nums[mid] == target){
