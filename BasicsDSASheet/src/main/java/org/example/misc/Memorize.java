@@ -71,5 +71,7 @@ public class Memorize {
     map.put("as", Arrays.asList(str));
 
     List<List<String>> list = new ArrayList<>(map.values());
+
+    System.out.println("double "+ Double.MAX_VALUE);
   }
 }
