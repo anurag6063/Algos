@@ -27,7 +27,7 @@ class Solution {
         Arrays.sort(nums);
         // Arrays.asList(nums).forEach(System.out::println);
         Arrays.stream(nums).forEach(s -> System.out.println(s));
-        for(int i=0; i< nums.length-3; i++){
+        for(int i=0; i < nums.length-3; i++){
             // System.out.println(i + " "+ nums[i]);
             for(int j= i+1; j < nums.length-2; j++){
                 int l = j+1;
