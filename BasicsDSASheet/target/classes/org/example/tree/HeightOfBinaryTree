@@ -1,0 +1,49 @@
+/*
+[Note]
+[Reference]: https://takeuforward.org/data-structure/check-if-the-binary-tree-is-balanced-binary-tree/
+[Problem]: https://leetcode.com/problems/balanced-binary-tree/
+[Pattern]: Resursion
+[Tips]: Use the height of BT algo with -1 when the difference increases and keep returning -1 if once hit.
+[Revision]: 1
+[Confidence]: 20%
+[Next]: Practice
+[Steps]:
+[Code]
+
+[/Code]
+[Tags]:
+[Intution]:
+"""
+In this when i get BC it's 0.
+Now do height og left and right
+Add +1 only after max so that it does not artificially increases the height.
+Also to maintain the point that the it's unbalanced, keep returning -1 if anyone of the left or
+right path says it ever say -1.
+"""
+[/Intution]
+[/Note]
+*/
+
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        return findDepth(root) == -1 ? false : true;
+    }
+
+     private static int findDepth(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+        int left = findDepth(node.left);
+        if(left == -1){
+            return -1;
+        }
+        int right = findDepth(node.right);
+        if(right == -1){
+            return -1;
+        }
+        if(Math.abs(right-left) > 1){
+            return -1;
+        }
+        return Math.max(left, right)+1;
+    }
+}

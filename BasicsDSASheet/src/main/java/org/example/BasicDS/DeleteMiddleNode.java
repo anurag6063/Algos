@@ -1,4 +1,4 @@
-package BasicsDSASheet.src.main.java.org.example.BasicDS;
+package org.example.BasicDS;
 
 import static BasicsDSASheet.src.main.java.org.example.BasicDS.Node.printLL;
 

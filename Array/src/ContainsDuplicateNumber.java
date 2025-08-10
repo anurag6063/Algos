@@ -105,4 +105,17 @@ class ContainsDuplicateNumber {
         }
         return false;
     }
+    public static void main(String[] args) {
+        ContainsDuplicateNumber solution = new ContainsDuplicateNumber();
+        int[] nums = {1, 2, 3, 4, 5, 1};
+        boolean resultBF = solution.containsDuplicateBF(nums);
+        boolean resultSet = solution.containsDuplicateNumber_OP_Set(nums);
+        boolean resultMap = solution.containsDuplicateNumber_Map(nums);
+        boolean resultArray = solution.containsDuplicateNumber_Array(nums);
+
+        System.out.println("Brute Force Result: " + resultBF);
+        System.out.println("Set Result: " + resultSet);
+        System.out.println("Map Result: " + resultMap);
+        System.out.println("Array Result: " + resultArray);
+    }
 }

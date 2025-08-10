@@ -30,6 +30,11 @@ class Solution {
 
         ListNode fast = dummy;
         ListNode slow = dummy;
+            h
+        // 0 1 2 3 4 5 
+           2 1 0    
+           n = 2,1,0       
+        // 2 nd from last
 
         while(fast != null && fast.next != null){
             if(n > 0){

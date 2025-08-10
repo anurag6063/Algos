@@ -1,4 +1,4 @@
-
+public class Gas_Station_134 {
 /*
 # Algos
 [Note]
@@ -76,4 +76,14 @@ class Gas_Station_134 {
     }
     return -1;
   }
+
+  public static void main(String[] args) {
+    Gas_Station_134 solution = new Gas_Station_134();
+    int[] gas = {1, 2, 3, 4, 5};
+    int[] cost = {3, 4, 5, 1, 2};
+    int result = solution.canCompleteCircuit(gas, cost);
+    System.out.println("Starting gas station index: " + result);
+  }
+}
+    
 }
