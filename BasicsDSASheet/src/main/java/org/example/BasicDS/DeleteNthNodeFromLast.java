@@ -1,5 +1,9 @@
 package BasicsDSASheet.src.main.java.org.example.BasicDS;
 
+/*
+* QuestionLink:
+* QuestionNote:
+* */
 public class DeleteNthNodeFromLast {
   // Function to print the linked list
   public static void printLL(Node head) {
@@ -10,10 +14,14 @@ public class DeleteNthNodeFromLast {
   }
 
   // Function to delete the Nth node from the end of the linked list
+
+  /* SolutionLink:
+   * SolutionNote:
+   */
   public static Node DeleteNthNodefromEnd(Node head, int N){
     Node ahead = head;
     Node behind = head;
-
+// <Memorize>
     while(ahead.next != null){
       if(N > 0){
         System.out.println("Not moving yet ");
@@ -28,6 +36,8 @@ public class DeleteNthNodeFromLast {
     behind.next = behind.next.next;
     return head;
   }
+// </Memorize>
+
 
 
   public static void main(String[] args) {

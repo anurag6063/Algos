@@ -1,0 +1,3 @@
+# Sample guideline, please follow similar structure for guideline with code samples
+1. Make the code readable 
+2. Make the code executable. 

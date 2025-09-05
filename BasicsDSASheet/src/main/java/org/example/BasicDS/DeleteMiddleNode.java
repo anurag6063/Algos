@@ -5,7 +5,7 @@ import static BasicsDSASheet.src.main.java.org.example.BasicDS.Node.printLL;
 public class DeleteMiddleNode {
   // Function to delete the
   // middle node of a linked list
-  public Node deleteMiddle(Node head) {
+  public BasicsDSASheet.src.main.java.org.example.bst.Node deleteMiddle(Node head) {
     Node fast = head; // double hop, starting from head.
     Node slow = head; // single hop starting from head.
     Node dummy = new Node(0, head); // will be used to find answer
