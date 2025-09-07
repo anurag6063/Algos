@@ -1,0 +1,172 @@
+# =============================================================================
+# DOXYGEN INTERNAL COMMENTS TROUBLESHOOTING GUIDE
+# =============================================================================
+
+# STEP 1: Check your Doxyfile configuration
+# These settings are CRITICAL for extracting internal comments:
+
+INTERNAL_DOCS          = YES     # Must be YES to extract internal docs
+HIDE_IN_BODY_DOCS      = NO      # Must be NO to show internal comments
+SOURCE_BROWSER         = YES     # Enables source code display
+INLINE_SOURCES         = YES     # Shows source with documentation
+STRIP_CODE_COMMENTS    = NO      # Must be NO to preserve comments
+EXTRACT_ALL            = YES     # Extract all documented/undocumented items
+JAVADOC_AUTOBRIEF      = YES     # Helps with Java comment recognition
+
+# STEP 2: Verify file paths and patterns
+INPUT                  = ./src           # Make sure this path is correct
+FILE_PATTERNS          = *.java         # Ensure .java files are included
+RECURSIVE              = YES             # Search subdirectories
+
+# STEP 3: Enable detailed warnings to see what's happening
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_LOGFILE           = doxygen_warnings.log  # Check this log file
+
+# =============================================================================
+# DIAGNOSTIC COMMANDS TO RUN
+# =============================================================================
+
+# 1. Test with verbose output to see what Doxygen is processing
+doxygen -d Preprocessor Doxyfile
+
+# 2. Check if your Java file is being found
+doxygen -d ExtCmd Doxyfile
+
+# 3. Generate with all debugging enabled
+doxygen -d FilterOutput -d Validate Doxyfile
+
+# 4. Check the warnings log for specific issues
+cat doxygen_warnings.log
+
+# =============================================================================
+# MINIMAL TEST CASE
+# =============================================================================
+# Create a simple test file to verify internal comments work:
+
+# File: TestInternal.java
+/**
+ * @brief Simple test class
+ */
+public class TestInternal {
+    /**
+     * @brief Test method with internal comments
+     * @param x Input value
+     * @return Result
+     */
+    public int testMethod(int x) {
+        //! This should appear in documentation
+        int result = x * 2;
+
+        /*! This multi-line comment
+         *  should also appear in docs
+         */
+        return result;  //!< Return doubled value
+    }
+}
+
+# =============================================================================
+# COMMON ISSUES AND SOLUTIONS
+# =============================================================================
+
+# ISSUE 1: Comments not showing in HTML output
+# SOLUTION: Check these settings in your Doxyfile:
+INTERNAL_DOCS          = YES
+HIDE_IN_BODY_DOCS      = NO
+SOURCE_BROWSER         = YES
+
+# ISSUE 2: File not being processed
+# SOLUTION: Verify path and file patterns:
+# - Check INPUT path points to correct directory
+# - Ensure FILE_PATTERNS includes *.java
+# - Set RECURSIVE = YES if files are in subdirectories
+
+# ISSUE 3: Comments recognized but not displayed
+# SOLUTION: Check HTML output settings:
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+STRIP_CODE_COMMENTS    = NO
+
+# ISSUE 4: Only seeing method docs, not internal comments
+# SOLUTION: Enable source browser:
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# =============================================================================
+# VERIFICATION STEPS
+# =============================================================================
+
+# 1. After running doxygen, check these locations in HTML output:
+#    - Class documentation pages
+#    - Method documentation sections
+#    - Source code browser (if enabled)
+#    - Search for specific internal comment text
+
+# 2. Look for "Internal Documentation" sections in method pages
+
+# 3. Check the "Source" tab for each class/method
+
+# 4. Verify warnings log doesn't show file parsing errors
+
+# =============================================================================
+# ALTERNATIVE DOXYFILE SETTINGS TO TRY
+# =============================================================================
+
+# If standard settings don't work, try these alternatives:
+
+# Enable all extraction options
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+
+# Use different comment recognition
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+# Enable all file processing
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+
+# =============================================================================
+# TEST YOUR DOXYFILE CONFIGURATION
+# =============================================================================
+
+# Run this command to validate your Doxyfile:
+doxygen -s -g test_doxyfile  # Generate default config
+diff Doxyfile test_doxyfile  # Compare with your config
+
+# Check specific settings:
+grep -E "(INTERNAL_DOCS|HIDE_IN_BODY_DOCS|SOURCE_BROWSER)" Doxyfile
+
+# =============================================================================
+# MINIMAL WORKING DOXYFILE FOR INTERNAL COMMENTS
+# =============================================================================
+
+PROJECT_NAME           = "Test Internal Comments"
+OUTPUT_DIRECTORY       = ./output
+INPUT                  = ./
+FILE_PATTERNS          = *.java
+RECURSIVE              = YES
+
+# Critical settings for internal comments
+INTERNAL_DOCS          = YES
+HIDE_IN_BODY_DOCS      = NO
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+STRIP_CODE_COMMENTS    = NO
+EXTRACT_ALL            = YES
+JAVADOC_AUTOBRIEF      = YES
+
+# HTML output
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# Enable warnings
+WARNINGS               = YES
+WARN_LOGFILE           = warnings.log
