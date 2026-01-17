@@ -33,7 +33,7 @@ class Solution {
          }while(slow != fast);
          
          
-         // once we find the intersecion point. reset slow to 0 and move again this will find the fast
+         // once we find the intersection point. reset slow to 0 and move again this will find the fast
          slow = 0;
          
          while(slow != fast){
@@ -44,30 +44,4 @@ class Solution {
          return slow;
          
      }
-    
-    // should have worked had the repeted no occur just once extra times.
-    public int findDuplicate_JustTwice(int[] nums) {
-        
-        /*
-        sort array
-        now start from 1 and check if last no should not be same
-        
-        yes:[1,3,4,2,2]
-        fins sum = 12
-        max = 4 ; 10 
-        sum = [n*(n+1)]/2 20/2 = 10 
-        diff = 4 
-        */
-        int max = nums[0];
-        int sum = 0;
-        
-        for(int i =0; i< nums.length; i++){
-            sum += nums[i];
-            max = Math.max(max, nums[i]);
-        }
-        
-        int shouldBe = (max*(max+1))/2;
-        System.out.println(shouldBe);
-        return sum-shouldBe;
-    }
 }
